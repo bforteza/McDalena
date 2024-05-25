@@ -27,6 +27,15 @@ void Tablero::dibuja()
 	}
 	Peon1_Negro.dibuja(Peon1_Negro.coordenadas,Peon1_Negro.equipo);
 	Peon1_Blanco.dibuja(Peon1_Blanco.coordenadas, Peon1_Blanco.equipo);
+	Torre1_Negro.dibuja(Torre1_Negro.coordenadas, Torre1_Negro.equipo);
+	Torre1_Blanco.dibuja(Torre1_Blanco.coordenadas, Torre1_Blanco.equipo);
+	Caballo1_Negro.dibuja(Caballo1_Negro.coordenadas, Caballo1_Negro.equipo);
+	Caballo1_Blanco.dibuja(Caballo1_Blanco.coordenadas, Caballo1_Blanco.equipo);
+	Alfil1_Negro.dibuja(Alfil1_Negro.coordenadas, Alfil1_Negro.equipo);
+	Alfil1_Blanco.dibuja(Alfil1_Blanco.coordenadas, Alfil1_Blanco.equipo);
+	Rey1_Negro.dibuja(Rey1_Negro.coordenadas, Rey1_Negro.equipo);
+	Rey1_Blanco.dibuja(Rey1_Blanco.coordenadas, Rey1_Blanco.equipo);
+
 }
 void Tablero::inicializa()
 {

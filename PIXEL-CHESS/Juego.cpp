@@ -80,8 +80,8 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
 	if (key == 'e')
 	{
-		tablero1.Peon1_Negro.coordenadas.y++;
-		tablero1.Peon1_Blanco.coordenadas.y--;
+		tablero1.Rey1_Negro.coordenadas.y++;
+		tablero1.Rey1_Blanco.coordenadas.y--;
 	}
 	
 	glutPostRedisplay();
