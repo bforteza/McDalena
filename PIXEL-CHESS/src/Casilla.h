@@ -5,13 +5,10 @@ using ETSIDI::Sprite;
 
 class Casilla
 {
-	//Vector2D posicion;
 	Sprite *sprite;
 public:
 
 	Casilla(Sprite *spr) :sprite(spr) {}
 	void dibuja();
-
-
 };
 

@@ -1,5 +1,4 @@
 #include "freeglut.h"
-#include "Pieza.h"
 #include "ETSIDI.h"
 #include "Tablero.h"
 #include "Ajedrez.h"
@@ -79,8 +78,12 @@ void OnTimer(int value)
 }
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
-
-
+	if (key == 'e')
+	{
+		tablero1.Peon1_Negro.coordenadas.y++;
+		tablero1.Peon1_Blanco.coordenadas.y--;
+	}
+	
 	glutPostRedisplay();
 
 }

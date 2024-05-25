@@ -2,35 +2,36 @@
 
 void Tablero::dibuja()
 {
+	//dibujo del fondo
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D,
+		ETSIDI::getTexture("imagenes/Fondo.png").id);
+	glEnable(GL_LIGHTING);
+	glBegin(GL_POLYGON);
+	glColor3f(1, 1, 1);
+	glTexCoord2d(0, 1); glVertex3d(-5.0, 5.0, -0.5);
+	glTexCoord2d(1, 1); glVertex3d(5.0, 5.0, -0.5);
+	glTexCoord2d(1, 0); glVertex3d(5.0, -5.0, -0.5);
+	glTexCoord2d(0, 0); glVertex3d(-5.0, -5.0, -0.5);
+	glEnd();
+	glEnable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D);
 
-	casillas.at(0).at(0).dibuja();
-	casillas.at(0).at(1).dibuja();
-	casillas.at(0).at(2).dibuja();
-	casillas.at(0).at(3).dibuja();
 
-	casillas.at(1).at(0).dibuja();
-	casillas.at(1).at(1).dibuja();
-	casillas.at(1).at(2).dibuja();
-	casillas.at(1).at(3).dibuja();
-
-	casillas.at(2).at(0).dibuja();
-	casillas.at(2).at(1).dibuja();
-	casillas.at(2).at(2).dibuja();
-	casillas.at(2).at(3).dibuja();
-
-	casillas.at(3).at(0).dibuja();
-	casillas.at(3).at(1).dibuja();
-	casillas.at(3).at(2).dibuja();
-	casillas.at(3).at(3).dibuja();
-
-	casillas.at(4).at(0).dibuja();
-	casillas.at(4).at(1).dibuja();
-	casillas.at(4).at(2).dibuja();
-	casillas.at(4).at(3).dibuja();
-	
+	for (int i=0; i < 5; i++)
+	{
+		for (int j=0; j < 4; j++)
+		{
+			casillas.at(i).at(j).dibuja();
+		}
+	}
+	Peon1_Negro.dibuja(Peon1_Negro.coordenadas,Peon1_Negro.equipo);
+	Peon1_Blanco.dibuja(Peon1_Blanco.coordenadas, Peon1_Blanco.equipo);
 }
 void Tablero::inicializa()
 {
+
+
 	casillas.push_back({ new Sprite("imagenes/cuadrado.png", -1.66, 2.50, 1.2, 1.2)
 		,new Sprite("imagenes/cuadrado2.png", -0.58, 2.50, 1.2, 1.2)
 		,new Sprite("imagenes/cuadrado.png", 0.5, 2.50, 1.2, 1.2)
@@ -55,5 +56,7 @@ void Tablero::inicializa()
 		,new Sprite("imagenes/cuadrado2.png", -0.58,  -1.82, 1.2, 1.2)
 		,new Sprite("imagenes/cuadrado.png", 0.5, -1.82, 1.2, 1.2)
 		,new Sprite("imagenes/cuadrado2.png", 1.58, -1.82, 1.2, 1.2) });
+
+	
 
 }
