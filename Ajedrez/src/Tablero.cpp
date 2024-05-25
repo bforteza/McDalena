@@ -16,11 +16,13 @@ Tablero::Tablero(Columna columnas, int filas) {
 	}
 
 	Color color = NEGRO;
+
 	for (auto& fila : cuadricula) {
 		for (auto& casilla : fila) {
 			casilla = new CasillaVacia(color);
 			color = (color == NEGRO) ? BLANCO : NEGRO;
 		}
+		color = (color == NEGRO) ? BLANCO : NEGRO;
 	}
 
 }

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Ajedrez.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Ajedrez.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -23,6 +27,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Tablero.cpp",
+              "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Tablero.cpp",
+              "RelativeDocumentMoniker": "src\\Tablero.cpp",
+              "ToolTip": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Tablero.cpp",
+              "RelativeToolTip": "src\\Tablero.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-25T21:58:53.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Ajedrez.cpp",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Ajedrez.cpp",
               "RelativeDocumentMoniker": "src\\Ajedrez.cpp",
@@ -35,7 +52,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Tablero.h",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Tablero.h",
               "RelativeDocumentMoniker": "src\\Tablero.h",
@@ -43,7 +60,8 @@
               "RelativeToolTip": "src\\Tablero.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-25T21:47:58.419Z"
+              "WhenOpened": "2024-05-25T21:47:58.419Z",
+              "EditorCaption": ""
             }
           ]
         }
