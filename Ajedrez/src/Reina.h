@@ -1,5 +1,8 @@
 #pragma once
 #include "Pieza.h"
+#include "Rey.h"
+#include "Alfil.h"
+
 class Reina :
     public Pieza
 
@@ -7,6 +10,6 @@ class Reina :
 public:
     using Pieza::Pieza;
     void print();
-    bool premove(Tablero* tablero, Columna col, int fil);
+    bool premove(Rey rey, Alfil al, Tablero* tablero, Columna col, int fil);
 };
 

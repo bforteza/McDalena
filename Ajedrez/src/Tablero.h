@@ -8,6 +8,9 @@
 enum Juego{SC,UP };
 class Tablero
 {
+
+	
+
 public:
 	std::vector<std::vector< Casilla*>> cuadricula;
 

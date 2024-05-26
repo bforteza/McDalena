@@ -7,5 +7,6 @@ class Rey :
 public:
     using Pieza::Pieza;
     void print();
-    bool premueve(Tablero* tablero, Columna col, int fil);
+    bool premove(Tablero* tablero, Columna col, int fil);
+    friend class Reina;
 };

@@ -1,4 +1,9 @@
-﻿  Torre.cpp
-C:\Users\davil\source\repos\bforteza\McDalena\Ajedrez\src\Torre.cpp(20,58): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\davil\source\repos\bforteza\McDalena\Ajedrez\src\Torre.cpp(22,53): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
-  Ajedrez.vcxproj -> C:\Users\davil\source\repos\bforteza\McDalena\Ajedrez\x64\Debug\Ajedrez.exe
+﻿  Peon.cpp
+C:\Users\davil\source\repos\McDalena\Ajedrez\src\Peon.cpp(19,56): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Reina.cpp
+  Rey.cpp
+  Torre.cpp
+C:\Users\davil\source\repos\McDalena\Ajedrez\src\Torre.cpp(20,58): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\davil\source\repos\McDalena\Ajedrez\src\Torre.cpp(22,53): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Generando código...
+  Ajedrez.vcxproj -> C:\Users\davil\source\repos\McDalena\Ajedrez\x64\Debug\Ajedrez.exe

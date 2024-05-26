@@ -7,7 +7,7 @@ void Rey::print() {
 	std::cout << ((color_pieza == NEGRO) ? "K" : "k");
 }
 
-bool Rey::premueve(Tablero* tablero, Columna col, int fil) {
+bool Rey::premove(Tablero* tablero, Columna col, int fil) {
 
 	//Defino las posibles posiciones a las que se puede mover dada una posición incial:
 	Casilla* diag_1 = tablero->get_casilla(static_cast<Columna>(col - 1), fil - 1);
@@ -19,7 +19,7 @@ bool Rey::premueve(Tablero* tablero, Columna col, int fil) {
 	Casilla* izq = tablero->get_casilla(static_cast<Columna>(col - 1), fil);
 	Casilla* dcha = tablero->get_casilla(static_cast<Columna>(col + 1), fil);
 
-	//Con el bucle recorro la fila trasera, la de la pieza y la delantera, buscando que las posibles posiciones estén vacias
+	//Con el bucle y los ifs recorro la fila trasera, la de la pieza y la delantera, buscando que las posibles posiciones estén vacias
 	for (size_t i = 0; i <= tablero->cuadricula[col].size(); i++)
 	{
 		if (tablero->get_casilla(static_cast<Columna>(i), fil - 1) == diag_1 && !tablero->get_casilla(static_cast<Columna>(i), fil - 1)->ocupado())

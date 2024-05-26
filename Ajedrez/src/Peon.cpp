@@ -7,7 +7,7 @@ void Peon::print() {
 	std::cout << ((color_pieza == NEGRO) ? "P" : "p");
 }
 
-bool Peon::premueve(Tablero* tablero, Columna col, int fil) {
+bool Peon::premove(Tablero* tablero, Columna col, int fil) {
 
 	Casilla* diag_1 = tablero->get_casilla(static_cast<Columna>(col - 1), fil - 1);
 	Casilla* frente = tablero->get_casilla(static_cast<Columna>(col), fil - 1);

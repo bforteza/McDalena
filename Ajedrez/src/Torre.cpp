@@ -7,7 +7,7 @@ void Torre::print() {
 	std::cout << ((color_pieza == NEGRO) ? "K" : "k");
 }
 
-bool Torre::premueve(Tablero* tablero, Columna col, int fil) {
+bool Torre::premove(Tablero* tablero, Columna col, int fil) {
 	for (size_t i = 0; i <= tablero->cuadricula[col].size(); i++)
 	{
 		if (!tablero->get_casilla(static_cast<Columna>(i), fil)->ocupado())
