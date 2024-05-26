@@ -9,8 +9,8 @@ protected:
 public:
 	virtual void print() = 0;
 	Casilla(Color ccasilla) : color_casilla(ccasilla) {};
-
-
+	Color get_color_casilla();
+	void set_color_casilla(Color color);
 	//virtual void dibuja();
 };
 

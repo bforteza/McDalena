@@ -3,6 +3,7 @@
 #include "Casilla.h"
 
 enum Columna{A=0,B,C,D,E,F,G};
+enum Juego{SC,UP };
 class Tablero
 {
 private:
@@ -10,12 +11,14 @@ private:
 
 public:
 	
-	//Casilla& casilla(Columna col, int fil);
+	Casilla* get_casilla(Columna col, int fil);
 
+	void size(Columna columnas, int filas);
 	void print();
+	void asignar(Columna col, int fil, Casilla* entrada);
+	//inicializadores
 
-	Tablero(Columna columnas, int filas);
-
-
+	Tablero(Juego juego);
+	
 };
 

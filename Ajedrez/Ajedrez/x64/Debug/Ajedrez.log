@@ -1,2 +1,8 @@
-﻿  Tablero.cpp
+﻿  Alfil.cpp
+  Caballo.cpp
+  Reina.cpp
+  Rey.cpp
+  Tablero.cpp
+  Torre.cpp
+  Generando código...
   Ajedrez.vcxproj -> C:\Users\tomeu\Desktop\C\github\McDalena\Ajedrez\x64\Debug\Ajedrez.exe

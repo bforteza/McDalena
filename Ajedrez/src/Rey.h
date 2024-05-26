@@ -3,5 +3,8 @@
 class Rey :
     public Pieza
 {
-
+public:
+    using Pieza::Pieza;
+    void print();
+   
 };

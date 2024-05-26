@@ -7,7 +7,7 @@
 int main()
 {
     std::cout << "Hello World!\n";
-    Tablero tablero(D, 6);
+    Tablero tablero(UP);
 
     tablero.print();
 }
