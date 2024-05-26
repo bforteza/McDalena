@@ -2,12 +2,14 @@
 #include "ETSIDI.h"
 #include "Tablero.h"
 #include "Ajedrez.h"
-
+#include "iostream"
 Tablero tablero1;
 
 void OnDraw(void);
 void OnTimer(int value);
 void OnKeyboardDown(unsigned char key, int x, int y);
+
+void OnMouseClick(int boton,int state, int x, int y);
 
 
 
@@ -34,6 +36,7 @@ int main(int argc, char* argv[])
 	glutDisplayFunc(OnDraw);
 	glutTimerFunc(25, OnTimer, 0);
 	glutKeyboardFunc(OnKeyboardDown);
+	glutMouseFunc(OnMouseClick);
 
 	glutMainLoop();
 
@@ -72,6 +75,7 @@ void OnTimer(int value)
 
 
 	//no borrar estas lineas
+
 	glutTimerFunc(4, OnTimer, 0);
 	glutPostRedisplay();
 
@@ -80,10 +84,27 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
 	if (key == 'e')
 	{
-		tablero1.Rey1_Negro.coordenadas.y++;
-		tablero1.Rey1_Blanco.coordenadas.y--;
+		tablero1.casillas.at(0).at(0).sprite = new Sprite("imagenes/cuadradorojo.png", -1.66, 2.50, 1.2, 1.2);
 	}
 	
 	glutPostRedisplay();
 
+}
+void OnMouseClick(int boton, int state, int x, int y)
+{
+	if (boton == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
+	{
+		std::cout << x << "," << y << std::endl;
+		if ((x > 212) && (x < 327))
+		{
+			if ((y > 60) && (y < 162))
+			{
+				tablero1.casillas.at(0).at(0).sprite = new Sprite("imagenes/cuadradorojo.png", -1.66, 2.50, 1.2, 1.2);
+			}
+			
+		}
+		
+
+		
+	}
 }

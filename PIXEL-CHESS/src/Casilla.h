@@ -5,10 +5,12 @@ using ETSIDI::Sprite;
 
 class Casilla
 {
-	Sprite *sprite;
-public:
+	int estado;
+	Vector2D coordenadas;
 
-	Casilla(Sprite *spr) :sprite(spr) {}
+public:
+	Sprite* sprite;
+	Casilla(Vector2D coord,int est, Sprite *spr) : coordenadas(coord),estado(est), sprite(spr) {}
 	void dibuja();
 };
 
