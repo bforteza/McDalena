@@ -1,0 +1,317 @@
+﻿  Ajedrez.cpp
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(21,96): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(21,91): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(21,85): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(21,79): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(22,93): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(22,88): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(22,82): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(22,75): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(25,97): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(25,92): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(25,86): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(25,80): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(26,99): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(26,94): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(26,88): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(26,81): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(29,91): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(29,86): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(29,80): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(29,74): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(30,93): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(30,88): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(30,82): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(30,75): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(33,85): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(33,80): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(33,74): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(33,68): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(34,87): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(34,82): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(34,76): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(34,69): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(37,89): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(37,83): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(37,77): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(37,71): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(38,91): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(38,85): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(38,79): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(38,72): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Ajedrez.cpp")
+  
+  Alfil.cpp
+  Caballo.cpp
+  Casilla.cpp
+  CasillaVacia.cpp
+  Peon.cpp
+  Pieza.cpp
+  Reina.cpp
+  Rey.cpp
+  Tablero.cpp
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(21,96): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(21,91): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(21,85): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(21,79): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(22,93): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(22,88): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(22,82): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(22,75): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(25,97): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(25,92): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(25,86): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(25,80): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(26,99): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(26,94): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(26,88): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(26,81): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(29,91): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(29,86): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(29,80): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(29,74): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(30,93): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(30,88): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(30,82): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(30,75): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(33,85): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(33,80): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(33,74): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(33,68): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(34,87): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(34,82): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(34,76): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(34,69): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(37,89): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(37,83): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(37,77): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(37,71): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(38,91): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(38,85): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(38,79): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.h(38,72): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Tablero.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(38,74): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(38,69): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(38,57): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(44,121): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(44,116): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(44,104): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(44,87): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(47,121): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(47,116): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(47,104): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(47,87): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(53,121): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(53,116): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(53,104): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(53,87): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(56,121): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(56,116): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(56,104): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(56,87): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(105,137): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(105,132): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(105,120): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(105,103): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(108,137): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(108,132): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(108,120): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(108,103): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(114,137): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(114,132): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(114,120): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(114,103): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(117,137): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(117,132): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(117,120): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(117,103): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(129,84): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(129,79): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(129,67): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(129,50): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(137,87): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(137,82): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(137,70): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(137,53): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(154,136): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(154,131): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(154,119): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(154,102): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(157,136): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(157,131): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(157,119): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(157,102): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(163,136): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(163,131): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(163,119): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(163,102): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(166,136): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(166,131): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(166,119): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(166,102): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(178,87): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(178,82): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(178,70): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\src\Tablero.cpp(178,53): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  Torre.cpp
+  Vector2D.cpp
+  Generando código...
+  PIXEL-CHESS.vcxproj -> C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS\bin\PIXEL-CHESS.exe
