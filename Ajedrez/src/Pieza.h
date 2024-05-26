@@ -1,5 +1,7 @@
 #pragma once
 #include "Casilla.h"
+#include "Tablero.h"
+#include "vector"
 
 
 class Pieza :

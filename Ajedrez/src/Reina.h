@@ -7,5 +7,6 @@ class Reina :
 public:
     using Pieza::Pieza;
     void print();
+    bool premove(Tablero* tablero, Columna col, int fil);
 };
 
