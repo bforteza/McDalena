@@ -13,6 +13,5 @@ public:
     virtual void print() = 0;
     virtual bool ocupado() { return true; };
     virtual bool premove(Tablero* tablero, Columna col, int fil) { return false; };
-    virtual void move() = 0;
 };
 
