@@ -8,8 +8,10 @@ int main()
 {
     std::cout << "Hello World!\n";
     Tablero tablero(UP);
-
+    tablero.premove(A, 1);
     tablero.print();
+   // tablero.get_casilla(D, 0)->print();
+   
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar

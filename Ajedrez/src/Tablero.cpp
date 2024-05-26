@@ -1,11 +1,5 @@
 #include "Tablero.h"
-#include "CasillaVacia.h"
 #include <iostream>
-#include "Peon.h"
-#include "Torre.h"
-#include "Rey.h"
-#include "Reina.h"
-#include "Alfil.h"
 
 void Tablero::size(Columna columnas, int filas) {
 
@@ -29,7 +23,7 @@ void Tablero::size(Columna columnas, int filas) {
 Tablero::Tablero(Juego juego) {
 	if (juego == UP) {
 		size(D, 5);
-		asignar(A, 1, new Rey(BLANCO)); //falta implementar todas las demas piezas
+		asignar(A, 1, new Alfil(BLANCO)); //falta implementar todas las demas piezas
 	}
 	else if (juego == SC) {
 
@@ -42,13 +36,18 @@ void Tablero::print() {
 	for (auto fila : cuadricula) {
 		for (auto casilla : fila) {
 			casilla->print();
+			if (casilla->selecionada == 1) {
+				std::cout << ".";
+			}
 		}
 		std::cout << "\n";
 	}
 } //falta mejorar el metodo print para que las casillas aparezcan en su lugar
 
 Casilla* Tablero::get_casilla(Columna col, int fil) {
-	return cuadricula[col][fil];
+	if(col >= 0 && col < cuadricula.size() && (fil-1) >= 0 && (fil-1) < cuadricula[0].size())
+	return cuadricula[col][fil-1];
+	return nullptr;
 }
 
 void Tablero::asignar(Columna col, int fil, Casilla* entrada) {
@@ -58,5 +57,10 @@ void Tablero::asignar(Columna col, int fil, Casilla* entrada) {
 
 	delete cuadricula[col][fil-1];
 	cuadricula[col][fil-1] = entrada;
+}
+
+bool Tablero::premove(Columna col, int fil) {
+	if (get_casilla(col, fil)->premove(this,col, fil)) return true;
+	return false;
 }
 

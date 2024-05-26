@@ -1,5 +1,10 @@
-﻿  Alfil.cpp
+﻿  Ajedrez.cpp
+  Alfil.cpp
   Caballo.cpp
+  Casilla.cpp
+  CasillaVacia.cpp
+  Peon.cpp
+  Pieza.cpp
   Reina.cpp
   Rey.cpp
   Tablero.cpp

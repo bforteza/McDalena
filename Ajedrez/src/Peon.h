@@ -6,6 +6,6 @@ class Peon :
 public:
     using Pieza::Pieza;
     void print();
-
+    
 };
 
