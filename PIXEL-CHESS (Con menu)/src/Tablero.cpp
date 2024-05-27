@@ -27,8 +27,16 @@ void Tablero::dibujafondo()
 }
 
 
-Tablero::Tablero(Columna columnas, int filas) {
+Tablero::Tablero(Columna columnas, int filas,float origen_x,float origen_y, 
+	const int spriteorigen_x, const int spriteorigen_y, int _modalidad) {
 
+		modalidad = _modalidad;
+		marca_origenx = origen_x;
+		marca_origeny = origen_y;
+		marca_filas = filas;
+		marca_columnas = columnas;
+		marca_spritex = spriteorigen_x;
+		marca_spritey = spriteorigen_y;
 	int i=0, j=0; //Dos parámetros para la carga de casillas (x,y)
 	cuadricula.resize(filas); //Hacemos lo suficientemente grandes las filas
 	for (size_t i = 0; i < cuadricula.size(); i++) {
@@ -42,19 +50,19 @@ Tablero::Tablero(Columna columnas, int filas) {
 			if (j % 2 == 0) //Si la fila es par
 			{
 				if (i % 2 == 0)//Si la fila es par
-					casilla = new CasillaVacia({ NEGRO }, new Sprite("imagenes/cuadrado2.png", -1.66 + i * 1.08, 2.50 - j * 1.08, 1.2, 1.2), { i,j });
+					casilla = new CasillaVacia({ NEGRO }, new Sprite("imagenes/cuadrado2.png", origen_x + i * 1.08, origen_y - j * 1.08, 1.2, 1.2));
 				//Las coordenadas de la casilla varían según se baja con xcasilla=x y casilla=(-y)
 				if (i % 2 != 0)//Si la fila es impar
-					casilla = new CasillaVacia({ BLANCO }, new Sprite("imagenes/cuadrado.png", -1.66 + i * 1.08, 2.50 - j * 1.08, 1.2, 1.2), { i,j });
+					casilla = new CasillaVacia({ BLANCO }, new Sprite("imagenes/cuadrado.png", origen_x + i * 1.08, origen_y - j * 1.08, 1.2, 1.2));
 				//Las coordenadas de la casilla varían según se baja con xcasilla=x y casilla=(-y)
 			}
 			if (j % 2 != 0)//Si la fila es impar
 			{
 				if (i % 2 == 0)//Si la fila es par
-					casilla = new CasillaVacia({ BLANCO }, new Sprite("imagenes/cuadrado.png", -1.66 + i * 1.08, 2.50 - j * 1.08, 1.2, 1.2), { i,j });
+					casilla = new CasillaVacia({ BLANCO }, new Sprite("imagenes/cuadrado.png", origen_x + i * 1.08, origen_y - j * 1.08, 1.2, 1.2));
 				//Las coordenadas de la casilla varían según se baja con xcasilla=x y casilla=(-y)
 				if (i % 2 != 0)//Si la fila es impar
-					casilla = new CasillaVacia({ NEGRO }, new Sprite("imagenes/cuadrado2.png", -1.66 + i * 1.08, 2.50 - j * 1.08, 1.2, 1.2), { i,j });
+					casilla = new CasillaVacia({ NEGRO }, new Sprite("imagenes/cuadrado2.png", origen_x + i * 1.08, origen_y - j * 1.08, 1.2, 1.2));
 				//Las coordenadas de la casilla varían según se baja con xcasilla=x y casilla=(-y)
 
 			}
@@ -63,71 +71,173 @@ Tablero::Tablero(Columna columnas, int filas) {
 		i = 0;//reseteo de columna al cambiar de fila
 		j++;//cambio de fila
 	}
+
+	if (_modalidad == 0)
+	{
+
+	//Torres blanca y negra inicializadas
+	 TorreNegra = new Torre{ { 3,0 }, NEGRO, 0, new Sprite("imagenes/TorreN.png", -0.66, 0.44, 0.8, 0.8) };
+	 TorreBlanca = new	Torre{ {0,4},BLANCO,0,new Sprite("imagenes/TorreB.png", 2.58, -1.74, 0.8, 0.8) };
+	
+	//Caballos blanco y negro inicializados
+	 CaballoNegro = new Caballo{ {1,0},NEGRO,0,new Sprite("imagenes/CaballoN.png", -0.64, 0.44, 0.8, 0.8) };
+	 CaballoBlanco = new Caballo{ {2,4},BLANCO,0,new Sprite("imagenes/caballoB.png", 2.62, -1.72, 0.8, 0.8) };
+
+	//Alfiles blanco y negro inicializados
+	 AlfilNegro = new Alfil{ {2,0},NEGRO,0,new Sprite("imagenes/AlfilN.png", -0.66, 0.44, 0.8, 0.8) };
+	 AlfilBlanco = new Alfil{ {1,4},BLANCO,0,new Sprite("imagenes/AlfilB.png", 2.58, -1.72, 0.8, 0.8) };
+
+	//Reyes blanco y negro inicializados
+	 ReyNegro = new Rey{ {0,0},NEGRO,0,new Sprite("imagenes/ReyN.png", -0.66, 0.42, 0.8, 0.8) };
+	 ReyBlanco = new Rey{ {3,4},BLANCO,0,new Sprite("imagenes/ReyB.png", 2.62, -1.74, 0.8, 0.8) };
+
+	//Peones blanco y negro inicializados
+	 PeonesNegros.resize(1);
+	 PeonesBlancos.resize(1);
+	PeonesNegros.at(0) = new Peon{{0,1},NEGRO,0,new Sprite("imagenes/PeonN.png", -0.64, 0.42, 0.74, 0.74)};
+	PeonesBlancos.at(0) = new Peon{{3,3},BLANCO,0,new Sprite("imagenes/PeonB.png", 2.62, -1.74, 0.84, 0.84)};
+	}
+	if (_modalidad == 1)
+	{
+
+		//Torres blanca y negra inicializadas
+		TorreNegra = new Torre{ { 4,0 }, NEGRO, 0, new Sprite("imagenes/TorreN.png", -0.90, 0.72, 0.8, 0.8) };
+		TorreBlanca = new	Torre{ {0,5},BLANCO,0,new Sprite("imagenes/TorreB.png", 2.32, -1.47, 0.8, 0.8) };
+
+		//Caballos blanco y negro inicializados
+		CaballoNegro = new Caballo{ {3,0},NEGRO,0,new Sprite("imagenes/CaballoN.png", -0.90, 0.74, 0.8, 0.8) };
+		CaballoBlanco = new Caballo{ {1,5},BLANCO,0,new Sprite("imagenes/caballoB.png", 2.38, -1.42, 0.8, 0.8) };
+
+		//Alfiles blanco y negro inicializados
+		AlfilNegro = new Alfil{ {2,0},NEGRO,0,new Sprite("imagenes/AlfilN.png", -0.92, 0.74, 0.8, 0.8) };
+		AlfilBlanco = new Alfil{ {2,5},BLANCO,0,new Sprite("imagenes/AlfilB.png", 2.34, -1.41, 0.8, 0.8) };
+
+		//Reyes blanco y negro inicializados
+		ReyNegro = new Rey{ {1,0},NEGRO,0,new Sprite("imagenes/ReyN.png", -0.92, 0.74, 0.8, 0.8) };
+		ReyBlanco = new Rey{ {3,5},BLANCO,0,new Sprite("imagenes/ReyB.png", 2.34, -1.43, 0.8, 0.8) };
+
+		//Reyes blanco y negro inicializados
+		ReinaNegra = new Reina{ {0,0},NEGRO,0,new Sprite("imagenes/ReinaN.png", -0.92, 0.72, 0.8, 0.8) };
+		ReinaBlanca = new Reina{ {4,5},BLANCO,0,new Sprite("imagenes/ReinaB.png", 2.28, -1.48, 0.8, 0.8) };
+
+		//Peones blanco y negro inicializados
+		PeonesNegros.resize(5);
+		PeonesBlancos.resize(5);
+		i = 0;
+		while (i < 5)
+		{
+			PeonesNegros.at(i) = new Peon{ {i,1},NEGRO,0,new Sprite("imagenes/PeonN.png", -0.92, 0.72, 0.70, 0.70) };
+			PeonesBlancos.at(i) = new Peon{ {i,4},BLANCO,0,new Sprite("imagenes/PeonB.png", 2.34, -1.44, 0.8, 0.8) };
+			i++;
+		}
+		
+		
+		//PeonesBlancos.at(0) = new Peon{ {3,3},BLANCO,0,new Sprite("imagenes/PeonB.png", 2.62, -1.74, 0.84, 0.84) };
+	}
+	
 	
 }
 
-void Tablero::print() {
+void Tablero::dibuja() {
 	for (auto fila : cuadricula) {//recorremos las filas
 		for (auto casilla : fila) {//recorremos las columnas
 			casilla->print();//Imprimimos la casilla
 		}
 	}
-	//Dibujamos la torre negra
-	Torre1_Negro.dibuja(Torre1_Negro.coordenadas,NEGRO);
-	//Dibujamos la torre blanca
-	Torre1_Blanco.dibuja(Torre1_Blanco.coordenadas, BLANCO);
-	//Dibujamos el caballo negro
-	Caballo1_Negro.dibuja(Caballo1_Negro.coordenadas, NEGRO);
-	//Dibujamos el caballo blanco
-	Caballo1_Blanco.dibuja(Caballo1_Blanco.coordenadas, BLANCO);
-	//Dibujamos el alfil negro
-	Alfil1_Negro.dibuja(Alfil1_Negro.coordenadas, NEGRO);
-	//Dibujamos el alfil blanco
-	Alfil1_Blanco.dibuja(Alfil1_Blanco.coordenadas, BLANCO);
-	//Dibujamos el rey negro
-	Rey1_Negro.dibuja(Rey1_Negro.coordenadas, NEGRO);
-	//Dibujamos el rey blanco
-	Rey1_Blanco.dibuja(Rey1_Blanco.coordenadas, BLANCO);
-	//Dibujamos el peon negro
-	Peon1_Negro.dibuja(Peon1_Negro.coordenadas, NEGRO);
-	//Dibujamos el peon blanco
-	Peon1_Blanco.dibuja(Peon1_Blanco.coordenadas, BLANCO);
+	if (modalidad == 0)
+	{
+		//Dibujamos las torres
+		TorreBlanca->dibuja(TorreBlanca->coordenadas, BLANCO);
+		TorreNegra->dibuja(TorreNegra->coordenadas, NEGRO);
+
+		//Dibujamos los caballos
+		CaballoNegro->dibuja(CaballoNegro->coordenadas, NEGRO);
+		CaballoBlanco->dibuja(CaballoBlanco->coordenadas, BLANCO);
+
+		//Dibujamos los alfiles
+		AlfilNegro->dibuja(AlfilNegro->coordenadas, NEGRO);
+		AlfilBlanco->dibuja(AlfilBlanco->coordenadas, BLANCO);
+
+		//Dibujam<os los reyes
+		ReyNegro->dibuja(ReyNegro->coordenadas, NEGRO);
+		ReyBlanco->dibuja(ReyBlanco->coordenadas, BLANCO);
+
+		//Dibujamos el peon negro
+		PeonesNegros.at(0)->dibuja(PeonesNegros.at(0)->coordenadas, NEGRO);
+		//Dibujamos el peon blanco
+		PeonesBlancos.at(0)->dibuja(PeonesBlancos.at(0)->coordenadas, BLANCO);
+	}
+	if (modalidad == 1)
+	{
+		//Dibujamos las torres
+		TorreBlanca->dibuja(TorreBlanca->coordenadas, BLANCO);
+		TorreNegra->dibuja(TorreNegra->coordenadas, NEGRO);
+
+		//Dibujamos los caballos
+		CaballoNegro->dibuja(CaballoNegro->coordenadas, NEGRO);
+		CaballoBlanco->dibuja(CaballoBlanco->coordenadas, BLANCO);
+
+		//Dibujamos los alfiles
+		AlfilNegro->dibuja(AlfilNegro->coordenadas, NEGRO);
+		AlfilBlanco->dibuja(AlfilBlanco->coordenadas, BLANCO);
+
+		//Dibujam<os los reyes
+		ReyNegro->dibuja(ReyNegro->coordenadas, NEGRO);
+		ReyBlanco->dibuja(ReyBlanco->coordenadas, BLANCO);
+
+		//Dibujam<os los reyes
+		ReinaNegra->dibuja(ReinaNegra->coordenadas, NEGRO);
+		ReinaBlanca->dibuja(ReinaBlanca->coordenadas, BLANCO);
+		int i = 0;
+		while (i < 5)
+		{
+			PeonesNegros.at(i)->dibuja(PeonesNegros.at(i)->coordenadas, NEGRO);
+			PeonesBlancos.at(i)->dibuja(PeonesBlancos.at(i)->coordenadas, BLANCO);
+			i++;
+		}
+		
+	}
+	
 }
 void Tablero::detectar(int x, int y)
 {
-		for (int i = 0; i < 4 ; i++)
+		for (int i = 0; i < marca_columnas+1 ; i++)
 		{
-			for (int j = 0; j < 5; j++)
+			origenx = marca_origenx;
+			origeny = marca_origeny;
+			spriteorigenx = marca_spritex;
+			spriteorigeny = marca_spritey;
+			for (int j = 0; j < marca_filas; j++)
 			{
 
 				if (j % 2 == 0) //Si la fila es par
 				{
 					if (i % 2 == 0)//Si la fila es par
-						cuadricula.at(j).at(i) = new CasillaVacia({ NEGRO }, new Sprite("imagenes/cuadrado2.png", -1.66 + i * 1.08, 2.50 - j * 1.08, 1.2, 1.2), { i,j });
+						cuadricula.at(j).at(i) = new CasillaVacia({ NEGRO }, new Sprite("imagenes/cuadrado2.png", origenx + i * 1.08, origeny - j * 1.08, 1.2, 1.2));
 					//Las coordenadas de la casilla varían según se baja con xcasilla=x y casilla=(-y)
 					if (i % 2 != 0)//Si la fila es impar
-						cuadricula.at(j).at(i) = new CasillaVacia({ BLANCO }, new Sprite("imagenes/cuadrado.png", -1.66 + i * 1.08, 2.50 - j * 1.08, 1.2, 1.2), { i,j });
+						cuadricula.at(j).at(i) = new CasillaVacia({ BLANCO }, new Sprite("imagenes/cuadrado.png", origenx + i * 1.08, origeny - j * 1.08, 1.2, 1.2));
 					//Las coordenadas de la casilla varían según se baja con xcasilla=x y casilla=(-y)
 				}
 				if (j % 2 != 0)//Si la fila es impar
 				{
 					if (i % 2 == 0)//Si la fila es par
-						cuadricula.at(j).at(i) = new CasillaVacia({ BLANCO }, new Sprite("imagenes/cuadrado.png", -1.66 + i * 1.08, 2.50 - j * 1.08, 1.2, 1.2), { i,j });
+						cuadricula.at(j).at(i) = new CasillaVacia({ BLANCO }, new Sprite("imagenes/cuadrado.png", origenx + i * 1.08, origeny - j * 1.08, 1.2, 1.2));
 					//Las coordenadas de la casilla varían según se baja con xcasilla=x y casilla=(-y)
 					if (i % 2 != 0)//Si la fila es impar
-						cuadricula.at(j).at(i) = new CasillaVacia({ NEGRO }, new Sprite("imagenes/cuadrado2.png", -1.66 + i * 1.08, 2.50 - j * 1.08, 1.2, 1.2), { i,j });
+						cuadricula.at(j).at(i) = new CasillaVacia({ NEGRO }, new Sprite("imagenes/cuadrado2.png", origenx + i * 1.08, origeny - j * 1.08, 1.2, 1.2));
 					//Las coordenadas de la casilla varían según se baja con xcasilla=x y casilla=(-y)
 
 				}
 
-				if ((x > (212 + i * 115)) && x < (327 + i * 115))
+				if ((x > (spriteorigenx + i * 118)) && x < (spriteorigenx+118 + i * 118))
 				{
-					if ((y > 60 + j * 115) && (y < 165 + 115 * j))
+					if ((y > spriteorigeny + j * 104) && (y < spriteorigeny+104 + 104 * j))
 					{
 
 						delete cuadricula.at(j).at(i);
 		cuadricula.at(j).at(i) = new CasillaVacia({ BLANCO },
-		new Sprite("imagenes/cuadradoverde.png", -1.66 + i * 1.08, 2.50 - j * 1.08, 1.2, 1.2), { j,i });
+		new Sprite("imagenes/cuadradoverde.png", origenx + i * 1.08, origeny - j * 1.08, 1.2, 1.2));
 		clicado = true;
 					}
 				}
@@ -135,7 +245,7 @@ void Tablero::detectar(int x, int y)
 				{
 					delete cuadricula.at(coordenadas_click.x).at(coordenadas_click.y);
 					cuadricula.at(j).at(i) = new CasillaVacia({ BLANCO },
-						new Sprite("imagenes/cuadradorojo.png", -1.66 + i * 1.08, 2.50 - j * 1.08, 1.2, 1.2), { j,i });
+						new Sprite("imagenes/cuadradorojo.png", origenx + i * 1.08, origeny - j * 1.08, 1.2, 1.2));
 					clicado = true;
 				}
 
@@ -159,39 +269,43 @@ void Tablero::detectar(int x, int y)
 	}
 void Tablero::clicar(int x, int y, int &estado)
 {
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < marca_columnas+1; i++)
 	{
-		for (int j = 0; j < 5; j++)
+		origenx = marca_origenx;
+		origeny = marca_origeny;
+		spriteorigenx = marca_spritex;
+		spriteorigeny = marca_spritey;
+		for (int j = 0; j < marca_filas; j++)
 		{
 
 			if (j % 2 == 0) //Si la fila es par
 			{
 				if (i % 2 == 0)//Si la fila es par
-					cuadricula.at(j).at(i) = new CasillaVacia({ NEGRO }, new Sprite("imagenes/cuadrado2.png", -1.66 + i * 1.08, 2.50 - j * 1.08, 1.2, 1.2), { i,j });
+					cuadricula.at(j).at(i) = new CasillaVacia({ NEGRO }, new Sprite("imagenes/cuadrado2.png", origenx + i * 1.08, origeny - j * 1.08, 1.2, 1.2));
 				//Las coordenadas de la casilla varían según se baja con xcasilla=x y casilla=(-y)
 				if (i % 2 != 0)//Si la fila es impar
-					cuadricula.at(j).at(i) = new CasillaVacia({ BLANCO }, new Sprite("imagenes/cuadrado.png", -1.66 + i * 1.08, 2.50 - j * 1.08, 1.2, 1.2), { i,j });
+					cuadricula.at(j).at(i) = new CasillaVacia({ BLANCO }, new Sprite("imagenes/cuadrado.png", origenx + i * 1.08, origeny - j * 1.08, 1.2, 1.2));
 				//Las coordenadas de la casilla varían según se baja con xcasilla=x y casilla=(-y)
 			}
 			if (j % 2 != 0)//Si la fila es impar
 			{
 				if (i % 2 == 0)//Si la fila es par
-					cuadricula.at(j).at(i) = new CasillaVacia({ BLANCO }, new Sprite("imagenes/cuadrado.png", -1.66 + i * 1.08, 2.50 - j * 1.08, 1.2, 1.2), { i,j });
+					cuadricula.at(j).at(i) = new CasillaVacia({ BLANCO }, new Sprite("imagenes/cuadrado.png", origenx + i * 1.08, origeny - j * 1.08, 1.2, 1.2));
 				//Las coordenadas de la casilla varían según se baja con xcasilla=x y casilla=(-y)
 				if (i % 2 != 0)//Si la fila es impar
-					cuadricula.at(j).at(i) = new CasillaVacia({ NEGRO }, new Sprite("imagenes/cuadrado2.png", -1.66 + i * 1.08, 2.50 - j * 1.08, 1.2, 1.2), { i,j });
+					cuadricula.at(j).at(i) = new CasillaVacia({ NEGRO }, new Sprite("imagenes/cuadrado2.png", origenx + i * 1.08, origeny - j * 1.08, 1.2, 1.2));
 				//Las coordenadas de la casilla varían según se baja con xcasilla=x y casilla=(-y)
 
 			}
 
-			if ((x > (212 + i * 115)) && x < (327 + i * 115))
+			if ((x > (spriteorigenx + i * 118)) && x < (spriteorigenx + 118 + i * 118))
 			{
-				if ((y > 60 + j * 115) && (y < 165 + 115 * j))
+				if ((y > spriteorigeny + j * 104) && (y < spriteorigeny + 104 + 104 * j))
 				{
 
 					delete cuadricula.at(j).at(i);
 					cuadricula.at(j).at(i) = new CasillaVacia({ BLANCO },
-						new Sprite("imagenes/cuadradorojo.png", -1.66 + i * 1.08, 2.50 - j * 1.08, 1.2, 1.2), { j,i });
+						new Sprite("imagenes/cuadradorojo.png", origenx + i * 1.08, origeny - j * 1.08, 1.2, 1.2));
 					coordenadas_click = { j,i };
 					std::cout << coordenadas_click.x << ',' << coordenadas_click.y << std::endl;
 				}

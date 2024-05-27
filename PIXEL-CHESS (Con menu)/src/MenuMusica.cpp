@@ -145,7 +145,11 @@ void MenuMusica::clicar(int x, int y,int& estado, int &muteado)
 			Color_LeapOfFaith[1] = 0;
 			Color_LeapOfFaith[2] = 1;
 			T_LeapOfFaith = 49;
-			ETSIDI::playMusica("sonidos/LeapOfFaith.mp3", true);
+
+			if (muteado % 2 != 0)
+			{
+				ETSIDI::playMusica("sonidos/LeapOfFaith.mp3", true);
+			}
 		}
 		else
 		{
@@ -170,7 +174,11 @@ void MenuMusica::clicar(int x, int y,int& estado, int &muteado)
 			Color_LiveFreeOrDie[1] = 0;
 			Color_LiveFreeOrDie[2] = 1;
 			T_LiveFreeOrDie = 49;
-			ETSIDI::playMusica("sonidos/LiveFreeOrDie.mp3", true);
+			if (muteado % 2 != 0)
+			{
+				ETSIDI::playMusica("sonidos/LiveFreeOrDie.mp3", true);
+			}
+			
 		}
 		else
 		{
@@ -192,12 +200,15 @@ void MenuMusica::clicar(int x, int y,int& estado, int &muteado)
 	{
 		if ((y > 489) && (y < 543))
 		{
-			ETSIDI::playMusica("sonidos/Butterflies.mp3", true);
+			
 			Color_Butterflies[0] = 0;
 			Color_Butterflies[1] = 0;
 			Color_Butterflies[2] = 1;
 			T_Butterflies = 49;
-			
+			if (muteado % 2 != 0)
+			{
+				ETSIDI::playMusica("sonidos/Butterflies.mp3", true);
+			}
 		}
 		else
 		{

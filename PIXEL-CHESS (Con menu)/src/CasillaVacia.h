@@ -7,7 +7,7 @@ class CasillaVacia :
 public:
 
     //Constructores
-    CasillaVacia(Color color,Sprite *spr, Vector2D coord) : Casilla(color, spr,coord) {};
+    CasillaVacia(Color color,Sprite *spr) : Casilla(color, spr) {};
     CasillaVacia();
 
     void print() final override;

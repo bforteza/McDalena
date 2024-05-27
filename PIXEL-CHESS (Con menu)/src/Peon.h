@@ -12,5 +12,7 @@ class Peon : public Pieza //Heredamos el peon de manera pública de la clase piez
 	Peon( Vector2D coord, Color color_peon, bool com,Sprite* spr) : Pieza(coord, color_peon), comido(com),sprite(spr) {}
 	//Función para dibujar los peones
 	void dibuja(Vector2D coordenadas,Color equipo);
+
+	friend class Tablero;//hacemos que el tablero tenga acceso a las piezas
 };
 

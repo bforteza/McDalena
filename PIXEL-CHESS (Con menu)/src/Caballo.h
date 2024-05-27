@@ -11,4 +11,6 @@ public:
 	Caballo(Vector2D coord, Color color_caballo, bool com, Sprite* spr) : Pieza(coord, color_caballo), comido(com), sprite(spr) {}
 	//Método para dibujar las piezas
 	void dibuja(Vector2D coordenadas, Color equipo);
+
+	friend class Tablero;//hacemos que el tablero tenga acceso a las piezas
 };

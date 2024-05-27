@@ -5,8 +5,9 @@ using ETSIDI::Sprite;
 enum Color { BLANCO = 0, NEGRO = 1 };//Enumeración para identificar blanco y negro
 class Casilla
 {
+	bool selecionada = 0;
 protected:
-	int estado;// Estado para comprobar si la casilla está ocupada y cómo está ocupada
+
 	Vector2D coordenadas; //Coordenadas de la casilla en la matriz
 	Color color_casilla{}; //Color corresboniente
 	Sprite* sprite; //Sprite Correspondiente
@@ -14,7 +15,7 @@ protected:
 public:
 	
 	//Constructores
-	Casilla(Color ccasilla, Sprite *spr, Vector2D coord) : color_casilla(ccasilla),sprite(spr) {};
+	Casilla(Color ccasilla, Sprite *spr) : color_casilla(ccasilla),sprite(spr) {};
 	Casilla() = default;
 
 	//Función virtual pura para dibujar

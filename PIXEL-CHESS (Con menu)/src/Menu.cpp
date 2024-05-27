@@ -9,12 +9,12 @@ void Menu::dibuja()
 	if (estado == 1)
 	{
 		tablero1.dibujafondo();
-		tablero1.print();
+		tablero1.dibuja();
 	}
 	if (estado == 2)
 	{
 		tablero2.dibujafondo();
-		tablero2.print();
+		tablero2.dibuja();
 	}
 	if (estado == 3)
 	{
@@ -28,14 +28,17 @@ void Menu::dibuja()
 }
 void Menu::detecta(int x, int y)
 {
+	if (estado == 0)
+	{
+		pantallainicio.detectar(x, y);
+	}
 	if (estado == 1)
 	{
 	tablero1.detectar(x, y);
 	}
-	
-	if (estado == 0)
+	if (estado == 2)
 	{
-	pantallainicio.detectar(x, y);
+	tablero2.detectar(x, y);
 	}
 	if (estado == 3)
 	{
@@ -45,13 +48,17 @@ void Menu::detecta(int x, int y)
 void Menu::clica(int x, int y)
 {
 	std::cout << x << ',' << y << std::endl;
+	if (estado == 0)
+	{
+		pantallainicio.clicar(x, y, estado);
+	}
 	if (estado == 1)
 	{
 		tablero1.clicar(x, y,estado);
 	}
-	if (estado == 0)
+	if (estado == 2)
 	{
-		pantallainicio.clicar(x, y,estado);
+		tablero2.clicar(x, y, estado);
 	}
 	if (estado == 3)
 	{

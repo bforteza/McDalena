@@ -11,4 +11,6 @@ public:
 	Reina(Vector2D coord, Color color_alfil, bool com, Sprite* spr) : Pieza(coord, color_alfil), comido(com), sprite(spr) {}
 	//Función para dibujarlas
 	void dibuja(Vector2D coordenadas, Color equipo);
+
+	friend class Tablero;//hacemos que el tablero tenga acceso a las piezas
 };

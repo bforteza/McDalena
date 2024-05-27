@@ -11,4 +11,6 @@ public:
 	Rey(Vector2D coord, Color color_rey, bool com, Sprite* spr) : Pieza(coord, color_rey), jaque(com), sprite(spr) {}
 	//Función para dibujar las piezas
 	void dibuja(Vector2D coordenadas, Color equipo);
+
+	friend class Tablero;//hacemos que el tablero tenga acceso a las piezas
 };
