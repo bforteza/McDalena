@@ -14,12 +14,15 @@ class Tablero
 public:
 	std::vector<std::vector< Casilla*>> cuadricula;
 
-	Casilla* get_casilla(Columna col, int fil);
 
-	void size(Columna columnas, int filas);
+	Casilla* get_casilla(int col, int fil);
+
+	void size(int columnas, int filas);
 	void print();
-	void asignar(Columna col, int fil, Casilla* entrada);
-	bool premove(Columna col, int fil);
+	void asignar(int col, int fil, Casilla* entrada);
+
+	bool premove(int col, int fil);
+	void borrar_seleccion();
 	
 	//inicializadores
 

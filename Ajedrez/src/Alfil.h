@@ -10,7 +10,7 @@ public:
     using Pieza::Pieza;
     void print();
 
-    virtual bool premove(Tablero* tablero,Columna col, int fila);
+    virtual bool premove(Tablero* tablero, int col, int fila);
     friend class Reina;
 
 };

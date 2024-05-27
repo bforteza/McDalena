@@ -1,5 +1,5 @@
 #pragma once
-#include <vector>
+
 #include "Casilla.h"
 
 
@@ -9,9 +9,10 @@ class Pieza :
 protected:
     Color color_pieza{};
 public:
+    virtual Color get_color_pieza() { return color_pieza; };
     Pieza(Color pieza) : Casilla(NEGRO), color_pieza(pieza) {};
-    virtual void print() = 0;
+    virtual void print() {};
     virtual bool ocupado() { return true; };
-    virtual bool premove(Tablero* tablero, Columna col, int fil) { return false; };
+    virtual bool premove(Tablero* tablero, int col, int fil) { return false; };
 };
 

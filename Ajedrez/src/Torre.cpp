@@ -4,7 +4,7 @@
 
 void Torre::print() {
 
-	std::cout << ((color_pieza == NEGRO) ? "K" : "k");
+	std::cout << ((color_pieza == NEGRO) ? "R" : "r");
 }
 
 bool Torre::premove(Tablero* tablero, Columna col, int fil) {

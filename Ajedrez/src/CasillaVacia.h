@@ -8,7 +8,7 @@ class CasillaVacia :
 public:
 
     CasillaVacia(Color color) : Casilla(color) {};
-    virtual bool premove(Tablero* tablero, Columna col, int fil) { return false; };
+    virtual bool premove(Tablero* tablero, int col, int fil) { return false; };
     virtual bool ocupado() { return false; };
     void print();
 };
