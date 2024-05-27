@@ -16,7 +16,7 @@ class Tablero
 {
 	//Matriz de casillas que conforman el tablero
 	std::vector<std::vector< Casilla*>> cuadricula;
-	
+	Sprite volver = { "imagenes/PreVolver.png", -3,3,1, 1 };
 	//Peones blanco y negro inicializados
 	Torre Torre1_Negro = { { 3,0 }, NEGRO, 0, new Sprite("imagenes/TorreN.png", -0.66, 0.44, 0.8, 0.8) };
 	Torre Torre1_Blanco = { {0,4},BLANCO,0,new Sprite("imagenes/TorreB.png", 2.58, -1.74, 0.8, 0.8) };
@@ -47,5 +47,5 @@ public:
 	void dibujafondo();
 	void print();
 	void detectar(int x, int y);
-	void clicar(int x, int y);
+	void clicar(int x, int y, int &estado);
 };

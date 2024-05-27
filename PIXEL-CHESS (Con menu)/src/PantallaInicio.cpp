@@ -42,8 +42,7 @@ void PantallaInicio::clicar(int x, int y,int &estado)
 		if ((y > 207) && (y < 260))
 		{
 			estado = 1;
-			ETSIDI::playMusica("sonidos/claves.mp3", true);
-			ETSIDI::playMusica("sonidos/claves.mp3", false);
+
 		}
 	}
 	if ((x > 306) && (x < 581))
@@ -51,8 +50,7 @@ void PantallaInicio::clicar(int x, int y,int &estado)
 		if ((y > 313) && (y < 351))
 		{
 			estado = 2;
-			ETSIDI::playMusica("sonidos/claves.mp3", true);
-			ETSIDI::playMusica("sonidos/claves.mp3", false);
+
 		}
 	}
 	if ((x > 365) && (x < 517))
@@ -60,16 +58,14 @@ void PantallaInicio::clicar(int x, int y,int &estado)
 		if ((y > 408) && (y < 447))
 		{
 			estado = 3;
-			ETSIDI::playMusica("sonidos/claves.mp3", true);
-			ETSIDI::playMusica("sonidos/claves.mp3", false);
+
 		}
 	}
 	if ((x > 393) && (x < 489))
 	{
 		if ((y > 489) && (y < 543))
 		{
-			ETSIDI::playMusica("sonidos/claves.mp3", true);
-			ETSIDI::playMusica("sonidos/claves.mp3", false);
+			estado = 4;
 		}
 	}
 }

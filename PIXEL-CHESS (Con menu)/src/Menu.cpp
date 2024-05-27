@@ -2,14 +2,27 @@
 
 void Menu::dibuja()
 {
+	if (estado == 0)
+	{
+		pantallainicio.dibuja();
+	}
 	if (estado == 1)
 	{
 		tablero1.dibujafondo();
 		tablero1.print();
 	}
-	if (estado == 0)
+	if (estado == 2)
 	{
-		pantallainicio.dibuja();
+		tablero2.dibujafondo();
+		tablero2.print();
+	}
+	if (estado == 3)
+	{
+		menumusica.dibuja();
+	}
+	if (estado == 4)
+	{
+		exit(0);
 	}
 
 }
@@ -22,17 +35,26 @@ void Menu::detecta(int x, int y)
 	
 	if (estado == 0)
 	{
-		pantallainicio.detectar(x, y);
+	pantallainicio.detectar(x, y);
+	}
+	if (estado == 3)
+	{
+		menumusica.detectar(x, y);
 	}
 }
 void Menu::clica(int x, int y)
 {
+	std::cout << x << ',' << y << std::endl;
 	if (estado == 1)
 	{
-		tablero1.clicar(x, y);
+		tablero1.clicar(x, y,estado);
 	}
 	if (estado == 0)
 	{
 		pantallainicio.clicar(x, y,estado);
+	}
+	if (estado == 3)
+	{
+		menumusica.clicar(x, y, estado,muteado);
 	}
 }

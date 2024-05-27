@@ -23,6 +23,7 @@ void Tablero::dibujafondo()
 	//Habilitamos la luz para una mejor vista
 	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);
+	volver.draw();
 }
 
 
@@ -140,8 +141,23 @@ void Tablero::detectar(int x, int y)
 
 			}
 		}
+		if ((x > 97) && (x < 153))
+		{
+			if ((y > 39) && (y < 83))
+			{
+				volver = { "imagenes/Volver.png", -3,3,1, 1 };
+			}
+			else
+			{
+				volver = { "imagenes/PreVolver.png", -3,3,1, 1 };
+			}
+		}
+		else
+		{
+			volver = { "imagenes/PreVolver.png", -3,3,1, 1 };
+		}
 	}
-void Tablero::clicar(int x, int y)
+void Tablero::clicar(int x, int y, int &estado)
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -180,6 +196,13 @@ void Tablero::clicar(int x, int y)
 					std::cout << coordenadas_click.x << ',' << coordenadas_click.y << std::endl;
 				}
 			}
+		}
+	}
+	if ((x > 97) && (x < 153))
+	{
+		if ((y > 39) && (y < 83))
+		{
+			estado = 0;
 		}
 	}
 }
