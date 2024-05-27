@@ -23,8 +23,8 @@ void Tablero::size(int columnas, int filas) {
 Tablero::Tablero(Juego juego) {
 	if (juego == UP) {
 		size(D, 5);
-		asignar(B, 2, new Alfil(BLANCO));
-	//	asignar(C, 3, new Alfil(NEGRO));//falta implementar todas las demas piezas
+		asignar(A, 1, new Rey(BLANCO));
+		asignar(D, 1, new Torre(BLANCO));//falta implementar todas las demas piezas
 	}
 	else if (juego == SC) {
 
@@ -35,11 +35,10 @@ Tablero::Tablero(Juego juego) {
 
 void Tablero::print() {
 
-	int columna = A;
 	
 	
 	for (auto fila : cuadricula) {
-		std::cout <<  columna << " ";
+		
 		
 		for (auto casilla : fila) {
 			casilla->print();
@@ -56,18 +55,19 @@ void Tablero::print() {
 } //falta mejorar el metodo print para que las casillas aparezcan en su lugar
 
 Casilla* Tablero::get_casilla(int col, int fil) {
-	if (col >= 0 && col < cuadricula.size() && (fil - 1) >= 0 && (fil - 1) < cuadricula[0].size())
-		return cuadricula[col][fil - 1];
+
+	if (fil-1 >= 0 && fil-1 < cuadricula.size() && col >= 0 && col < cuadricula[0].size())
+		return cuadricula[fil-1][col];
 	return nullptr;
 }
 
 void Tablero::asignar(int col, int fil, Casilla* entrada) {
 
 	
-	entrada->set_color_casilla(cuadricula[col][fil-1]->get_color_casilla());
+	entrada->set_color_casilla(cuadricula[fil-1][col]->get_color_casilla());
 
-	delete cuadricula[col][fil-1];
-	cuadricula[col][fil-1] = entrada;
+	delete cuadricula[fil-1][col];
+	cuadricula[fil-1][col] = entrada;
 }
 
 bool Tablero::premove(int col, int fil) {

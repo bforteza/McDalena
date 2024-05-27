@@ -3,7 +3,8 @@
 #include "Casilla.h"
 #include "CasillaVacia.h"
 #include "Alfil.h"
-
+#include "Rey.h"
+#include "Torre.h"
 
 enum Juego{SC,UP };
 class Tablero

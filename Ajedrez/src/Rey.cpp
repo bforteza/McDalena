@@ -1,59 +1,46 @@
 #include "Rey.h"
 #include "Tablero.h"
 #include <iostream>
-
+#include "Torre.h"
 void Rey::print() {
 
 	std::cout << ((color_pieza == NEGRO) ? "K" : "k");
 }
 
-bool Rey::premove(Tablero* tablero, Columna col, int fil) {
+bool Rey::premove(Tablero* tablero, int col, int fil) {
+	bool retorno = false;
+	Casilla* aux;
 
-	//Defino las posibles posiciones a las que se puede mover dada una posición incial:
-	Casilla* diag_1 = tablero->get_casilla(static_cast<Columna>(col - 1), fil - 1);
-	Casilla* frente = tablero->get_casilla(static_cast<Columna>(col), fil - 1);
-	Casilla* diag_2 = tablero->get_casilla(static_cast<Columna>(col + 1), fil - 1);
-	Casilla* diag_3 = tablero->get_casilla(static_cast<Columna>(col - 1), fil + 1);
-	Casilla* atras = tablero->get_casilla(static_cast<Columna>(col), fil + 1);
-	Casilla* diag_4 = tablero->get_casilla(static_cast<Columna>(col + 1), fil + 1);
-	Casilla* izq = tablero->get_casilla(static_cast<Columna>(col - 1), fil);
-	Casilla* dcha = tablero->get_casilla(static_cast<Columna>(col + 1), fil);
+	for (int auxcol = col - 1; auxcol <= col + 1; auxcol++) {
+		for (int auxfil = fil - 1; auxfil <= fil + 1; auxfil++) { //recorre cuadricula 3x3
 
-	//Con el bucle y los ifs recorro la fila trasera, la de la pieza y la delantera, buscando que las posibles posiciones estén vacias
-	for (size_t i = 0; i <= tablero->cuadricula[col].size(); i++)
-	{
-		if (tablero->get_casilla(static_cast<Columna>(i), fil - 1) == diag_1 && !tablero->get_casilla(static_cast<Columna>(i), fil - 1)->ocupado())
-		{
-			diag_1->selecionada = true;
-		}
-		else if (tablero->get_casilla(static_cast<Columna>(i), fil - 1) == diag_2 && !tablero->get_casilla(static_cast<Columna>(i), fil - 1)->ocupado())
-		{
-			diag_2->selecionada = true;
-		}
-		else if (tablero->get_casilla(static_cast<Columna>(i), fil - 1) == frente && !tablero->get_casilla(static_cast<Columna>(i), fil - 1)->ocupado())
-		{
-			frente->selecionada = true;
-		}
-		else if (tablero->get_casilla(static_cast<Columna>(i), fil + 1) == diag_3 && !tablero->get_casilla(static_cast<Columna>(i), fil - 1)->ocupado())
-		{
-			diag_3->selecionada = true;
-		}
-		else if (tablero->get_casilla(static_cast<Columna>(i), fil + 1) == atras && !tablero->get_casilla(static_cast<Columna>(i), fil - 1)->ocupado())
-		{
-			atras->selecionada = true;
-		}
-		else if (tablero->get_casilla(static_cast<Columna>(i), fil + 1) == diag_4 && !tablero->get_casilla(static_cast<Columna>(i), fil - 1)->ocupado())
-		{
-			diag_4->selecionada = true;
-		}
-		else if (tablero->get_casilla(static_cast<Columna>(i), fil) == izq && !tablero->get_casilla(static_cast<Columna>(i), fil - 1)->ocupado())
-		{
-			izq->selecionada = true;
-		}
-		else if (tablero->get_casilla(static_cast<Columna>(i), fil) == dcha && !tablero->get_casilla(static_cast<Columna>(i), fil - 1)->ocupado())
-		{
-			dcha->selecionada = true;
+			aux = tablero->get_casilla(auxcol, auxfil);
+
+			if (aux != nullptr && !aux->ocupado()) { 
+				aux->selecionada = true;
+				retorno = true;
+			}
+			else if (aux != nullptr && aux->ocupado() && dynamic_cast<Pieza*>(aux)->get_color_pieza() != color_pieza) {
+				aux->selecionada = true;
+				retorno = true;
+			}
+
 		}
 	}
-	return true;
+
+	if (!move) {
+		
+		if (dynamic_cast<Torre*>(tablero->get_casilla(col + 3, fil)) != nullptr &&
+			!dynamic_cast<Torre*>(tablero->get_casilla(col + 3, fil))->get_move() &&
+			!tablero->get_casilla(col + 2, fil)->ocupado() && !tablero->get_casilla(col + 1, fil)->ocupado()) {
+			tablero->get_casilla(col + 2, fil)->selecionada = true;
+		}
+		if (dynamic_cast<Torre*>(tablero->get_casilla(col - 3, fil)) != nullptr &&
+			!dynamic_cast<Torre*>(tablero->get_casilla(col - 3, fil))->get_move() &&
+			!tablero->get_casilla(col - 2, fil)->ocupado() && !tablero->get_casilla(col - 1, fil)->ocupado()) {
+			tablero->get_casilla(col - 2, fil)->selecionada = true;
+		}
+
+	}
+	return retorno;
 }

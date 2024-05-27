@@ -3,36 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Ajedrez.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Ajedrez.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Rey.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Rey.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Torre.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Torre.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Rey.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Rey.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Casilla.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Casilla.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Alfil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Alfil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Ajedrez.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Ajedrez.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Casilla.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Casilla.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\CasillaVacia.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\CasillaVacia.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Torre.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Torre.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Reina.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Reina.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Peon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Peon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Peon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Peon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Caballo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -43,32 +55,24 @@
       "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Pieza.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Casilla.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Casilla.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Rey.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Rey.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Alfil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Alfil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\CasillaVacia.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\CasillaVacia.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Rey.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Rey.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Casilla.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Casilla.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Torre.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Torre.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\CasillaVacia.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\CasillaVacia.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Peon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Peon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Reina.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Reina.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Alfil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Alfil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Reina.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -81,10 +85,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Pieza.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Pieza.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Peon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{28250C68-5F7C-4EC0-9E0E-8102DC17A49D}|Ajedrez\\Ajedrez.vcxproj|solutionrelative:src\\Peon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -94,11 +94,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 258,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 15,
               "Title": "CasillaVacia.cpp",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\CasillaVacia.cpp",
               "RelativeDocumentMoniker": "src\\CasillaVacia.cpp",
@@ -107,22 +107,7 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-25T22:07:23.482Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Rey.cpp",
-              "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Rey.cpp",
-              "RelativeDocumentMoniker": "src\\Rey.cpp",
-              "ToolTip": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Rey.cpp",
-              "RelativeToolTip": "src\\Rey.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-26T09:48:17.146Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -132,7 +117,7 @@
               "RelativeDocumentMoniker": "src\\Tablero.cpp",
               "ToolTip": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Tablero.cpp",
               "RelativeToolTip": "src\\Tablero.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAATAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-25T21:58:53.843Z",
               "IsPinned": true,
@@ -140,13 +125,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Torre.cpp",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Torre.cpp",
               "RelativeDocumentMoniker": "src\\Torre.cpp",
               "ToolTip": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Torre.cpp",
               "RelativeToolTip": "src\\Torre.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAwAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-26T10:26:54.755Z",
               "IsPinned": true,
@@ -154,13 +139,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Ajedrez.cpp",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Ajedrez.cpp",
               "RelativeDocumentMoniker": "src\\Ajedrez.cpp",
               "ToolTip": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Ajedrez.cpp",
               "RelativeToolTip": "src\\Ajedrez.cpp",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAAaAAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAuwAoAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-25T21:50:01.77Z",
               "IsPinned": true,
@@ -168,13 +153,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "Alfil.cpp",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Alfil.cpp",
               "RelativeDocumentMoniker": "src\\Alfil.cpp",
               "ToolTip": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Alfil.cpp",
               "RelativeToolTip": "src\\Alfil.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-26T09:48:07.282Z",
               "IsPinned": true,
@@ -182,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 16,
               "Title": "Reina.cpp",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Reina.cpp",
               "RelativeDocumentMoniker": "src\\Reina.cpp",
@@ -191,12 +176,11 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-26T09:48:16.511Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Pieza.cpp",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Pieza.cpp",
               "RelativeDocumentMoniker": "src\\Pieza.cpp",
@@ -205,39 +189,37 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-26T09:48:15.928Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "Caballo.cpp",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Caballo.cpp",
               "RelativeDocumentMoniker": "src\\Caballo.cpp",
               "ToolTip": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Caballo.cpp",
               "RelativeToolTip": "src\\Caballo.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAALAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAsAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-26T09:48:07.877Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 9,
               "Title": "Peon.cpp",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Peon.cpp",
               "RelativeDocumentMoniker": "src\\Peon.cpp",
               "ToolTip": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Peon.cpp",
               "RelativeToolTip": "src\\Peon.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAASAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABYAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-26T15:14:12.332Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 14,
               "Title": "Casilla.cpp",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Casilla.cpp",
               "RelativeDocumentMoniker": "src\\Casilla.cpp",
@@ -246,6 +228,19 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-25T22:10:20.243Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Rey.cpp",
+              "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Rey.cpp",
+              "RelativeDocumentMoniker": "src\\Rey.cpp",
+              "ToolTip": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Rey.cpp",
+              "RelativeToolTip": "src\\Rey.cpp",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACAAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-26T09:48:17.146Z",
               "IsPinned": true,
               "EditorCaption": ""
             }
@@ -253,17 +248,17 @@
         },
         {
           "DockedWidth": 164,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 3,
               "Title": "Torre.h",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Torre.h",
               "RelativeDocumentMoniker": "src\\Torre.h",
               "ToolTip": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Torre.h",
               "RelativeToolTip": "src\\Torre.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAqAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-26T09:48:02.221Z",
               "IsPinned": true,
@@ -271,13 +266,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Tablero.h",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Tablero.h",
               "RelativeDocumentMoniker": "src\\Tablero.h",
               "ToolTip": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Tablero.h",
               "RelativeToolTip": "src\\Tablero.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAHAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-25T21:47:58.419Z",
               "IsPinned": true,
@@ -285,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Caballo.h",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Caballo.h",
               "RelativeDocumentMoniker": "src\\Caballo.h",
@@ -294,12 +289,11 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-26T09:47:32.536Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Reina.h",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Reina.h",
               "RelativeDocumentMoniker": "src\\Reina.h",
@@ -308,12 +302,11 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-26T11:17:59.423Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "Casilla.h",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Casilla.h",
               "RelativeDocumentMoniker": "src\\Casilla.h",
@@ -327,21 +320,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "Pieza.h",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Pieza.h",
               "RelativeDocumentMoniker": "src\\Pieza.h",
               "ToolTip": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Pieza.h",
               "RelativeToolTip": "src\\Pieza.h",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAuwAsAAAAAAAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAuwA4AAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-25T22:08:52.435Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 10,
               "Title": "Peon.h",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Peon.h",
               "RelativeDocumentMoniker": "src\\Peon.h",
@@ -364,12 +356,11 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-25T22:07:16.48Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "Alfil.h",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Alfil.h",
               "RelativeDocumentMoniker": "src\\Alfil.h",
@@ -378,18 +369,17 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-26T09:47:31.727Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 4,
               "Title": "Rey.h",
               "DocumentMoniker": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Rey.h",
               "RelativeDocumentMoniker": "src\\Rey.h",
               "ToolTip": "C:\\Users\\tomeu\\Desktop\\C\\github\\McDalena\\Ajedrez\\src\\Rey.h",
               "RelativeToolTip": "src\\Rey.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-27T09:18:15.441Z",
               "IsPinned": true,

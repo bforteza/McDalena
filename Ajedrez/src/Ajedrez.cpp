@@ -8,7 +8,8 @@ int main()
 {
     std::cout << "Hello World!\n";
     Tablero tablero(UP);
-    tablero.premove(B, 2);
+   // tablero.print();
+    tablero.premove(A, 1);
     tablero.print();
    // tablero.get_casilla(D, 0)->print();
    
