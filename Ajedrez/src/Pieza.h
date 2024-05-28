@@ -10,9 +10,11 @@ protected:
     Color color_pieza{};
 public:
     virtual Color get_color_pieza() { return color_pieza; };
-    Pieza(Color pieza) : Casilla(NEGRO), color_pieza(pieza) {};
+    Pieza(Color pieza,Color casilla = NEGRO) : Casilla(casilla), color_pieza(pieza) {};
+    Pieza(const Pieza& otra) : Casilla(otra.color_casilla), color_pieza(otra.color_pieza) {};
     virtual void print() {};
     virtual bool ocupado() { return true; };
+    
     virtual bool premove(Tablero* tablero, int col, int fil) { return false; };
 };
 

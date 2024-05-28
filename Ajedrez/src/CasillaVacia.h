@@ -10,6 +10,8 @@ public:
     CasillaVacia(Color color) : Casilla(color) {};
     virtual bool premove(Tablero* tablero, int col, int fil) { return false; };
     virtual bool ocupado() { return false; };
+    virtual Casilla* puntero() { return new CasillaVacia(color_casilla); };
+  
     void print();
 };
 

@@ -26,11 +26,15 @@ public:
 	virtual void print() = 0;
 	virtual bool premove(Tablero* tablero, int col, int fil) = 0;
 	virtual bool ocupado() = 0;
-	
+	virtual Casilla* puntero() = 0;
+
+	void operator = (Casilla* entrada);
+
 	//inicilizadores
 
 	Casilla(Color ccasilla) : color_casilla(ccasilla) {};
-
+	 
 
 };
 
+bool operator << (Casilla& base, Casilla& copida);

@@ -9,8 +9,27 @@ int main()
    
     Tablero tablero(UP);
    
-    if (tablero.jacke(BLANCO)) std::cout << "Hello World!\n";
+    tablero.premove(C, 1);
     tablero.print();
+
+    if (tablero.ahogado(BLANCO)) {
+        std::cout << "ahogado";
+    }
+    if (tablero.jaque(NEGRO)) {
+        std::cout << "JAQUE";
+    }
+    if (tablero.mate(NEGRO)) {
+        std::cout << "MATE";
+    }
+
+
+
+   // bool b = tablero.jaque(NEGRO);
+
+
+
+      //  std::cout << "jaque";
+   
    // tablero.get_casilla(D, 0)->print();
    
 }

@@ -12,6 +12,7 @@ public:
 
     virtual bool premove(Tablero* tablero, int col, int fila);
     friend class Reina;
+    virtual Casilla* puntero() { return new Alfil(*this); }
 
 };
 

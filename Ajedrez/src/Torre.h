@@ -11,6 +11,6 @@ public:
     void print();
     bool premove(Tablero* tablero, int col, int fil);
     bool get_move() { return move; }
-    
+    virtual Casilla* puntero() { return new Torre(*this); }
 };
 

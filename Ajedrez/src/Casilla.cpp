@@ -11,3 +11,5 @@ void Casilla::set_color_casilla(Color color) {
 Color operator !(Color color){
 	return (color == NEGRO) ? BLANCO : NEGRO;
 }
+
+

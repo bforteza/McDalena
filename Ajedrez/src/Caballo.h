@@ -7,6 +7,6 @@ public:
     using Pieza::Pieza;
     void print();
     bool premove(Tablero* tablero, int col, int fil);
-
+    virtual Casilla* puntero() { return new Caballo(*this); }
 };
 
