@@ -1,2 +1,3 @@
 ﻿  Tablero.cpp
-  Ajedrez.vcxproj -> C:\Users\davil\source\repos\McDalena\Ajedrez\x64\Debug\Ajedrez.exe
+C:\Users\tomeu\Desktop\C\github\McDalena\Ajedrez\src\Tablero.cpp(125,1): warning C4715: 'Tablero::get_rey': no todas las rutas de acceso de control devuelven un valor
+  Ajedrez.vcxproj -> C:\Users\tomeu\Desktop\C\github\McDalena\Ajedrez\x64\Debug\Ajedrez.exe

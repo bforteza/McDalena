@@ -8,6 +8,9 @@ enum Columna { A = 0, B, C, D, E, F, G };
 
 
 enum Color {BLANCO=0, NEGRO=1};
+
+Color operator !(Color color); 
+
 class Casilla
 {
 protected:

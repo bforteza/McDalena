@@ -8,22 +8,25 @@ void Torre::print() {
 }
 
 bool Torre::premove(Tablero* tablero, int col, int fil) {
+    bool retorno = false;
     // Mover hacia la derecha
     for (int i = col + 1; i < 8; ++i) 
     {
         Casilla* casilla = tablero->get_casilla(i, fil);
         if (casilla != nullptr && casilla->ocupado()) 
-	{
-            if (dynamic_cast<Pieza*>(casilla)->get_color_pieza() != color_pieza)
 	    {
+            if (dynamic_cast<Pieza*>(casilla)->get_color_pieza() != color_pieza)
+	        {
                 casilla->selecionada = true; // Puede capturar la pieza enemiga
+                retorno = true;
             }
             break; // Detenerse al encontrar una pieza
         }
         else {
             if (casilla != nullptr) 
-	    {
+	        {
                 casilla->selecionada = true; // Casilla vacía
+                retorno = true;
             }
         }
     }
@@ -37,12 +40,14 @@ bool Torre::premove(Tablero* tablero, int col, int fil) {
             if (dynamic_cast<Pieza*>(casilla)->get_color_pieza() != color_pieza)
 	    {
                 casilla->selecionada = true; // Puede capturar la pieza enemiga
+                retorno = true;
             }
             break; // Detenerse al encontrar una pieza
         }
         else {
             if (casilla != nullptr) {
                 casilla->selecionada = true; // Casilla vacía
+                retorno = true;
             }
         }
     }
@@ -62,6 +67,7 @@ bool Torre::premove(Tablero* tablero, int col, int fil) {
         else {
             if (casilla != nullptr) {
                 casilla->selecionada = true; // Casilla vacía
+                retorno = true;
             }
         }
     }
@@ -81,9 +87,10 @@ bool Torre::premove(Tablero* tablero, int col, int fil) {
         else {
             if (casilla != nullptr) {
                 casilla->selecionada = true; // Casilla vacía
+                retorno = true;
             }
         }
     }
 
-    return true;
+    return retorno;
 }

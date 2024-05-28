@@ -11,6 +11,6 @@ class Reina :
 public:
     using Pieza::Pieza;
     void print();
-    bool premove(Rey rey, Alfil al, Tablero* tablero, int col, int fil, Torre tor);
+    bool premove( Tablero* tablero, int col, int fil);
 };
 

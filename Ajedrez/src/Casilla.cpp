@@ -7,3 +7,7 @@ Color Casilla::get_color_casilla() {
 void Casilla::set_color_casilla(Color color) {
 	color_casilla = color;
 }
+
+Color operator !(Color color){
+	return (color == NEGRO) ? BLANCO : NEGRO;
+}
