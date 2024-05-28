@@ -5,6 +5,8 @@
 #include "Alfil.h"
 #include "Rey.h"
 #include "Torre.h"
+#include "Caballo.h"
+#include "Reina.h"
 
 enum Juego{SC,UP };
 class Tablero

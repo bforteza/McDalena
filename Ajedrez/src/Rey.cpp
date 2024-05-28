@@ -4,7 +4,7 @@
 #include "Torre.h"
 void Rey::print() {
 
-	std::cout << ((color_pieza == NEGRO) ? "K" : "k");
+	std::cout << ((color_pieza == NEGRO) ? "Kg" : "kg");
 }
 
 bool Rey::premove(Tablero* tablero, int col, int fil) {

@@ -6,7 +6,7 @@ class Caballo :
 public:
     using Pieza::Pieza;
     void print();
-    bool premove(Tablero* tablero, Columna col, int fil);
+    bool premove(Tablero* tablero, int col, int fil);
 
 };
 

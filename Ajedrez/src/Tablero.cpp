@@ -23,8 +23,10 @@ void Tablero::size(int columnas, int filas) {
 Tablero::Tablero(Juego juego) {
 	if (juego == UP) {
 		size(D, 5);
-		asignar(A, 1, new Rey(BLANCO));
-		asignar(D, 1, new Torre(BLANCO));//falta implementar todas las demas piezas
+		asignar(A, 4, new Rey(BLANCO));
+		asignar(C, 3, new Caballo(NEGRO));//falta implementar todas las demas piezas
+		asignar(B, 1, new Torre(BLANCO));
+		asignar(C, 1, new Caballo(BLANCO));
 	}
 	else if (juego == SC) {
 
