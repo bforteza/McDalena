@@ -11,8 +11,7 @@
 enum Juego{SC,UP };
 class Tablero
 {
-
-	
+	std::vector<Casilla*> movimientos{};
 
 public:
 	std::vector<std::vector< Casilla*>> cuadricula;
@@ -23,6 +22,7 @@ public:
 	void size(int columnas, int filas);
 	void print();
 	void asignar(int col, int fil, Casilla* entrada);
+	std::vector<Casilla*> get_mov() { return movimientos; }
 
 	bool fmove(int Ocol, int Ofil, int Dcol, int Dfil);
 	bool premove(int col, int fil);

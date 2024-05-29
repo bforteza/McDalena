@@ -171,6 +171,8 @@ Rey* Tablero::get_rey(Color color) {
 bool Tablero::fmove(int Ocol, int Ofil, int Dcol, int Dfil) {
 	Casilla*& Origen = get_casilla(Ocol, Ofil);
 	Casilla*& Destino = get_casilla(Dcol, Dfil);
+	movimientos.push_back(Origen);
+	movimientos.push_back(Destino);
 	Color aux = Origen->get_color_casilla();
 	Color aux2 = Destino->get_color_casilla();
 	if (Origen == nullptr || Destino == nullptr || !Origen->ocupado()) return false;

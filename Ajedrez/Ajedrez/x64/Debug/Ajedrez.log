@@ -1,3 +1,11 @@
-﻿  Tablero.cpp
-C:\Users\tomeu\Desktop\C\github\McDalena\Ajedrez\src\Tablero.cpp(82,1): warning C4172: devolución de dirección de la variable local o temporal: retorno
-  Ajedrez.vcxproj -> C:\Users\tomeu\Desktop\C\github\McDalena\Ajedrez\x64\Debug\Ajedrez.exe
+﻿  Ajedrez.cpp
+  Alfil.cpp
+  Caballo.cpp
+  CasillaVacia.cpp
+  Peon.cpp
+  Rey.cpp
+  Tablero.cpp
+  Torre.cpp
+  Generando código...
+C:\Users\davil\source\repos\McDalena\Ajedrez\src\Tablero.cpp(82,1): warning C4172: devolución de dirección de la variable local o temporal: retorno
+  Ajedrez.vcxproj -> C:\Users\davil\source\repos\McDalena\Ajedrez\x64\Debug\Ajedrez.exe

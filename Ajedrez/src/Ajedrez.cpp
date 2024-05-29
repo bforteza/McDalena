@@ -1,8 +1,11 @@
 // Ajedrez.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
 //
-
 #include <iostream>
 #include "Tablero.h"
+#include <vector>
+using std::vector;
+
+bool pgn = 0;
 
 int main()
 {
@@ -34,12 +37,39 @@ int main()
    
 }
 
-// Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
-// Depurar programa: F5 o menú Depurar > Iniciar depuración
+void PGN(Tablero& tab,Juego mod) //Para modificar el tablero actual lo paso como referencia
+{
+    if (pgn) 
+    {
+        Tablero::Tablero(mod);
+        tab.print();
+        vector<Casilla*> movs = tab.get_mov();
+        for (int i = 0; i < movs.size(); i++) //Recorro las posiciones guardadas 
+        {
+            Pieza* pieza = dynamic_cast<Pieza*>(movs[i]);
+            Pieza* pieza2 = dynamic_cast<Pieza*>(movs[i + 1]);
+            if (pieza == nullptr || pieza2 == nullptr) {
+                continue; // Por seguridad, por si alguna conversión falla, continúa con el siguiente movimiento
+            }
+            Color aux = movs[i]->get_color_casilla();
+            Color aux2 = movs[i + 1]->get_color_casilla();
 
-// Sugerencias para primeros pasos: 1. Use la ventana del Explorador de soluciones para agregar y administrar archivos
-//   2. Use la ventana de Team Explorer para conectar con el control de código fuente
-//   3. Use la ventana de salida para ver la salida de compilación y otros mensajes
-//   4. Use la ventana Lista de errores para ver los errores
-//   5. Vaya a Proyecto > Agregar nuevo elemento para crear nuevos archivos de código, o a Proyecto > Agregar elemento existente para agregar archivos de código existentes al proyecto
-//   6. En el futuro, para volver a abrir este proyecto, vaya a Archivo > Abrir > Proyecto y seleccione el archivo .sln
+            //Con este bucle itero sobre todo el tablero
+            for (int f = 0; f < tab.cuadricula.size(); f++) {
+                for (int c = 0; c < tab.cuadricula[f].size(); c++) {
+                    Casilla*& casilla = tab.get_casilla(c, f);
+
+                    if (casilla == movs[i]) {
+                        delete casilla;
+                        casilla = new CasillaVacia(aux);
+                    }
+                    else if (casilla == movs[i + 1]) {
+                        pieza2->set_color_casilla(aux2);
+                        tab.asignar(c, f, pieza2);
+                    }
+                }
+            }
+        }
+    }
+    
+}
