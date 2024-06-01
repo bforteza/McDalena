@@ -362,13 +362,84 @@ void Tablero::detectar(int x, int y,Juego juego)
 
 
 }
-void Tablero::clicar(int x, int y, int& estado)
+void Tablero::clicar(int x, int y, int& estado, Juego juego, int& coordenadas_x, int& coordenadas_y)
 {
+	int i = 0, j = 0;
+	Casilla* aux = nullptr;
+	aux = new CasillaVacia(VERDE);
+	Color color_casilla;
 	if ((x > 97) && (x < 153))
 	{
 		if ((y > 39) && (y < 83))
 		{
 			estado = 0;
 		}
+	}
+
+	for (auto& fila : cuadricula) {
+		for (auto& casilla : fila) {
+			if ((x > (spriteorigenx + j * 115)) && x < (spriteorigenx + 115 + j * 115))
+			{
+				if ((y > spriteorigeny + i * 105) && (y < spriteorigeny + 105 + i * 105))
+				{
+					coordenadas_x = j;
+					coordenadas_y = i+1;
+					std::cout << coordenadas_x << ',' << coordenadas_y<<std::endl;
+					if (juego == UP)
+					{
+						Tablero::size(3, 5);
+						asignar(C, 1, new Alfil(BLANCO));
+						asignar(B, 5, new Alfil(NEGRO));
+
+						asignar(B, 1, new Caballo(BLANCO));
+						asignar(C, 5, new Caballo(NEGRO));
+
+						asignar(D, 1, new Torre(BLANCO));
+						asignar(A, 5, new Torre(NEGRO));
+
+						asignar(A, 1, new Rey(BLANCO));
+						asignar(D, 5, new Rey(NEGRO));
+
+						asignar(A, 2, new Peon(BLANCO));
+						asignar(D, 4, new Peon(NEGRO));
+					}
+					if (juego == SC)
+					{
+						Tablero::size(4, 6);
+						asignar(C, 1, new Alfil(BLANCO));
+						asignar(C, 6, new Alfil(NEGRO));
+
+						asignar(D, 1, new Caballo(BLANCO));
+						asignar(B, 6, new Caballo(NEGRO));
+
+						asignar(E, 1, new Torre(BLANCO));
+						asignar(A, 6, new Torre(NEGRO));
+
+						asignar(B, 1, new Rey(BLANCO));
+						asignar(D, 6, new Rey(NEGRO));
+
+						asignar(A, 1, new Reina(BLANCO));
+						asignar(E, 6, new Reina(NEGRO));
+
+
+						for (int i = A; i <= E; i++)
+						{
+							asignar(i, 2, new Peon(BLANCO));
+							asignar(i, 5, new Peon(NEGRO));
+						}
+					}
+					
+					aux->sprite_casilla = new Sprite("imagenes/cuadradorojo.png", float(origenx + 1.08 * j), float(origeny - 1.08 * i), 1.2, 1.2);
+					cuadricula.at(i).at(j)->sprite_casilla = aux->sprite_casilla;
+					cuadricula.at(i).at(j)->color_casilla = aux->color_casilla;
+					
+				}
+			}
+
+			j++;
+		}
+		j = 0;
+		i++;
+		
 	}
 }

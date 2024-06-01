@@ -1,0 +1,14 @@
+﻿  Afil.cpp
+  Caballo.cpp
+  Coordenadas.cpp
+  Peon.cpp
+  Pieza.cpp
+  principal.cpp
+  Reina.cpp
+  Rey.cpp
+  Tablero.cpp
+  Torre.cpp
+  Generando código...
+C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\src\Tablero.cpp(51): warning C4715: 'Tablero::rey': no todas las rutas de acceso de control devuelven un valor
+C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\src\Tablero.cpp(32): warning C4172: devolución de dirección de la variable local o temporal: retorno
+  miproyecto.vcxproj -> C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\bin\miproyecto.exe

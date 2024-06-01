@@ -1,0 +1,11 @@
+﻿  Menu.cpp
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS (A implementar) - copia - copia\src\PantallaInicio.h(7,55): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Menu.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS (A implementar) - copia - copia\src\PantallaInicio.h(7,51): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Menu.cpp")
+  
+C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS (A implementar) - copia - copia\src\MenuMusica.h(7,50): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  (compilando archivo de origen "src/Menu.cpp")
+  
+  PIXEL-CHESS.vcxproj -> C:\Users\mariu\OneDrive\Escritorio\PIXEL-CHESS (A implementar) - copia - copia\bin\PIXEL-CHESS.exe

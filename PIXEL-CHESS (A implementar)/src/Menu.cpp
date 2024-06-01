@@ -14,12 +14,14 @@ void Menu::dibuja()
 		//tablero1.dibujafondo();
 		//tablero1.dibuja();
 		tablero2.print();
+		tablero2.premove(coordenadax, coordenaday);
 	}
 	if (estado == 2)
 	{
 		//tablero2.dibujafondo();
 		//tablero2.dibuja();
 		tablero1.print();
+		tablero1.premove(coordenadax, coordenaday);
 	}
 	if (estado == 3)
 	{
@@ -60,11 +62,11 @@ void Menu::clica(int x, int y)
 	}
 	if (estado == 1)
 	{
-		tablero2.clicar(x, y,estado);
+		tablero2.clicar(x, y,estado, UP,coordenadax,coordenaday);
 	}
 	if (estado == 2)
 	{
-		tablero1.clicar(x, y, estado);
+		tablero1.clicar(x, y, estado, SC,coordenadax,coordenaday);
 	}
 	if (estado == 3)
 	{

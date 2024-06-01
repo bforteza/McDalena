@@ -21,7 +21,7 @@ void MouseMove(int x, int y);
 int main(int argc, char* argv[])
 {
 
-		//tablero.premove(C, 1);
+		
 		//tablero.print();
 	/*
 		if (tablero.ahogado(BLANCO)) {

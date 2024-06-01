@@ -138,6 +138,7 @@
     <ClInclude Include="src\Caballo.h" />
     <ClInclude Include="src\Casilla.h" />
     <ClInclude Include="src\CasillaVacia.h" />
+    <ClInclude Include="src\Coordenadas.h" />
     <ClInclude Include="src\Menu.h" />
     <ClInclude Include="src\MenuMusica.h" />
     <ClInclude Include="src\PantallaInicio.h" />
@@ -154,6 +155,7 @@
     <ClCompile Include="src\Caballo.cpp" />
     <ClCompile Include="src\Casilla.cpp" />
     <ClCompile Include="src\CasillaVacia.cpp" />
+    <ClCompile Include="src\Coordenadas.cpp" />
     <ClCompile Include="src\Menu.cpp" />
     <ClCompile Include="src\MenuMusica.cpp" />
     <ClCompile Include="src\PantallaInicio.cpp" />

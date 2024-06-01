@@ -20,11 +20,11 @@ protected:
 
 	Sprite* sprite_casilla; //Sprite Correspondiente
 	Sprite* sprite_pieza; //Sprite Correspondiente
-	Color color_casilla{};
+	
 	
 public:
 	bool selecionada = 0;
-
+	Color color_casilla{};
 	//virtual Color get_color_pieza() = 0;
 	Color get_color_casilla();
 	void set_color_casilla(Color color);

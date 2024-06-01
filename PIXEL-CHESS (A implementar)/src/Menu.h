@@ -9,6 +9,7 @@ class Menu
 {
 	int estado=0;
 	int muteado = 1;
+	int coordenadax = 0, coordenaday = 0;
 	Tablero tablero1{ SC };
 	Tablero tablero2{ UP };
 	PantallaInicio pantallainicio;

@@ -20,6 +20,7 @@ void CasillaVacia::print(int col, int fil, double origenx, double origeny) {
 	{
 		sprite_casilla = new Sprite("imagenes/cuadradorojo.png", origenx + 1.08 * fil, origeny - 1.08 * col, 1.2, 1.2);
 	}
+
 	
 	sprite_casilla->draw();
 
