@@ -9,7 +9,7 @@ Color operator !(Color color) {
 
 VectorCoordenadas Pieza::premove_dir(Coordenadas(&dir)[4], Tablero* tablero, const Coordenadas& posicion) {
 
-	VectorCoordenadas retorno;
+	VectorCoordenadas retorno{};
 
 	Coordenadas aux;
 	Coordenadas tam = tablero->get_tam();
@@ -20,11 +20,11 @@ VectorCoordenadas Pieza::premove_dir(Coordenadas(&dir)[4], Tablero* tablero, con
 		aux += d;
 
 		while (aux < tam && tablero->get_pieza(aux) == nullptr) {  //mientras esten vacias
-			retorno += new Coordenadas(aux);
+			retorno += aux;
 			aux += d;
 		}
 		if (aux < tam && tablero->get_pieza(aux)->get_color() != color) {  //condicion de diferente color
-			retorno += new Coordenadas(aux);
+			retorno += aux;
 		}
 	}
 	

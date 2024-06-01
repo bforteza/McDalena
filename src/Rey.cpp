@@ -13,15 +13,17 @@ VectorCoordenadas Rey::premove(Tablero* tablero, const Coordenadas& posicion)
 	Pieza* aux;
 	for (int i = -1; i <= 1; i++) {
 		for (int j = -1; j <= 1; j++) {
+
 			dir = posicion;
 			dir += Coordenadas{i, j};
+
 			if (dir < tam) {
 				aux = tablero->get_pieza(dir);
-				if(aux != nullptr)  {
-					retorno += new Coordenadas(dir);
+				if(aux == nullptr)  {
+					retorno += dir;
 				}
 				else if (aux->get_color() != color) {
-					retorno += new Coordenadas(dir);
+					retorno += dir;
 				}
 			}
 		}

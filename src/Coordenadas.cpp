@@ -11,7 +11,6 @@ Coordenadas Coordenadas::operator+(Coordenadas& e) const
 	return Coordenadas(col+e.col,fil+e.fil);
 }
 
-
 void Coordenadas::operator+=(Coordenadas e)
 {
 	col += e.col;
@@ -29,33 +28,37 @@ const VectorCoordenadas VectorCoordenadas::operator+(const VectorCoordenadas& e)
 void VectorCoordenadas::operator+=(const VectorCoordenadas& e)
 {
 	v.reserve(v.size() + e.v.size());
-	for (auto& iter : e.v) { v.push_back(new Coordenadas(*iter)); }
+	v.insert(v.end(), e.v.begin(), e.v.end());
 }
 
-void VectorCoordenadas::operator+=(Coordenadas& e)
-{
-	v.push_back(&e);
-}
-
-void VectorCoordenadas::operator+=(Coordenadas* e)
+void VectorCoordenadas::operator+=(const Coordenadas& e)
 {
 	v.push_back(e);
 }
 
 void VectorCoordenadas::clear()
-{
-	for (auto ele : v) {
-		if (ele != nullptr)
-			delete ele;
-		ele = nullptr;
-	}
+{	
 	v.clear();
 }
 
-void VectorCoordenadas::operator<=(VectorCoordenadas& e)
+bool VectorCoordenadas::operator<<(Coordenadas& e)
 {
-	v.reserve(v.size() + e.v.size());
-	v.insert(v.end(), e.v.begin(), e.v.end());
-	for (auto& iter : e.v)
-		iter = nullptr;
+	for (auto& iter : v) {
+		if (iter == e)
+			return true;
+	}
+	return false;
 }
+
+void VectorCoordenadas::eliminar(const Coordenadas& e)
+{
+	int i = 0;
+	for (auto& iter : v) {
+		if (iter == e) {
+			v.erase(v.begin() + i);
+		}
+		i++;
+	}
+}
+
+

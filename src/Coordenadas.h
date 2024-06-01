@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <memory>
 
 class Coordenadas {
 public:
@@ -24,24 +25,22 @@ public:
 class VectorCoordenadas {
 public:
 
-	std::vector<Coordenadas*> v{};
+	std::vector<Coordenadas> v{};
 
-	void operator<= (VectorCoordenadas& e);
-	const VectorCoordenadas operator+ (const VectorCoordenadas& e);
-	void operator+= (const VectorCoordenadas& e);
-	void operator+= (Coordenadas& e);
-	void operator+= (Coordenadas* e);
-	void clear();
+	void eliminar(const Coordenadas&); //elimina la coordenada si coinciden los parametros
+	const VectorCoordenadas operator+ (const VectorCoordenadas& e); //devuelve un vector concatenado
+	void operator+= (const VectorCoordenadas& e); //se concatena el vector de entrada a la función
+	void operator+= (const Coordenadas& e); //se añade como último parámetro del vector
 
-	
+	void clear(); //vacia el vector
+
+	bool operator<<(Coordenadas& e); //comprueba que las coordenadas formen parte de este vector
+
+	VectorCoordenadas() = default;
 
 	~VectorCoordenadas() {
 
-		for (auto ele : v) {
-			if (ele != nullptr)
-			delete ele;
-			ele = nullptr;
-		}
+		
 		v.clear();
 	}
 	
