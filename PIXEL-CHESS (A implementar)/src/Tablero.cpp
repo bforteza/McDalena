@@ -35,11 +35,13 @@ void Tablero::size(int columnas, int filas) {
 }
 
 Tablero::Tablero(Juego juego) {
+
 	if (juego == UP) {
 		size(D, 5);
 		origenx = -1.66;
 		origeny = 2.50;
-
+		spriteorigenx = 212;
+		spriteorigeny = 60;
 		asignar(C,1 , new Alfil(BLANCO));
 		asignar(B,5, new Alfil(NEGRO));
 
@@ -62,6 +64,30 @@ Tablero::Tablero(Juego juego) {
 		size(E, 6); //falta implementar todas las piezas
 		origenx = -1.96;
 		origeny = 2.85;
+		spriteorigenx = 179;
+		spriteorigeny = 27;
+
+		asignar(C, 1, new Alfil(BLANCO));
+		asignar(C, 6, new Alfil(NEGRO));
+
+		asignar(D, 1, new Caballo(BLANCO));
+		asignar(B, 6, new Caballo(NEGRO));
+
+		asignar(E, 1, new Torre(BLANCO));
+		asignar(A, 6, new Torre(NEGRO));
+
+		asignar(B, 1, new Rey(BLANCO));
+		asignar(D, 6, new Rey(NEGRO));
+
+		asignar(A, 1, new Reina(BLANCO));
+		asignar(E, 6, new Reina(NEGRO));
+
+
+		for (int i = A; i<=E; i++)
+		{
+			asignar(i, 2, new Peon(BLANCO));
+			asignar(i, 5, new Peon(NEGRO));
+		}
 
 	}
 }
@@ -102,18 +128,15 @@ void Tablero::print() {
 
 	for (auto fila : cuadricula) {
 		
-		std::cout << num++<< " ";
 		for (auto casilla : fila) {
 			casilla->print(coord_fila,coord_columna,origenx,origeny);
 			
 			coord_columna++;
 		}
-		std::cout << "\n";
 		coord_columna = 0;
 		coord_fila++;
 		
 	}
-	std::cout << "\n\n";
 } //falta mejorar el metodo print para que las casillas aparezcan en su lugar
 
 Casilla*& Tablero::get_casilla(int col, int fil) {
@@ -251,8 +274,12 @@ bool Tablero::ahogado(Color color) {
 	}
 	return true;
 }
-void Tablero::detectar(int x, int y)
+void Tablero::detectar(int x, int y,Juego juego)
 {
+	int i = 0, j = 0;
+	Casilla* aux = nullptr;
+	aux = new CasillaVacia(VERDE);
+	Color color_casilla;
 	if ((x > 97) && (x < 153))
 	{
 		if ((y > 39) && (y < 83))
@@ -268,6 +295,72 @@ void Tablero::detectar(int x, int y)
 	{
 		volver = { "imagenes/PreVolver.png", -3,3,1, 1 };
 	}
+
+	
+			for (auto& fila : cuadricula) {
+				for (auto& casilla : fila) {
+					if ((x > (spriteorigenx + j * 115)) && x < (spriteorigenx + 115 + j * 115))
+					{
+						if ((y > spriteorigeny + i * 105) && (y < spriteorigeny + 105 + i * 105))
+						{
+							if (juego == UP)
+							{
+								Tablero::size(3, 5);
+								asignar(C, 1, new Alfil(BLANCO));
+								asignar(B, 5, new Alfil(NEGRO));
+
+								asignar(B, 1, new Caballo(BLANCO));
+								asignar(C, 5, new Caballo(NEGRO));
+
+								asignar(D, 1, new Torre(BLANCO));
+								asignar(A, 5, new Torre(NEGRO));
+
+								asignar(A, 1, new Rey(BLANCO));
+								asignar(D, 5, new Rey(NEGRO));
+
+								asignar(A, 2, new Peon(BLANCO));
+								asignar(D, 4, new Peon(NEGRO));
+							}
+							if (juego == SC)
+							{
+								Tablero::size(4, 6);
+								asignar(C, 1, new Alfil(BLANCO));
+								asignar(C, 6, new Alfil(NEGRO));
+
+								asignar(D, 1, new Caballo(BLANCO));
+								asignar(B, 6, new Caballo(NEGRO));
+
+								asignar(E, 1, new Torre(BLANCO));
+								asignar(A, 6, new Torre(NEGRO));
+
+								asignar(B, 1, new Rey(BLANCO));
+								asignar(D, 6, new Rey(NEGRO));
+
+								asignar(A, 1, new Reina(BLANCO));
+								asignar(E, 6, new Reina(NEGRO));
+
+
+								for (int i = A; i <= E; i++)
+								{
+									asignar(i, 2, new Peon(BLANCO));
+									asignar(i, 5, new Peon(NEGRO));
+								}
+							}
+							aux->sprite_casilla = new Sprite("imagenes/cuadradoverde.png", float(origenx + 1.08 * j), float(origeny - 1.08 *i), 1.2, 1.2);
+							cuadricula.at(i).at(j)->sprite_casilla = aux->sprite_casilla;
+							cuadricula.at(i).at(j)->color_casilla = aux->color_casilla;
+						}
+					}
+
+					j++;
+				}
+			j = 0;
+			i++;
+			
+			}
+
+
+
 }
 void Tablero::clicar(int x, int y, int& estado)
 {

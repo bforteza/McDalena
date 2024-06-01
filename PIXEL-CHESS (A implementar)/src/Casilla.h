@@ -2,7 +2,6 @@
 #include <iostream>
 #include "ETSIDI.h"
 #include "freeglut.h"
-
 using ETSIDI::Sprite;
 
 class Tablero;
@@ -11,7 +10,7 @@ enum Columna { A = 0, B, C, D, E, F, G };
 
 
 
-enum Color {BLANCO=0, NEGRO=1};
+enum Color {BLANCO=0, NEGRO=1, VERDE=2, ROJO=3};
 
 Color operator !(Color color); 
 
@@ -40,6 +39,8 @@ public:
 	//inicilizadores
 
 	Casilla(Color ccasilla) : color_casilla(ccasilla) {};
+
+	friend Tablero;
 	 
 
 };

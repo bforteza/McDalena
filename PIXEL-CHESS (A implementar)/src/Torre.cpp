@@ -9,12 +9,12 @@ void Torre::print(int col, int fil, double origenx, double origeny) {
         if (color_pieza == NEGRO)
         {
             sprite_casilla = new Sprite("imagenes/cuadrado2.png", origenx + 1.08 * fil, origeny - 1.08 * col, 1.2, 1.2);
-            sprite_pieza = new Sprite("imagenes/TorreN.png", fil * 1.072 - 1.65, -1.072 * col + 2.40, 0.8, 0.8);
+            sprite_pieza = new Sprite("imagenes/TorreN.png",1.66+origenx+ fil * 1.072 - 1.65,-2.5+origeny -1.072 * col + 2.40, 0.8, 0.8);
         }
         if (color_pieza == BLANCO)
         {
             sprite_casilla = new Sprite("imagenes/cuadrado2.png", origenx + 1.08 * fil, origeny - 1.08 * col, 1.2, 1.2);
-            sprite_pieza = new Sprite("imagenes/TorreB.png", fil * 1.072 - 1.65, -1.072 * col + 2.40, 0.8, 0.8);
+            sprite_pieza = new Sprite("imagenes/TorreB.png",1.66+origenx+ fil * 1.072 - 1.65,-2.5+origeny -1.072 * col + 2.40, 0.8, 0.8);
 
         }
     }
@@ -23,20 +23,35 @@ void Torre::print(int col, int fil, double origenx, double origeny) {
         if (color_pieza == NEGRO)
         {
             sprite_casilla = new Sprite("imagenes/cuadrado.png", origenx + 1.08 * fil, origeny - 1.08 * col, 1.2, 1.2);
-            sprite_pieza = new Sprite("imagenes/TorreN.png", fil * 1.072 - 1.65, -1.072 * col + 2.40, 0.8, 0.8);
+            sprite_pieza = new Sprite("imagenes/TorreN.png",1.66+origenx+ fil * 1.072 - 1.65,-2.5+origeny -1.072 * col + 2.40, 0.8, 0.8);
 
         }
         if (color_pieza == BLANCO)
         {
             sprite_casilla = new Sprite("imagenes/cuadrado.png", origenx + 1.08 * fil, origeny - 1.08 * col, 1.2, 1.2);
-            sprite_pieza = new Sprite("imagenes/TorreB.png", fil * 1.072 - 1.65, -1.072 * col + 2.40, 0.8, 0.8);
+            sprite_pieza = new Sprite("imagenes/TorreB.png",1.66+origenx+ fil * 1.072 - 1.65,-2.5+origeny -1.072 * col + 2.40, 0.8, 0.8);
+
+        }
+    }
+    if (color_casilla == VERDE)
+    {
+        if (color_pieza == NEGRO)
+        {
+            sprite_casilla = new Sprite("imagenes/cuadradoverde.png", origenx + 1.08 * fil, origeny - 1.08 * col, 1.2, 1.2);
+            sprite_pieza = new Sprite("imagenes/TorreN.png", 1.66 + origenx + fil * 1.072 - 1.65, -2.5 + origeny - 1.072 * col + 2.45, 0.8, 0.8);
+
+        }
+        if (color_pieza == BLANCO)
+        {
+            sprite_casilla = new Sprite("imagenes/cuadradoverde.png", origenx + 1.08 * fil, origeny - 1.08 * col, 1.2, 1.2);
+            sprite_pieza = new Sprite("imagenes/TorreB.png", 1.66 + origenx + fil * 1.072 - 1.65, -2.5 + origeny - 1.072 * col + 2.45, 0.8, 0.8);
 
         }
     }
     sprite_pieza->draw();
     sprite_casilla->draw();
-
-}
+    }
+   
 
 bool Torre::premove(Tablero* tablero, int col, int fil) {
     bool retorno = false;

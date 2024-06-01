@@ -13,6 +13,6 @@ public:
     virtual bool ocupado() { return false; };
     virtual Casilla* puntero() { return new CasillaVacia(color_casilla); };
   
-    void print(int col, int fil,double origenx, double origeny);
+     void print(int col, int fil, double origenx, double origeny);
 };
 

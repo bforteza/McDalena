@@ -13,6 +13,7 @@ class Tablero
 {
 	std::vector<Casilla*> movimientos{};
 	double origenx, origeny;
+	int spriteorigenx, spriteorigeny;
 	Sprite volver = { "imagenes/PreVolver.png", -3,3,1, 1 };
 public:
 	std::vector<std::vector< Casilla*>> cuadricula;
@@ -23,7 +24,7 @@ public:
 	void size(int columnas, int filas);
 	void print();
 	void asignar(int col, int fil, Casilla* entrada);
-	void detectar(int x, int y);
+	void detectar(int x, int y,Juego juego);
 	void clicar(int x, int y, int& estado);
 
 	std::vector<Casilla*> get_mov() { return movimientos; }

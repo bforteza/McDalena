@@ -39,12 +39,12 @@ void Menu::detecta(int x, int y)
 	}
 	if (estado == 1)
 	{
-		tablero2.detectar(x, y);
+		tablero2.detectar(x, y,UP);
 	
 	}
 	if (estado == 2)
 	{
-		tablero1.detectar(x, y);
+		tablero1.detectar(x, y,SC);
 	}
 	if (estado == 3)
 	{
