@@ -16,18 +16,22 @@ Color operator !(Color color);
 class Pieza
 {
 protected:
-	Color c_pieza{};
+	Color color{};
 public:
 	//metodos otención de datos
-	virtual Color get_c_pieza() { return c_pieza; };
+	virtual Color get_color() { return color; };
 	
 	virtual void print() {};
 
-	virtual vector<Coordenadas*> premove(Tablero& tablero, Coordenadas posicion) {
-		vector<Coordenadas*> res;
+	virtual VectorCoordenadas premove(Tablero* tablero, const Coordenadas& posicion) {
+		VectorCoordenadas res;
 		return res;
 	};
+
+	VectorCoordenadas premove_dir(Coordenadas (&dir)[4], Tablero* tablero, const Coordenadas& posicion);
+	
+	
 	//inicializador
-	Pieza(Color pieza) : c_pieza(pieza) {};
+	Pieza(Color pieza) : color(pieza) {};
 };
 

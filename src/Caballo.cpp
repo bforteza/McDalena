@@ -2,6 +2,11 @@
 
 void Caballo::print() {
 
-	std::cout << ((c_pieza == NEGRO) ? "N" : "n");
+	std::cout << ((color == NEGRO) ? "N" : "n");
+}
+
+VectorCoordenadas Caballo::premove(Tablero* tablero, const Coordenadas& posicion)
+{
+	return VectorCoordenadas();
 }
 
