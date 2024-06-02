@@ -5,7 +5,7 @@ void Alfil::print() {
 	std::cout << ((color == NEGRO) ? "B" : "b");
 }
 
-VectorCoordenadas Alfil::premove(const Tablero* const tablero, const Coordenadas& posicion)
+VectorCoordenadas Alfil::premove(Tablero* tablero, const Coordenadas& posicion)
 {
 	Coordenadas direcciones[4] = { {1,1},{1,-1},{-1,-1},{-1,1} };
 

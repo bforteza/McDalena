@@ -4,22 +4,22 @@
 
 class Coordenadas {
 public:
-	char col, fil;
+	int col, fil;
 
 	Coordenadas(int _col, int _fil) :col(_col), fil(_fil) {};
 	Coordenadas() = default;
 	Coordenadas(Coordenadas& e) : col(e.col), fil(e.fil) {};
 	Coordenadas(const Coordenadas& e) : col(e.col), fil(e.fil) {};
 
-	bool operator < (const Coordenadas& e) const;
+	bool operator < (const Coordenadas& e);
 
 	bool operator == (const Coordenadas& other) const
 	{
 		return col == other.col && fil == other.fil;
 	}
 
-	Coordenadas operator + (const Coordenadas& e) const;
-	void operator += (const Coordenadas e);
+	Coordenadas operator + (Coordenadas& e) const;
+	void operator += (Coordenadas e);
 };
 
 class VectorCoordenadas {
@@ -39,8 +39,9 @@ public:
 	VectorCoordenadas() = default;
 
 	~VectorCoordenadas() {
+
+		
 		v.clear();
 	}
 	
-	bool operator==(const VectorCoordenadas& other) const;
 };

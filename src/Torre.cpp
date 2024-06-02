@@ -8,7 +8,7 @@ void Torre::print() {
 
 
 
-VectorCoordenadas Torre::premove(const Tablero* const tablero, const Coordenadas& posicion)
+VectorCoordenadas Torre::premove(Tablero* tablero, const Coordenadas& posicion)
 {
 	Coordenadas direcciones[4] = { {0,1},{0,-1},{1,0},{-1,0} };
 

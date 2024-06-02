@@ -23,12 +23,12 @@ public:
 	
 	virtual void print() {};
 
-	virtual VectorCoordenadas premove(const Tablero* const tablero, const Coordenadas& posicion) {
+	virtual VectorCoordenadas premove(Tablero* tablero, const Coordenadas& posicion) {
 		VectorCoordenadas res;
 		return res;
 	};
 
-	VectorCoordenadas premove_dir(Coordenadas (&dir)[4], const Tablero* const tablero, const Coordenadas& posicion);
+	VectorCoordenadas premove_dir(Coordenadas (&dir)[4], Tablero* tablero, const Coordenadas& posicion);
 	
 	
 	//inicializador

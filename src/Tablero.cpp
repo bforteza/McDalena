@@ -15,10 +15,9 @@ Tablero::Tablero(Juego juego){
 	if (juego == SC) {
 		for (int c = 1; c <= tam.col; c++) {
 			asignar({ c , 2 }, new Peon(BLANCO));
-			//asignar({ c , 5 }, new Peon(NEGRO));
+			asignar({ c , 5 }, new Peon(NEGRO));
 		}
-		asignar({ C,5 }, new Reina(BLANCO));
-		asignar({ A,3 }, new Reina(BLANCO));
+		asignar({ C,3 }, new Reina(BLANCO));
 		asignar({ A,1 }, new Rey(BLANCO));
 		asignar({ A,6 }, new Rey(NEGRO));
 	}
@@ -26,7 +25,7 @@ Tablero::Tablero(Juego juego){
 	buscar_piezas();
 }
 
-Pieza*& Tablero::get_pieza(const Coordenadas entrada) {
+Pieza*& Tablero::get_pieza(Coordenadas entrada) {
 	
 	if(entrada<tam)
 	return cuadricula[entrada.col - 1 + (entrada.fil - 1) * (tam.col)];
@@ -35,14 +34,7 @@ Pieza*& Tablero::get_pieza(const Coordenadas entrada) {
 	return retorno;
 }
 
-Pieza* Tablero::get_pieza(const Coordenadas entrada) const
-{
-	if (entrada < tam)
-		return cuadricula[entrada.col - 1 + (entrada.fil - 1) * (tam.col)];
-	return nullptr;
-}
-
-Coordenadas Tablero::rey(Color color) const
+Coordenadas Tablero::rey(Color color)
 {
 	if (color == BLANCO) {
 		for (auto& iter : p_blancas.v) {
@@ -96,24 +88,6 @@ void Tablero::print() {
 	std::cout << "\n";
 }
 
-bool Tablero::mate(Color color)
-{
-	if (jaque(color) && ahogado(!color))
-		return true;
-	return false;
-}
-
-bool Tablero::ahogado(Color color)
-{
-	VectorCoordenadas & piezas = (color == BLANCO) ? p_blancas : p_negras;
-	for (auto iter : piezas.v) {
-		if (!premove(iter).v.empty()) {
-			return false;
-		}
-	}
-	return true;
-}
-
 bool Tablero::jaque(Color color)
 {
 	VectorCoordenadas& piezas = (color == BLANCO) ? p_blancas : p_negras;
@@ -153,6 +127,8 @@ bool Tablero::fmove(const Coordenadas& origen, const Coordenadas& destino)
 		case NEGRO:
 			p_negras.eliminar(destino);
 			break;
+		default:
+			break;
 		}
 	}
 	switch (porigen->get_color())
@@ -162,45 +138,44 @@ bool Tablero::fmove(const Coordenadas& origen, const Coordenadas& destino)
 		p_blancas += destino;
 		break;
 	case NEGRO:
-		p_negras += destino;
 		p_negras.eliminar(origen);
-		
+		p_negras += destino;
+		break;
+	default:
 		break;
 	}
 	pdestino = porigen;
 	porigen = nullptr;
-	
+	int i = 0;
 
 	return muerte;
 	
 }
 
-VectorCoordenadas Tablero::premove(const Coordenadas& e) 
+VectorCoordenadas Tablero::premove(const Coordenadas& e)
 {
-
 	Pieza* aux = get_pieza(e);
 	if (aux != nullptr) {
-
 		bool muerte = false;
 		VectorCoordenadas premoves;
+		
 		Color c_pieza = aux->get_color();
+		if (aux != nullptr) {
+			premoves += aux->premove(this, e);
 
-		premoves += aux->premove(this, e);
-		for (auto iter : vector(premoves.v)) {
-				
-			muerte = fmove(e, iter);
-			if (jaque(!c_pieza))
-				premoves.eliminar(iter);
+			for (auto& iter : premoves.v) {
 
-			fmove(iter, e);
-			if (muerte) {
-
-				get_pieza(iter) = muertas.back();
-				muertas.pop_back();
+				muerte = fmove(e, iter);
+				if (jaque(!c_pieza))
+					premoves.eliminar(iter);
+				fmove(iter, e);
+				if (muerte)
+					get_pieza(iter) = muertas.back();
 			}
+
+			return premoves;
+
 		}
-			 
-		return premoves;
 	}
 	return VectorCoordenadas();
 }

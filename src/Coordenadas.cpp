@@ -1,17 +1,17 @@
 #include "Coordenadas.h"
 
-bool Coordenadas::operator < (const Coordenadas& e) const {
+bool Coordenadas::operator < (const Coordenadas& e) {
 	
 	return (col > 0 && fil > 0 && col <= e.col && fil <= e.fil);
 		
 }
 
-Coordenadas Coordenadas::operator+(const Coordenadas& e) const 
+Coordenadas Coordenadas::operator+(Coordenadas& e) const 
 {
 	return Coordenadas(col+e.col,fil+e.fil);
 }
 
-void Coordenadas::operator+=(const Coordenadas e)
+void Coordenadas::operator+=(Coordenadas e)
 {
 	col += e.col;
 	fil += e.fil;
@@ -60,7 +60,5 @@ void VectorCoordenadas::eliminar(const Coordenadas& e)
 		i++;
 	}
 }
-
-
 
 
