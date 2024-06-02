@@ -5,7 +5,7 @@ void Peon::print() {
 	std::cout << ((color == NEGRO) ? "P" : "p");
 }
 
-VectorCoordenadas Peon::premove(Tablero* tablero, const Coordenadas& posicion)
+VectorCoordenadas Peon::premove(const Tablero* const tablero, const Coordenadas& posicion)
 {
 	VectorCoordenadas retorno;
 	Coordenadas dir(posicion);

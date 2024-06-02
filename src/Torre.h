@@ -8,6 +8,6 @@ public:
     void print();
     
         
-    virtual VectorCoordenadas premove(Tablero* tablero, const Coordenadas& posicion);
+    virtual VectorCoordenadas premove(const Tablero* const tablero, const Coordenadas& posicion);
 };
 

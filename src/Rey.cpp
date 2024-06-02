@@ -5,7 +5,7 @@ void Rey::print() {
 	std::cout << ((color == NEGRO) ? "K" : "k");
 }
 
-VectorCoordenadas Rey::premove(Tablero* tablero, const Coordenadas& posicion)
+VectorCoordenadas Rey::premove(const Tablero* const tablero, const Coordenadas& posicion)
 {
 	VectorCoordenadas retorno;
 	Coordenadas dir(posicion);

@@ -13,23 +13,25 @@ class Tablero
 private:
 	vector<Pieza*> cuadricula;
 	Coordenadas tam;				//tamaño
-	vector<Pieza*> muertas;
-
+	vector<Pieza*> muertas;			//piezas muertas
 	VectorCoordenadas seleccion,p_blancas, p_negras; 
 
 	void asignar(Coordenadas e, Pieza* entrada);
 	void buscar_piezas();
-	
-	
+	bool fmove(const Coordenadas& origen, const Coordenadas& destino); //devuelve true si ha muerto alguna pieza
+	Coordenadas rey(Color color)const;
 public:
-	bool fmove(const Coordenadas& origen, const Coordenadas& destino);
+
 	//parametros
-	Coordenadas get_tam() { return tam; };
-	Pieza*& get_pieza(Coordenadas entrada);
-	Coordenadas rey(Color color);
+	Coordenadas get_tam() const { return tam; };
+	Pieza*& get_pieza(const Coordenadas entrada);
+	Pieza* get_pieza(const Coordenadas entrada) const;
+
 	
 	void print();
 
+	bool mate(Color color);
+	bool ahogado(Color color);
 	bool jaque(Color color);
 	void seleccionar(const VectorCoordenadas&);
 	void borrar_seleccion();
@@ -38,5 +40,17 @@ public:
 
 	//inicializadores
 	Tablero(Juego juego);
+	~Tablero(){
+		for (auto& iter : cuadricula) {
+			if (iter != nullptr)
+				delete iter;
+		}
+		cuadricula.clear();
+		for (auto& iter : muertas) {
+			if (iter != nullptr)
+				delete iter;
+		}
+		muertas.clear();
+	}
 };
 

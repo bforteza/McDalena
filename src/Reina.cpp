@@ -5,7 +5,7 @@ void Reina::print() {
 	std::cout << ((color == NEGRO) ? "Q" : "q");
 }
 
-VectorCoordenadas Reina::premove(Tablero* tablero, const Coordenadas& posicion)
+VectorCoordenadas Reina::premove(const Tablero* const tablero, const Coordenadas& posicion)
 {
 	Coordenadas direccionest[4] = { {0,1},{0,-1},{1,0},{-1,0} };
 	Coordenadas direccionesa[4] = { {1,1},{1,-1},{-1,-1},{-1,1} };
