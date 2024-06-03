@@ -71,101 +71,229 @@ void Torre::print(int col, int fil, double origenx, double origeny) {
 bool Torre::premove(Tablero* tablero, int col, int fil) {
     bool retorno = false;
     // Mover hacia la derecha
-    for (int i = col + 1; i < 8; ++i) 
-    {
-        Casilla* casilla = tablero->get_casilla(i, fil);
-        if (casilla != nullptr && casilla->ocupado()) 
-	    {
-            
-            if (dynamic_cast<Pieza*>(casilla)->get_color_pieza() != color_pieza)
-	        {
-                casilla->color_casilla = ROJO;
-                casilla->selecionada = true; // Puede capturar la pieza enemiga
-                retorno = true;
-            }
-            break; // Detenerse al encontrar una pieza
-        }
-        else {
-            if (casilla != nullptr) 
-	        {
-                casilla->color_casilla = ROJO;
-                casilla->selecionada = true; // Casilla vacía
-                retorno = true;
-            }
-        }
-    }
-
-    // Mover hacia la izquierda
-    for (int i = col - 1; i >= 0; --i) 
-    {
-        Casilla* casilla = tablero->get_casilla(i, fil);
-        if (casilla != nullptr && casilla->ocupado())
-	{
-           
-            if (dynamic_cast<Pieza*>(casilla)->get_color_pieza() != color_pieza)
-	    {
-                casilla->color_casilla = ROJO;
-                casilla->selecionada = true; // Puede capturar la pieza enemiga
-                retorno = true;
-            }
-            break; // Detenerse al encontrar una pieza
-        }
-        else {
-            if (casilla != nullptr) {
-                casilla->color_casilla = ROJO;
-                casilla->selecionada = true; // Casilla vacía
-                retorno = true;
-            }
-        }
-    }
-
-    // Mover hacia arriba
-    for (int i = fil + 1; i < 8; ++i) 
-    {
+    
+    if (color_pieza == BLANCO) {
         
-        Casilla* casilla = tablero->get_casilla(col, i);
-        if (casilla != nullptr && casilla->ocupado()) 
-	{
+        if (tablero->contador % 2 == 0) {
+
+            retorno = false;
+        }
+
+        else if (tablero->contador % 2 != 0) {
+
             
-            if (dynamic_cast<Pieza*>(casilla)->get_color_pieza() != color_pieza)
-	    {
-                casilla->color_casilla = ROJO;
-                casilla->selecionada = true; // Puede capturar la pieza enemiga
-            }
-            break; // Detenerse al encontrar una pieza
-        }
-        else {
-            if (casilla != nullptr) {
-                casilla->color_casilla = ROJO;
-                casilla->selecionada = true; // Casilla vacía
-                retorno = true;
-            }
-        }
-    }
+      
+    
+            for (int i = col + 1; i < 8; ++i)
+            {
+                Casilla* casilla = tablero->get_casilla(i, fil);
+                if (casilla != nullptr && casilla->ocupado())
+                {
 
-    // Mover hacia abajo
-    for (int i = fil - 1; i >= 0; --i) 
-    {
-        Casilla* casilla = tablero->get_casilla(col, i);
-        if (casilla != nullptr && casilla->ocupado()) 
-	{
-            if (dynamic_cast<Pieza*>(casilla)->get_color_pieza() != color_pieza) 
-	    {
-                casilla->color_casilla = ROJO;
-                casilla->selecionada = true; // Puede capturar la pieza enemiga
+                    if (dynamic_cast<Pieza*>(casilla)->get_color_pieza() != color_pieza)
+                    {
+                        casilla->color_casilla = ROJO;
+                        casilla->selecionada = true; // Puede capturar la pieza enemiga
+                        retorno = true;
+                    }
+                    break; // Detenerse al encontrar una pieza
+                }
+                else {
+                    if (casilla != nullptr)
+                    {
+                        casilla->color_casilla = ROJO;
+                        casilla->selecionada = true; // Casilla vacía
+                        retorno = true;
+                    }
+                }
             }
-            break; // Detenerse al encontrar una pieza
-        }
-        else {
-            if (casilla != nullptr) {
-                casilla->color_casilla = ROJO;
-                casilla->selecionada = true; // Casilla vacía
-                retorno = true;
-            }
-        }
-    }
 
-    return retorno;
+            // Mover hacia la izquierda
+            for (int i = col - 1; i >= 0; --i)
+            {
+                Casilla* casilla = tablero->get_casilla(i, fil);
+                if (casilla != nullptr && casilla->ocupado())
+                {
+
+                    if (dynamic_cast<Pieza*>(casilla)->get_color_pieza() != color_pieza)
+                    {
+                        casilla->color_casilla = ROJO;
+                        casilla->selecionada = true; // Puede capturar la pieza enemiga
+                        retorno = true;
+                    }
+                    break; // Detenerse al encontrar una pieza
+                }
+                else {
+                    if (casilla != nullptr) {
+                        casilla->color_casilla = ROJO;
+                        casilla->selecionada = true; // Casilla vacía
+                        retorno = true;
+                    }
+                }
+            }
+
+            // Mover hacia arriba
+            for (int i = fil + 1; i < 8; ++i)
+            {
+
+                Casilla* casilla = tablero->get_casilla(col, i);
+                if (casilla != nullptr && casilla->ocupado())
+                {
+
+                    if (dynamic_cast<Pieza*>(casilla)->get_color_pieza() != color_pieza)
+                    {
+                        casilla->color_casilla = ROJO;
+                        casilla->selecionada = true; // Puede capturar la pieza enemiga
+                    }
+                    break; // Detenerse al encontrar una pieza
+                }
+                else {
+                    if (casilla != nullptr) {
+                        casilla->color_casilla = ROJO;
+                        casilla->selecionada = true; // Casilla vacía
+                        retorno = true;
+                    }
+                }
+            }
+
+            // Mover hacia abajo
+            for (int i = fil - 1; i >= 0; --i)
+            {
+                Casilla* casilla = tablero->get_casilla(col, i);
+                if (casilla != nullptr && casilla->ocupado())
+                {
+                    if (dynamic_cast<Pieza*>(casilla)->get_color_pieza() != color_pieza)
+                    {
+                        casilla->color_casilla = ROJO;
+                        casilla->selecionada = true; // Puede capturar la pieza enemiga
+                    }
+                    break; // Detenerse al encontrar una pieza
+                }
+                else {
+                    if (casilla != nullptr) {
+                        casilla->color_casilla = ROJO;
+                        casilla->selecionada = true; // Casilla vacía
+                        retorno = true;
+                    }
+                }
+            }
+
+            return retorno; 
+        
+        }
+     }
+ 
+
+        else if (color_pieza == NEGRO) {
+
+            if (tablero->contador % 2 != 0) {
+
+                retorno = false;
+            }
+
+            if (tablero->contador % 2 == 0) {
+
+                for (int i = col + 1; i < 8; ++i)
+                {
+                    Casilla* casilla = tablero->get_casilla(i, fil);
+                    if (casilla != nullptr && casilla->ocupado())
+                    {
+
+                        if (dynamic_cast<Pieza*>(casilla)->get_color_pieza() != color_pieza)
+                        {
+                            casilla->color_casilla = ROJO;
+                            casilla->selecionada = true; // Puede capturar la pieza enemiga
+                            retorno = true;
+                        }
+                        break; // Detenerse al encontrar una pieza
+                    }
+                    else {
+                        if (casilla != nullptr)
+                        {
+                            casilla->color_casilla = ROJO;
+                            casilla->selecionada = true; // Casilla vacía
+                            retorno = true;
+                        }
+                    }
+                }
+
+                // Mover hacia la izquierda
+                for (int i = col - 1; i >= 0; --i)
+                {
+                    Casilla* casilla = tablero->get_casilla(i, fil);
+                    if (casilla != nullptr && casilla->ocupado())
+                    {
+
+                        if (dynamic_cast<Pieza*>(casilla)->get_color_pieza() != color_pieza)
+                        {
+                            casilla->color_casilla = ROJO;
+                            casilla->selecionada = true; // Puede capturar la pieza enemiga
+                            retorno = true;
+                        }
+                        break; // Detenerse al encontrar una pieza
+                    }
+                    else {
+                        if (casilla != nullptr) {
+                            casilla->color_casilla = ROJO;
+                            casilla->selecionada = true; // Casilla vacía
+                            retorno = true;
+                        }
+                    }
+                }
+
+                // Mover hacia arriba
+                for (int i = fil + 1; i < 8; ++i)
+                {
+
+                    Casilla* casilla = tablero->get_casilla(col, i);
+                    if (casilla != nullptr && casilla->ocupado())
+                    {
+
+                        if (dynamic_cast<Pieza*>(casilla)->get_color_pieza() != color_pieza)
+                        {
+                            casilla->color_casilla = ROJO;
+                            casilla->selecionada = true; // Puede capturar la pieza enemiga
+                        }
+                        break; // Detenerse al encontrar una pieza
+                    }
+                    else {
+                        if (casilla != nullptr) {
+                            casilla->color_casilla = ROJO;
+                            casilla->selecionada = true; // Casilla vacía
+                            retorno = true;
+                        }
+                    }
+                }
+
+                // Mover hacia abajo
+                for (int i = fil - 1; i >= 0; --i)
+                {
+                    Casilla* casilla = tablero->get_casilla(col, i);
+                    if (casilla != nullptr && casilla->ocupado())
+                    {
+                        if (dynamic_cast<Pieza*>(casilla)->get_color_pieza() != color_pieza)
+                        {
+                            casilla->color_casilla = ROJO;
+                            casilla->selecionada = true; // Puede capturar la pieza enemiga
+                        }
+                        break; // Detenerse al encontrar una pieza
+                    }
+                    else {
+                        if (casilla != nullptr) {
+                            casilla->color_casilla = ROJO;
+                            casilla->selecionada = true; // Casilla vacía
+                            retorno = true;
+                        }
+                    }
+                }
+
+                return retorno;
+
+            }
+        }
+    
+
+   
 }
 
 
@@ -174,17 +302,32 @@ void Torre::mover(Tablero* tablero, int posx, int posy, int cvx, int cvy) {
     if (color_pieza == BLANCO) {
 
         tablero->asignar(posx, posy, new Torre(BLANCO));
+
+        if (posx != cvy || posy != cvx) {
+
+            tablero->contador++;
+
+
+        }
     }
 
     else if (color_pieza == NEGRO) {
 
         tablero->asignar(posx, posy, new Torre(NEGRO));
+        if (posx != cvy || posy != cvx) {
+
+            tablero->contador++;
+
+
+        }
     }
 
 
     if (posx != cvy || posy != cvx) {
 
         tablero->asignar(cvy, cvx, new CasillaVacia(BLANCO));
+
+
     }
 
 

@@ -72,10 +72,40 @@ void Reina::print(int col, int fil, double origenx, double origeny) {
 
 bool Reina::premove( Tablero* tablero, int col, int fil) {
 	bool retorno = false;
-	retorno = Alfil(color_pieza).premove(tablero, col, fil) &&
-	Torre(color_pieza).premove(tablero, col, fil);
+
+	if(color_pieza == BLANCO){
+
+		if (tablero->contador % 2 == 0) {
+
+			retorno = false;
+		}
+
+		else if(tablero->contador % 2 != 0){
+
+	retorno = Alfil(BLANCO).premove(tablero, col, fil) &&
+	Torre(BLANCO).premove(tablero, col, fil);
 	//La reina puede moverse como el alfil y el rey, pues llamo a las funciones premove de ambos y que se ejecuten
 	return retorno;
+	
+	}
+	}
+
+	else if (color_pieza == NEGRO) {
+
+		if (tablero->contador % 2 != 0) {
+
+			retorno = false;
+		}
+
+		else if (tablero->contador % 2 == 0) {
+
+			retorno = Alfil(NEGRO).premove(tablero, col, fil) &&
+				Torre(NEGRO).premove(tablero, col, fil);
+			//La reina puede moverse como el alfil y el rey, pues llamo a las funciones premove de ambos y que se ejecuten
+			return retorno;
+
+		}
+	}
 }
 
 
@@ -84,17 +114,33 @@ void Reina::mover(Tablero* tablero, int posx, int posy, int cvx, int cvy) {
 	if (color_pieza == BLANCO) {
 
 		tablero->asignar(posx, posy, new Reina(BLANCO));
+
+		if (posx != cvy || posy != cvx) {
+
+			tablero->contador++;
+
+
+		}
 	}
 
 	else if (color_pieza == NEGRO) {
 
 		tablero->asignar(posx, posy, new Reina(NEGRO));
+		if (posx != cvy || posy != cvx) {
+
+			tablero->contador++;
+
+
+		}
 	}
 
 
 	if (posx != cvy || posy != cvx) {
 
 		tablero->asignar(cvy, cvx, new CasillaVacia(BLANCO));
+
+
 	}
+
 
 }

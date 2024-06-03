@@ -74,7 +74,14 @@ bool Alfil::premove(Tablero* tablero, int columna, int fila) {
 	int col = columna;
 	int fil = fila;
 	bool retorno = false;
-	
+
+	if (color_pieza == BLANCO) {
+
+	if(tablero->contador%2  == 0){
+
+	retorno = false;
+	}
+	else if(tablero->contador%2 !=0){
 	Casilla* aux;
 	for (int auxcol = -1;auxcol <= 1; auxcol += 2) {    
 		for (int auxfil = -1; auxfil <= 1; auxfil += 2) {   //recorre las cuatro diagonales
@@ -98,27 +105,78 @@ bool Alfil::premove(Tablero* tablero, int columna, int fila) {
 		}
 	}
 	return retorno;
+	}
+	}
+
+	else if (color_pieza == NEGRO) {
+
+		if (tablero->contador % 2 != 0) {
+			retorno = false;
+			
+		}
+		else if (tablero->contador % 2 == 0) {
+			Casilla* aux;
+			for (int auxcol = -1;auxcol <= 1; auxcol += 2) {
+				for (int auxfil = -1; auxfil <= 1; auxfil += 2) {   //recorre las cuatro diagonales
+					col = columna; //volver a la casilla de inicio
+					fil = fila;
+					aux = tablero->get_casilla(col + auxcol, fil + auxfil); //Diagonal 
+					while (aux != nullptr && !aux->ocupado()) {
+						aux->color_casilla = ROJO;
+						retorno = true;
+						aux->selecionada = true;
+						col += auxcol;
+						fil += auxfil;
+						aux = tablero->get_casilla(col + auxcol, fil + auxfil);
+					}
+					//Prueba si la ultima pieza ocupada es de su color o del contrario
+					if (aux != nullptr && aux->ocupado() && dynamic_cast<Pieza*>(aux)->get_color_pieza() != color_pieza) {
+						aux->color_casilla = ROJO;
+						aux->selecionada = true;
+						retorno = true;
+					}
+				}
+			}
+			return retorno;
+		}
+
+
+	}
+
+
 }
 
  void Alfil:: mover(Tablero* tablero, int posx, int posy, int cvx, int cvy) {
 
-	if(color_pieza == BLANCO){
+	if(color_pieza == BLANCO ){
 	 
 	 tablero->asignar(posx, posy, new Alfil(BLANCO));
+
+	 if (posx != cvy || posy != cvx) {
+
+		 tablero->contador++;
+
+
+	 }
 	}
 
-	else if (color_pieza ==NEGRO) {
+	else if (color_pieza ==NEGRO ) {
 
 		tablero->asignar(posx, posy, new Alfil(NEGRO));
+		if (posx != cvy || posy != cvx) {
+
+			tablero->contador++;
+
+
+		}
 	}
 
 
 	 if (posx!= cvy || posy != cvx) {
 
 		tablero->asignar(cvy, cvx, new CasillaVacia(BLANCO));
+
+		
 	 }
-	 
-
-
-
+	
 }

@@ -26,6 +26,8 @@ class Tablero
 public:
 	std::vector<std::vector< Casilla*>> cuadricula;
 
+	int contador = 0;
+
 	Rey* get_rey(Color color);
 	Casilla*& get_casilla(int col, int fil);
 

@@ -2,8 +2,6 @@
 #include <iostream>
 
 
-int coordalfilx = 2, coordalfily = 1;
-
 void Tablero::size(int columnas, int filas) {
 
 	cuadricula.resize(filas);
@@ -424,8 +422,6 @@ void Tablero::clicar(int x, int y, int& estado, Juego juego, int& coordenadas_x,
 					if ((get_casilla(coordenadas_x, coordenadas_y)->color_casilla == ROJO) ) {
 
 						
-						coordalfilx = coordenadas_x;
-						coordalfily = coordenadas_y;
 						std::cout << "HOLA" << std::endl;
 						std::cout << c << "," << u << std::endl;
 						std::cout << prex << "," << prey << std::endl;
@@ -439,7 +435,7 @@ void Tablero::clicar(int x, int y, int& estado, Juego juego, int& coordenadas_x,
 						
 						cuadricula[prey-1][prex]->mover(this,c,u,prey,prex);  // coordenadas_x y coordenadas_y deben ser coordenadas que sean iguales al click escepto cuando se clica algo rojo // prex y prey deben ser coordenadas que cambian cuando se clica algo rojo y no cambain 
 						
-
+						
 
 					}
 					if (juego == SC)
