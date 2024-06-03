@@ -15,4 +15,6 @@ int main()
        std::cout << "AHOGADO";
    if (tablero.mate(BLANCO))
        std::cout << "MATE";
+
+   tablero.jugar();
 }

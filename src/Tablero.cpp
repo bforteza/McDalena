@@ -1,5 +1,5 @@
 #include "Tablero.h"
-
+#include <iostream>
 Tablero::Tablero(Juego juego){
 	if (juego == SC) {
 		tam.fil = 6;
@@ -203,6 +203,25 @@ VectorCoordenadas Tablero::premove(const Coordenadas& e)
 		return premoves;
 	}
 	return VectorCoordenadas();
+}
+
+void Tablero::jugar()
+{
+	Coordenadas entrada1, entrada2;
+	bool play = true;
+	print();
+	while (play) {
+		borrar_seleccion();
+		std::cout << "Introduce pieza origen \n";
+		std::cin >> entrada1.col >> entrada1.fil;
+		entrada1.col -= '0';
+		entrada1.fil -= '0';
+		seleccionar(premove(entrada1));
+		print();
+		std::cout << "Introduce pieza destino \n";
+		std::cin >> entrada1.col >> entrada1.fil;
+
+	}
 }
 
 void Tablero::asignar(Coordenadas e, Pieza* entrada) {

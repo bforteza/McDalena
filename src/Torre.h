@@ -3,6 +3,8 @@
 class Torre :
     public Pieza
 {
+    bool move = false;
+    friend class Rey;
 public:
     using Pieza::Pieza;
     void print();

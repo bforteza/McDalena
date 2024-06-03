@@ -43,4 +43,7 @@ public:
 	}
 	
 	bool operator==(const VectorCoordenadas& other) const;
+
+	VectorCoordenadas(const std::vector<Coordenadas>& _v)
+		: v(_v) {};
 };

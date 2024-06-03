@@ -37,7 +37,7 @@ public:
 	void borrar_seleccion();
 	
 	VectorCoordenadas premove(const Coordenadas& e);
-
+	void jugar();
 	//inicializadores
 	Tablero(Juego juego);
 	~Tablero(){

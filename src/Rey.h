@@ -3,6 +3,7 @@
 class Rey :
     public Pieza
 {
+    bool move = false;
 public:
     using Pieza::Pieza;
     void print();

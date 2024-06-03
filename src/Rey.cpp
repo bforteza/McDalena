@@ -28,8 +28,14 @@ VectorCoordenadas Rey::premove(const Tablero* const tablero, const Coordenadas& 
 			}
 		}
 	}
-
-
-	return retorno;
 	
+	if (!move) {
+		Torre* Tizq = dynamic_cast<Torre*>(tablero->get_pieza(posicion + Coordenadas(-2, 0)));
+		Torre* Tder = dynamic_cast<Torre*>(tablero->get_pieza(posicion + Coordenadas(+2, 0)));
+		if ((Tizq != nullptr && !Tizq->move))
+			retorno += posicion + Coordenadas(-2, 0);
+		if ((Tder != nullptr && !Tder->move))
+			retorno += posicion + Coordenadas(+2, 0);
+	}
+	return retorno;	
 }
