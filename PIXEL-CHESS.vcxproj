@@ -144,6 +144,7 @@
     <ClInclude Include="src\Rey.h" />
     <ClInclude Include="src\Tablero.h" />
     <ClInclude Include="src\Torre.h" />
+    <ClInclude Include="src\Ventana.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Ajedrez.cpp" />
@@ -157,6 +158,7 @@
     <ClCompile Include="src\Rey.cpp" />
     <ClCompile Include="src\Tablero.cpp" />
     <ClCompile Include="src\Torre.cpp" />
+    <ClCompile Include="src\Ventana.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
