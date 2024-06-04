@@ -10,7 +10,7 @@
 
 
 Tablero tablero(UP);
-Ventana prueba(800, 400, "bin/imagenes/Fondo.png");
+Ventana prueba(800, 800, "bin/imagenes/Fondo.png");
 void OnDraw(void);
 void OnTimer(int value);
 void OnKeyboardDown(unsigned char key, int x, int y);
@@ -25,7 +25,7 @@ int main(int argc, char* argv[])
    //Inicializar el gestor de ventanas FREEGLUT
 //y crear la ventana
 	glutInit(&argc, argv);
-	glutInitWindowSize(800, 400);
+	glutInitWindowSize(800, 800);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutCreateWindow("MiJuego");
 	//habilitar luces y definir perspectiva
@@ -34,10 +34,9 @@ int main(int argc, char* argv[])
 	gluPerspective(90.0, 800/800.0f, 400, 500);
 	glEnable(0x0B57);
 	glMatrixMode(GL_PROJECTION);
-	//gluPerspective(90.0, 800 /800.0f, 400, 500);
-	
 
-	//Registrar los callbacks
+
+	
 	glutDisplayFunc(OnDraw);
 	glutTimerFunc(25, OnTimer, 0);
 	glutKeyboardFunc(OnKeyboardDown);
@@ -53,8 +52,8 @@ void OnDraw(void)
 {
 	
 	
-	prueba.dibuja();
-	//tablero.dibuja();
+	//prueba.dibuja();
+	tablero.dibuja();
 	glutSwapBuffers();
 }
 

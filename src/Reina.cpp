@@ -1,18 +1,5 @@
 #include "Reina.h"
 
-void Reina::print( const float x, const float y, const float lado) {
-
-	if (color == NEGRO)
-	{
-		sprite_pieza = new Sprite("bin/imagenes/ReinaN.png", x, y, lado , lado );
-
-	}
-	if (color == BLANCO)
-	{
-		sprite_pieza = new Sprite("bin/imagenes/ReinaN.png", x, y, lado , lado);
-	}
-	sprite_pieza->draw();
-}
 
 VectorCoordenadas Reina::premove(Tablero* tablero, const Coordenadas& posicion)
 {

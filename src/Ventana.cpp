@@ -2,15 +2,15 @@
 
 void Ventana::dibuja()
 {
-	//gluPerspective(90.0, 800 / 800.0f, 400, 500);
-	gluPerspective(90.0, Ancho / Alto, (Ancho/2) * 0.8, (Ancho/2) * 1.2);
+
+	gluPerspective(90.0, Ancho / Alto, (Alto/2) * 0.8, (Alto/2) * 1.2);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	//Para definir el punto de vista
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	gluLookAt(0, 0, Ancho/2, // posicion del ojo
-		0.0, 0, 0.0, // hacia que punto mira (0,0,0)
-		0.0, 1.0, 0.0); // definimos hacia arriba (eje Y) 
+	gluLookAt(0, 0, Alto/2, 
+		0.0, 0, 0.0,
+		0.0, 1.0, 0.0); 
 
 
 
@@ -19,7 +19,7 @@ void Ventana::dibuja()
 	
 	glEnable(GL_TEXTURE_2D);
 
-	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture(texturePath.c_str()   ).id);
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture(texturePath.c_str()).id);
 	
 
 	glBegin(GL_POLYGON);
@@ -38,6 +38,9 @@ void Ventana::dibuja()
 
 	glPopMatrix();
 
+	for (auto& iter : botones) {
+		iter.dibuja();
+	}
 
 }
 
@@ -45,4 +48,5 @@ void Ventana::dibuja()
 Ventana::Ventana(const GLdouble& Ancho, const GLdouble& Alto,std::string Path)
 	: Ancho(Ancho), Alto(Alto), texturePath(Path)
 {
+	botones.push_back(Boton(100, 100, 0, 0, "bin/imagenes/Mute.png"));
 }

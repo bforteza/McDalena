@@ -24,7 +24,11 @@ public:
 	//metodos otención de datos
 	virtual Color get_color() { return color; };
 
-	virtual void print(const float x,const float y, const float lado) {};
+	virtual void print(const float x,const float y, const float lado) {
+		glTranslated(x, y, 0);
+		sprite_pieza->draw();
+		glTranslated(-x, -y, 0);
+	};
 
 	virtual VectorCoordenadas premove(Tablero* tablero, const Coordenadas& posicion) {
 		VectorCoordenadas res;

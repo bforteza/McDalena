@@ -1,20 +1,7 @@
 #include "Caballo.h"
 #include "Tablero.h"
 
-void Caballo::print( const float x, const float y, const float lado) {
 
-	if (color == NEGRO)
-	{
-		sprite_pieza = new Sprite("bin/imagenes/CaballoN.png", x, y, lado , lado);
-
-	}
-	if (color == BLANCO)
-	{
-		sprite_pieza = new Sprite("bin/imagenes/CaballoB.png", x, y, lado , lado);
-
-	}
-	sprite_pieza->draw();
-}
 
 VectorCoordenadas Caballo::premove(Tablero* tablero, const Coordenadas& posicion)
 {

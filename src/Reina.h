@@ -4,8 +4,16 @@ class Reina :
     public Pieza
 {
 public:
-    using Pieza::Pieza;
-    virtual void print( const float x, const float y, const float lado) ;
+    
+
     virtual VectorCoordenadas premove(Tablero* tablero, const Coordenadas& posicion);
+
+    Reina(Color color) : Pieza::Pieza(color) {
+        if (color == BLANCO)
+            sprite_pieza = new Sprite("bin/imagenes/ReinaB.png", 0, 0, 100, 100);
+        if (color == NEGRO)
+            sprite_pieza = new Sprite("bin/imagenes/ReinaN.png", 0, 0, 100, 100);
+    };
+        
 };
 
