@@ -65,3 +65,12 @@ void Ventana::detecta(GLdouble x, GLdouble y) {
 		iter.detectar(tx, ty);
 	}
 }
+
+void Ventana::click(GLdouble x, GLdouble y) {
+	GLdouble tx = x - Ancho / 2;
+	GLdouble ty = Alto / 2 - y;
+
+	for (auto& iter : botones) {
+		iter.click(tx, ty);
+	}
+}

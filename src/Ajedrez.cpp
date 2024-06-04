@@ -11,7 +11,7 @@
 
 
 Tablero tablero(UP);
-Ventana prueba(800, 800, "bin/imagenes/Fondo.png");
+Ventana prueba(600, 600, "bin/imagenes/Fondo.png");
 
 
 void OnDraw(void);
@@ -21,14 +21,18 @@ void OnMouseClick(int boton, int state, int x, int y);
 void MouseMove(int x, int y);
 int x_raton, y_raton;
 bool click;
+
+void xxdd() {
+	std::cout << "xd";
+}
 int main(int argc, char* argv[])
 {
 
-	prueba.add_boton(Boton(100, 100, -350, 350, "bin/imagenes/Volver.png", "bin/imagenes/PreVolver.png"));
+	prueba.add_boton(Boton(100, 100, -250, 250, "bin/imagenes/Volver.png", "bin/imagenes/PreVolver.png",xxdd));
    //Inicializar el gestor de ventanas FREEGLUT
 //y crear la ventana
 	glutInit(&argc, argv);
-	glutInitWindowSize(800, 800);
+	glutInitWindowSize(600, 600);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutCreateWindow("MiJuego");
 	//habilitar luces y definir perspectiva
@@ -63,14 +67,12 @@ void OnDraw(void)
 void OnTimer(int value)
 {
 
-	//poner aqui el código de animacion
-
-
-	//no borrar estas lineas
+	
 	
 	prueba.detecta(x_raton, y_raton);
 	if (click) {
-		tablero.clicar(x_raton, y_raton);
+		prueba.click(x_raton, y_raton);
+		//tablero.clicar(x_raton, y_raton);
 	}
 
 	glutTimerFunc(25, OnTimer, 0);

@@ -15,7 +15,7 @@ public:
 
 	void dibuja() const;
 	void detecta(GLdouble x, GLdouble y);
-	void click();
+	void click(GLdouble x, GLdouble y);
 	Ventana(const GLdouble& Ancho, const GLdouble& Alto, std::string Path);
 	void add_boton(Boton entrada);
 	//ejemplo
