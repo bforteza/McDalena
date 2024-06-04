@@ -7,7 +7,7 @@ class Peon :
     public Pieza
 {
 public:
-    
+   
    
     virtual VectorCoordenadas premove(Tablero* tablero, const Coordenadas& posicion);
     Peon(Color color) : Pieza::Pieza(color) {
