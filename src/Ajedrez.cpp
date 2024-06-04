@@ -6,11 +6,14 @@
 #include "Tablero.h"
 #include <vector>
 #include "Ventana.h"
+#include "Boton.h"
 #pragma once
 
 
 Tablero tablero(UP);
 Ventana prueba(800, 800, "bin/imagenes/Fondo.png");
+
+
 void OnDraw(void);
 void OnTimer(int value);
 void OnKeyboardDown(unsigned char key, int x, int y);
@@ -21,7 +24,7 @@ bool click;
 int main(int argc, char* argv[])
 {
 
-	
+	prueba.add_boton(Boton(100, 100, -350, 350, "bin/imagenes/Volver.png", "bin/imagenes/PreVolver.png"));
    //Inicializar el gestor de ventanas FREEGLUT
 //y crear la ventana
 	glutInit(&argc, argv);
@@ -52,8 +55,8 @@ void OnDraw(void)
 {
 	
 	
-	//prueba.dibuja();
-	tablero.dibuja();
+	prueba.dibuja();
+	//tablero.dibuja();
 	glutSwapBuffers();
 }
 
@@ -65,7 +68,7 @@ void OnTimer(int value)
 
 	//no borrar estas lineas
 	
-	tablero.detectar(x_raton, y_raton);
+	prueba.detecta(x_raton, y_raton);
 	if (click) {
 		tablero.clicar(x_raton, y_raton);
 	}
@@ -89,6 +92,7 @@ void OnMouseClick(int boton, int state, int x, int y)
 	if (boton == GLUT_LEFT && state == GLUT_DOWN)
 	{
 		click = true;
+		std::cout << x << " " << y << "\n";
 	}
 	if (boton == GLUT_LEFT && state == GLUT_UP)
 	{
@@ -99,4 +103,5 @@ void MouseMove(int x, int y)
 {
 	x_raton = x;
 	y_raton = y;
+	
 }

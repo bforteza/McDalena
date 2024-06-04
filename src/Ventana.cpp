@@ -1,6 +1,6 @@
 #include "Ventana.h"
 
-void Ventana::dibuja()
+void Ventana::dibuja() const
 {
 
 	gluPerspective(90.0, Ancho / Alto, (Alto/2) * 0.8, (Alto/2) * 1.2);
@@ -38,7 +38,7 @@ void Ventana::dibuja()
 
 	glPopMatrix();
 
-	for (auto& iter : botones) {
+	for (auto iter : botones) {
 		iter.dibuja();
 	}
 
@@ -48,5 +48,20 @@ void Ventana::dibuja()
 Ventana::Ventana(const GLdouble& Ancho, const GLdouble& Alto,std::string Path)
 	: Ancho(Ancho), Alto(Alto), texturePath(Path)
 {
-	botones.push_back(Boton(100, 100, 0, 0, "bin/imagenes/Mute.png"));
+	
+}
+
+void Ventana::add_boton(Boton entrada)
+{
+	botones.push_back(entrada);
+}
+
+
+void Ventana::detecta(GLdouble x, GLdouble y) {
+	GLdouble tx = x - Ancho / 2;
+	GLdouble ty = Alto / 2 - y;
+
+	for (auto& iter : botones) {
+		iter.detectar(tx, ty);
+	}
 }

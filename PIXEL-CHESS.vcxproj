@@ -148,9 +148,9 @@
     <ClInclude Include="src\Ventana.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Boton.cpp" />
     <ClCompile Include="src\Ajedrez.cpp" />
     <ClCompile Include="src\Alfil.cpp" />
+    <ClCompile Include="src\Boton.cpp" />
     <ClCompile Include="src\Caballo.cpp" />
     <ClCompile Include="src\CasillaVacia.cpp" />
     <ClCompile Include="src\Coordenadas.cpp" />
