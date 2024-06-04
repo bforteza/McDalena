@@ -1,48 +1,94 @@
 #include "Tablero.h"
-#include <iostream>
-Tablero::Tablero(Juego juego){
+
+Tablero::Tablero(Juego juego) {
 	if (juego == SC) {
 		tam.fil = 6;
 		tam.col = 6;
+		
 	}
-
-	cuadricula.resize( tam.fil * tam.col );
-
-	for (auto& iter : cuadricula) {
-		iter = nullptr;
+	if (juego == UP) {
+		tam.fil = 5;
+		tam.col = 4;
+		origenx = -300;
+		origeny = -350;
 	}
+	finalx = origenx + tam.fil * lado;
+	finaly = origeny + tam.col * lado;
 
+	cuadricula.resize(tam.fil * tam.col);
+	base.resize(tam.fil * tam.col);
+	Color color = BLANCO;
+	int x=1;
+	for (auto& iter : base) {
+		iter = new CasillaVacia(color);
+		
+		x++;
+		if (x%tam.col != 1) {
+			color = !color;
+		}
+	}
+	
 	if (juego == SC) {
 		for (int c = 1; c <= tam.col; c++) {
 			asignar({ c , 2 }, new Peon(BLANCO));
-			//asignar({ c , 5 }, new Peon(NEGRO));
+			asignar({ c , 5 }, new Peon(NEGRO));
 		}
-		asignar({ C,5 }, new Reina(BLANCO));
-		asignar({ A,3 }, new Reina(BLANCO));
-		asignar({ A,1 }, new Rey(BLANCO));
-		asignar({ A,6 }, new Rey(NEGRO));
-	}
+		asignar({ A,1 }, new Reina(BLANCO));
+		asignar({ E,6 }, new Reina(NEGRO));
+		
+		asignar({ B,1 }, new Rey(BLANCO));
+		asignar({ D,6 }, new Rey(NEGRO));
+		
+		asignar({ C,1 }, new Alfil(BLANCO));
+		asignar({ C,6 }, new Alfil(NEGRO));
 
+		asignar({ D,1 }, new Caballo(BLANCO));
+		asignar({ B,6 }, new Caballo(NEGRO));
+
+		asignar({ E,1 }, new Torre(BLANCO));
+		asignar({ A,6 }, new Torre(NEGRO));
+
+		
+	}
+	if (juego == UP) {
+
+		asignar({ A , 2 }, new Peon(BLANCO));
+		asignar({ D , 4 }, new Peon(NEGRO));
+
+		asignar({ B,3 }, new Rey(BLANCO));
+		asignar({ A,5 }, new Rey(NEGRO));
+
+		asignar({ B,1 }, new Alfil(BLANCO));
+		asignar({ C,5 }, new Alfil(NEGRO));
+
+		asignar({ C,1 }, new Caballo(BLANCO));
+		asignar({ B,5 }, new Caballo(NEGRO));
+
+		asignar({ A,1 }, new Torre(BLANCO));
+		asignar({ D,5 }, new Torre(NEGRO));
+	}
 	buscar_piezas();
 }
 
 Pieza*& Tablero::get_pieza(const Coordenadas entrada) {
-	
-	if(entrada<tam)
-	return cuadricula[entrada.col - 1 + (entrada.fil - 1) * (tam.col)];
+
+	if (entrada < tam)
+		return cuadricula[entrada.col - 1 + (entrada.fil - 1) * (tam.col)];
 
 	Pieza* retorno = nullptr;
 	return retorno;
 }
 
-Pieza* Tablero::get_pieza(const Coordenadas entrada) const
+CasillaVacia*& Tablero::get_CasillaVacia(const Coordenadas entrada)
 {
 	if (entrada < tam)
-		return cuadricula[entrada.col - 1 + (entrada.fil - 1) * (tam.col)];
-	return nullptr;
+		return base[entrada.col - 1 + (entrada.fil - 1) * (tam.col)];
+
+	CasillaVacia* retorno = nullptr;
+	return retorno;
 }
 
-Coordenadas Tablero::rey(Color color) const
+Coordenadas Tablero::rey(const Color color)
 {
 	if (color == BLANCO) {
 		for (auto& iter : p_blancas.v) {
@@ -61,57 +107,66 @@ Coordenadas Tablero::rey(Color color) const
 	return Coordenadas();
 }
 
-void Tablero::print() {
+void Tablero::dibuja() {
 
-	for (int f = tam.fil; f != 0; f--) {
-		std::cout << f;
-		for (int c = 1; c <= tam.col; c++) {
-			bool punto = false;
-			for (auto& sel : seleccion.v) {
+	gluPerspective(90.0, 800 / 800.0f, 400, 500);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	//Para definir el punto de vista
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	gluLookAt(0, 0, 400, // posicion del ojo
+		    0.0, 0, 0.0, // hacia que punto mira (0,0,0)
+		    0.0, 1.0, 0.0); // definimos hacia arriba (eje Y) 
 
-				if(Coordenadas(c,f) == sel){
-					std::cout << ".";
-					punto = true;
-				}		
-				
-			}
-			if(punto == false)
-				std::cout << " ";
 
-			if (get_pieza({ c,f }) != nullptr)
-				get_pieza({ c,f })->print();
-			else
-				std::cout << " ";
-			
-		}
-		std::cout << "\n";
-	}
-	std::cout << " ";
-	char letra = 'A';
-	for (int c = 1; c <= tam.col; c++) {
 	
-		std::cout << " " << letra;
-		letra++;
-	}	
-	std::cout << "\n";
-}
 
-bool Tablero::mate(Color color)
-{
-	if (jaque(color) && ahogado(!color))
-		return true;
-	return false;
-}
+	glDisable(GL_LIGHTING);
+	//dibujo del fondo
+	glEnable(GL_TEXTURE_2D);
+	//Habilitamos la carga de texturas 2D
+	glBindTexture(GL_TEXTURE_2D,
+		//Cargamos el sprite de fondo
+		ETSIDI::getTexture("bin/imagenes/Fondo.png").id);
+	
+	glBegin(GL_POLYGON);
+	//glTranslated(-450, -450, 0);
+	//Generamos un polígono que cuadre en la ventana
+	GLfloat a = 400;
+	glTexCoord2d(0, 1); glVertex3d(-a, a, 0);
+	glTexCoord2d(1, 1); glVertex3d(a, a, 0);
+	glTexCoord2d(1, 0); glVertex3d(a, -a, 0);
+	glTexCoord2d(0, 0); glVertex3d(-a, -a, 0 );
+	glEnd();
+	//Habilitamos la luz para una mejor vista
+	
+	glDisable(GL_TEXTURE_2D);
+	glEnable(GL_LIGHTING);
+	
+	glPushMatrix();
+	glTranslated(origenx + lado/2, origeny + lado/2, 0);
+	for (auto& iter : seleccion.v) {
+		get_CasillaVacia(iter)->set_rojo();
+	}
+	GLdouble auxx, auxy;
+	for (int f = 1; f <= tam.fil; f++) {
+		for (int c = 1; c <= tam.col; c++) {
+			
+			auxx =  (c - 1) * lado;
+			auxy =  (f - 1) * lado;
+			
+			
+			get_CasillaVacia({ c,f })->print(auxx, auxy, lado);
+			if (get_pieza({ c,f }) != nullptr)
+				get_pieza({ c,f })->print(auxx, auxy, lado);
+			
 
-bool Tablero::ahogado(Color color)
-{
-	VectorCoordenadas & piezas = (color == BLANCO) ? p_blancas : p_negras;
-	for (auto iter : piezas.v) {
-		if (!premove(iter).v.empty()) {
-			return false;
 		}
 	}
-	return true;
+
+	glPopMatrix();
+
+	
 }
 
 bool Tablero::jaque(Color color)
@@ -153,6 +208,8 @@ bool Tablero::fmove(const Coordenadas& origen, const Coordenadas& destino)
 		case NEGRO:
 			p_negras.eliminar(destino);
 			break;
+		default:
+			break;
 		}
 	}
 	switch (porigen->get_color())
@@ -162,66 +219,54 @@ bool Tablero::fmove(const Coordenadas& origen, const Coordenadas& destino)
 		p_blancas += destino;
 		break;
 	case NEGRO:
-		p_negras += destino;
 		p_negras.eliminar(origen);
-		
+		p_negras += destino;
+		break;
+	default:
 		break;
 	}
 	pdestino = porigen;
 	porigen = nullptr;
-	
+	int i = 0;
 
 	return muerte;
-	
+
 }
 
-VectorCoordenadas Tablero::premove(const Coordenadas& e) 
+VectorCoordenadas Tablero::premove(const Coordenadas& e)
 {
-
 	Pieza* aux = get_pieza(e);
 	if (aux != nullptr) {
-
 		bool muerte = false;
 		VectorCoordenadas premoves;
-		Color c_pieza = aux->get_color();
 
+		Color c_pieza = aux->get_color();
+		
 		premoves += aux->premove(this, e);
-		for (auto iter : vector(premoves.v)) {
-				
+
+		for (auto& iter : vector<Coordenadas>(premoves.v) ) {
+
 			muerte = fmove(e, iter);
 			if (jaque(!c_pieza))
 				premoves.eliminar(iter);
-
 			fmove(iter, e);
 			if (muerte) {
-
 				get_pieza(iter) = muertas.back();
 				muertas.pop_back();
+				((c_pieza==BLANCO) ? p_negras : p_blancas)  += iter;
 			}
+
 		}
-			 
+
 		return premoves;
+
 	}
 	return VectorCoordenadas();
 }
 
-void Tablero::jugar()
+void Tablero::move(const Coordenadas& e)
 {
-	Coordenadas entrada1, entrada2;
-	bool play = true;
-	print();
-	while (play) {
-		borrar_seleccion();
-		std::cout << "Introduce pieza origen \n";
-		std::cin >> entrada1.col >> entrada1.fil;
-		entrada1.col -= '0';
-		entrada1.fil -= '0';
-		seleccionar(premove(entrada1));
-		print();
-		std::cout << "Introduce pieza destino \n";
-		std::cin >> entrada1.col >> entrada1.fil;
-
-	}
+	fmove(Piezaamover, e);
 }
 
 void Tablero::asignar(Coordenadas e, Pieza* entrada) {
@@ -246,4 +291,58 @@ void Tablero::buscar_piezas()
 	}
 }
 
+void Tablero::detectar(int x, int y)
+{
+	int auxx, auxy;
+	auxx = x - 400;
+	auxy = 400 - y;
+	
+	Color color = NEGRO;
 
+
+	auxx = ((auxx -  origenx) / (lado)) + 1;
+	auxy = ((auxy -  origeny) / (lado)) + 1;
+
+
+	if (Coordenadas(auxx, auxy) < tam)
+		get_CasillaVacia({ auxx,auxy })->set_verde();
+
+}
+
+void Tablero::clicar(int x, int y)
+{
+
+	int auxx, auxy;
+	auxx = x - 400;
+	auxy = 400 - y;
+
+	
+	auxx = ((auxx - origenx) / (lado)) + 1;
+	auxy = ((auxy - origeny) / (lado)) + 1;
+	Coordenadas aux(auxx, auxy);
+
+
+	if (((turno == BLANCO) ? p_blancas : p_negras) << aux && Piezaamover.col == 0) {
+		Piezaamover = aux;
+		seleccionar(premove(aux));
+	} else if (Piezaamover.col && seleccion << aux) {
+		move(aux);
+		borrar_seleccion();
+		Piezaamover.col = 0;
+		turno = !turno;
+
+	} else if (Piezaamover.col && !(seleccion << aux) && !(aux == Piezaamover)) {
+	
+		borrar_seleccion();
+		Piezaamover.col = 0;
+
+	}
+
+}
+
+Pieza* Tablero::get_pieza(const Coordenadas entrada) const
+{
+	if (entrada < tam)
+		return cuadricula[entrada.col - 1 + (entrada.fil - 1) * (tam.col)];
+	return nullptr;
+}

@@ -7,7 +7,7 @@ Color operator !(Color color) {
 }
 
 
-VectorCoordenadas Pieza::premove_dir(Coordenadas(&dir)[4], const Tablero* const tablero, const Coordenadas& posicion) {
+VectorCoordenadas Pieza::premove_dir(Coordenadas(&dir)[4], Tablero* tablero, const Coordenadas& posicion) {
 
 	VectorCoordenadas retorno{};
 
@@ -27,8 +27,7 @@ VectorCoordenadas Pieza::premove_dir(Coordenadas(&dir)[4], const Tablero* const 
 			retorno += aux;
 		}
 	}
-	
+
 	return retorno;
 }
-
 

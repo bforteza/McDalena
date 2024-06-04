@@ -1,11 +1,22 @@
 #include "Rey.h"
 #include "Tablero.h"
-void Rey::print() {
+void Rey::print( const float x, const float y, const float lado) {
 
-	std::cout << ((color == NEGRO) ? "K" : "k");
+
+		if (color == NEGRO)
+		{
+			sprite_pieza = new Sprite("bin/imagenes/ReyN.png", x, y, lado , lado);
+
+		}
+		if (color == BLANCO)
+		{
+			sprite_pieza = new Sprite("bin/imagenes/ReyB.png", x, y, lado , lado);
+
+		} 
+	sprite_pieza->draw();
 }
 
-VectorCoordenadas Rey::premove(const Tablero* const tablero, const Coordenadas& posicion)
+VectorCoordenadas Rey::premove(Tablero* tablero, const Coordenadas& posicion)
 {
 	VectorCoordenadas retorno;
 	Coordenadas dir(posicion);
@@ -15,11 +26,11 @@ VectorCoordenadas Rey::premove(const Tablero* const tablero, const Coordenadas& 
 		for (int j = -1; j <= 1; j++) {
 
 			dir = posicion;
-			dir += Coordenadas{i, j};
+			dir += Coordenadas{ i, j };
 
 			if (dir < tam) {
 				aux = tablero->get_pieza(dir);
-				if(aux == nullptr)  {
+				if (aux == nullptr) {
 					retorno += dir;
 				}
 				else if (aux->get_color() != color) {
@@ -28,14 +39,15 @@ VectorCoordenadas Rey::premove(const Tablero* const tablero, const Coordenadas& 
 			}
 		}
 	}
-	
 	if (!move) {
-		Torre* Tizq = dynamic_cast<Torre*>(tablero->get_pieza(posicion + Coordenadas(-2, 0)));
-		Torre* Tder = dynamic_cast<Torre*>(tablero->get_pieza(posicion + Coordenadas(+2, 0)));
+		Torre* Tizq = dynamic_cast<Torre*>(tablero->get_pieza(posicion + Coordenadas(-3, 0)));
+		Torre* Tder = dynamic_cast<Torre*>(tablero->get_pieza(posicion + Coordenadas(+3, 0)));
 		if ((Tizq != nullptr && !Tizq->move))
 			retorno += posicion + Coordenadas(-2, 0);
 		if ((Tder != nullptr && !Tder->move))
 			retorno += posicion + Coordenadas(+2, 0);
 	}
-	return retorno;	
+
+	return retorno;
+
 }

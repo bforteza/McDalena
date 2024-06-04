@@ -1,22 +1,39 @@
 #include "Caballo.h"
 #include "Tablero.h"
-void Caballo::print() {
 
-	std::cout << ((color == NEGRO) ? "N" : "n");
+void Caballo::print( const float x, const float y, const float lado) {
+
+	if (color == NEGRO)
+	{
+		sprite_pieza = new Sprite("bin/imagenes/CaballoN.png", x, y, lado , lado);
+
+	}
+	if (color == BLANCO)
+	{
+		sprite_pieza = new Sprite("bin/imagenes/CaballoB.png", x, y, lado , lado);
+
+	}
+	sprite_pieza->draw();
 }
 
-VectorCoordenadas Caballo::premove(const Tablero* const tablero, const Coordenadas& posicion)
+VectorCoordenadas Caballo::premove(Tablero* tablero, const Coordenadas& posicion)
 {
-	VectorCoordenadas retorno({{1,2},{2,1},{-1,-2},{-1,-2},{1,-2},{-2,1},{-1,2},{2,-1}});
+	VectorCoordenadas direcciones({ {1,2},{2,1},{-1,-2},{-1,-2},{1,-2},{-2,1},{-1,2},{2,-1} });
 	Coordenadas tam = tablero->get_tam();
-	for (auto& iter : retorno.v) {
+	VectorCoordenadas retorno;
+	for (auto& iter : direcciones.v) {
 		iter += posicion;
 	}
-	for (auto iter : std::vector(retorno.v)) {
-		if (!((iter + posicion) < tam) || tablero->get_pieza(iter)->get_color() == color)
-			retorno.eliminar(iter);
+	for (auto iter : std::vector<Coordenadas>(direcciones.v)) {
+		if ((iter < tam) && tablero->get_pieza(iter) == nullptr)
+			retorno += iter;
+		else if((iter < tam) && tablero->get_pieza(iter)->get_color() != color)
+			retorno += iter;
 	}
 
 	return retorno;
 }
+
+
+
 

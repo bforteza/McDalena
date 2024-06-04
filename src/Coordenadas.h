@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include <memory>
+
 
 class Coordenadas {
 public:
@@ -34,14 +34,14 @@ public:
 
 	void clear(); //vacia el vector
 
-	bool operator<<(Coordenadas& e); //comprueba que las coordenadas formen parte de este vector
+	bool operator<<(const Coordenadas& e); //comprueba que las coordenadas formen parte de este vector
 
 	VectorCoordenadas() = default;
 
 	~VectorCoordenadas() {
 		v.clear();
 	}
-	
+
 	bool operator==(const VectorCoordenadas& other) const;
 
 	VectorCoordenadas(const std::vector<Coordenadas>& _v)

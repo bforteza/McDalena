@@ -5,7 +5,7 @@ class Alfil :
 {
 public:
     using Pieza::Pieza;
-    void print();
-    virtual VectorCoordenadas premove(const Tablero* const tablero, const Coordenadas& posicion);
+   virtual void print( const float x, const float y, const float lado) ;
+    virtual VectorCoordenadas premove(Tablero* tablero, const Coordenadas& posicion);
 };
 

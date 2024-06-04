@@ -4,12 +4,13 @@ class Torre :
     public Pieza
 {
     bool move = false;
-    friend class Rey;
 public:
     using Pieza::Pieza;
-    void print();
-    
-        
-    virtual VectorCoordenadas premove(const Tablero* const tablero, const Coordenadas& posicion);
+   virtual void print( const float x, const float y, const float lado) ;
+
+  
+    virtual VectorCoordenadas premove(Tablero* tablero, const Coordenadas& posicion);
+
+    friend class Rey;
 };
 
