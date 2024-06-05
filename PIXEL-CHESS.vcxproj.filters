@@ -51,6 +51,9 @@
     <ClInclude Include="src\Boton.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="src\VentanaTablero.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pieza.cpp">
@@ -90,6 +93,9 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="src\Boton.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VentanaTablero.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

@@ -146,6 +146,7 @@
     <ClInclude Include="src\Tablero.h" />
     <ClInclude Include="src\Torre.h" />
     <ClInclude Include="src\Ventana.h" />
+    <ClInclude Include="src\VentanaTablero.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Ajedrez.cpp" />
@@ -161,6 +162,7 @@
     <ClCompile Include="src\Tablero.cpp" />
     <ClCompile Include="src\Torre.cpp" />
     <ClCompile Include="src\Ventana.cpp" />
+    <ClCompile Include="src\VentanaTablero.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

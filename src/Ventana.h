@@ -6,6 +6,7 @@
 #include "Boton.h"
 class Ventana
 {
+protected:
 	GLdouble Ancho;
 	GLdouble Alto;
 	std::string texturePath;
@@ -13,9 +14,9 @@ class Ventana
 	
 public:
 
-	void dibuja() const;
-	void detecta(GLdouble x, GLdouble y);
-	void click(GLdouble x, GLdouble y);
+	virtual void dibuja() const;
+	virtual void detecta(GLdouble x, GLdouble y);
+	virtual void click(GLdouble x, GLdouble y);
 	Ventana(const GLdouble& Ancho, const GLdouble& Alto, std::string Path);
 	void add_boton(Boton entrada);
 	//ejemplo

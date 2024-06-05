@@ -9,24 +9,14 @@ Tablero::Tablero(Juego juego) {
 	if (juego == UP) {
 		tam.fil = 5;
 		tam.col = 4;
-		origenx = -300;
-		origeny = -350;
+		
 	}
-	finalx = origenx + tam.fil * lado;
-	finaly = origeny + tam.col * lado;
+	
 
 	cuadricula.resize(tam.fil * tam.col);
-	base.resize(tam.fil * tam.col);
-	Color color = BLANCO;
-	int x=1;
-	for (auto& iter : base) {
-		iter = new CasillaVacia(color);
-		
-		x++;
-		if (x%tam.col != 1) {
-			color = !color;
-		}
-	}
+	/*
+	
+	}*/
 	
 	if (juego == SC) {
 		for (int c = 1; c <= tam.col; c++) {
@@ -79,14 +69,6 @@ Pieza*& Tablero::get_pieza(const Coordenadas entrada) {
 	return retorno;
 }
 
-CasillaVacia*& Tablero::get_CasillaVacia(const Coordenadas entrada)
-{
-	if (entrada < tam)
-		return base[entrada.col - 1 + (entrada.fil - 1) * (tam.col)];
-
-	CasillaVacia* retorno = nullptr;
-	return retorno;
-}
 
 Coordenadas Tablero::rey(const Color color)
 {
@@ -107,67 +89,6 @@ Coordenadas Tablero::rey(const Color color)
 	return Coordenadas();
 }
 
-void Tablero::dibuja() {
-
-	gluPerspective(90.0, 800 / 800.0f, 400, 500);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	//Para definir el punto de vista
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-	gluLookAt(0, 0, 400, // posicion del ojo
-		    0.0, 0, 0.0, // hacia que punto mira (0,0,0)
-		    0.0, 1.0, 0.0); // definimos hacia arriba (eje Y) 
-
-
-	
-
-	glDisable(GL_LIGHTING);
-	//dibujo del fondo
-	glEnable(GL_TEXTURE_2D);
-	//Habilitamos la carga de texturas 2D
-	glBindTexture(GL_TEXTURE_2D,
-		//Cargamos el sprite de fondo
-		ETSIDI::getTexture("bin/imagenes/Fondo.png").id);
-	
-	glBegin(GL_POLYGON);
-	//glTranslated(-450, -450, 0);
-	//Generamos un polígono que cuadre en la ventana
-	GLfloat a = 400;
-	glTexCoord2d(0, 1); glVertex3d(-a, a, 0);
-	glTexCoord2d(1, 1); glVertex3d(a, a, 0);
-	glTexCoord2d(1, 0); glVertex3d(a, -a, 0);
-	glTexCoord2d(0, 0); glVertex3d(-a, -a, 0 );
-	glEnd();
-	//Habilitamos la luz para una mejor vista
-	
-	glDisable(GL_TEXTURE_2D);
-	glEnable(GL_LIGHTING);
-	
-	glPushMatrix();
-	glTranslated(origenx + lado/2, origeny + lado/2, 0);
-	for (auto& iter : seleccion.v) {
-		get_CasillaVacia(iter)->set_rojo();
-	}
-	GLdouble auxx, auxy;
-	for (int f = 1; f <= tam.fil; f++) {
-		for (int c = 1; c <= tam.col; c++) {
-			
-			auxx =  (c - 1) * lado;
-			auxy =  (f - 1) * lado;
-			
-			
-			get_CasillaVacia({ c,f })->print(auxx, auxy, lado);
-			if (get_pieza({ c,f }) != nullptr)
-				get_pieza({ c,f })->print(auxx, auxy, lado);
-			
-
-		}
-	}
-
-	glPopMatrix();
-
-	
-}
 
 bool Tablero::jaque(Color color)
 {
@@ -289,55 +210,6 @@ void Tablero::buscar_piezas()
 			}
 		}
 	}
-}
-
-void Tablero::detectar(int x, int y)
-{
-	int auxx, auxy;
-	auxx = x - 400;
-	auxy = 400 - y;
-	
-	Color color = NEGRO;
-
-
-	auxx = ((auxx -  origenx) / (lado)) + 1;
-	auxy = ((auxy -  origeny) / (lado)) + 1;
-
-
-	if (Coordenadas(auxx, auxy) < tam)
-		get_CasillaVacia({ auxx,auxy })->set_verde();
-
-}
-
-void Tablero::clicar(int x, int y)
-{
-
-	int auxx, auxy;
-	auxx = x - 400;
-	auxy = 400 - y;
-
-	
-	auxx = ((auxx - origenx) / (lado)) + 1;
-	auxy = ((auxy - origeny) / (lado)) + 1;
-	Coordenadas aux(auxx, auxy);
-
-
-	if (((turno == BLANCO) ? p_blancas : p_negras) << aux && Piezaamover.col == 0) {
-		Piezaamover = aux;
-		seleccionar(premove(aux));
-	} else if (Piezaamover.col && seleccion << aux) {
-		move(aux);
-		borrar_seleccion();
-		Piezaamover.col = 0;
-		turno = !turno;
-
-	} else if (Piezaamover.col && !(seleccion << aux) && !(aux == Piezaamover)) {
-	
-		borrar_seleccion();
-		Piezaamover.col = 0;
-
-	}
-
 }
 
 Pieza* Tablero::get_pieza(const Coordenadas entrada) const
