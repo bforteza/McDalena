@@ -21,10 +21,10 @@ void VentanaTablero::detecta(GLdouble x, GLdouble y)
 	
 }
 
-void VentanaTablero::click(GLdouble x, GLdouble y)
+void VentanaTablero::click()
 {
 
-	Ventana::click(x, y);
+	Ventana::click();
 
 	
 

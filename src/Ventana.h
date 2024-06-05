@@ -7,6 +7,7 @@
 class Ventana
 {
 protected:
+	GLdouble tx, ty;
 	GLdouble Ancho;
 	GLdouble Alto;
 	std::string texturePath;
@@ -16,7 +17,7 @@ public:
 
 	virtual void dibuja() ;
 	virtual void detecta(GLdouble x, GLdouble y);
-	virtual void click(GLdouble x, GLdouble y);
+	virtual void click();
 	Ventana(const GLdouble& Ancho, const GLdouble& Alto, std::string Path);
 	void add_boton(Boton entrada);
 	//ejemplo

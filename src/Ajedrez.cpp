@@ -70,7 +70,7 @@ void OnTimer(int value)
 	
 	prueba.detecta(x_raton, y_raton);
 	if (click) {
-		prueba.click(x_raton, y_raton);
+		prueba.click();
 		//tablero.clicar(x_raton, y_raton);
 	}
 

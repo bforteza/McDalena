@@ -12,13 +12,13 @@ private:
     std::vector< CasillaVacia* > base;
 
 
-    GLdouble tx,ty;
+    
     
 
     CasillaVacia*& get_CasillaVacia(const Coordenadas entrada);
 public:
     void detecta(GLdouble x, GLdouble y);
-    void click(GLdouble x, GLdouble y);
+    void click();
     void dibuja() ;
 
    
