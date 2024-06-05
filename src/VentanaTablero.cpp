@@ -15,7 +15,7 @@ void VentanaTablero::detecta(GLdouble x, GLdouble y)
 	auxy =  ((ty - origeny) / (lado)) + 1;
 
 
-	if (Coordenadas(auxx, auxy) < tablero.tam)
+	if (Coordenadas(auxx, auxy) < tablero.get_tam())
 		get_CasillaVacia({ auxx,auxy })->set_verde();
 
 	
@@ -42,8 +42,8 @@ void VentanaTablero::click(GLdouble x, GLdouble y)
 
 CasillaVacia*& VentanaTablero::get_CasillaVacia(const Coordenadas entrada)
 {
-	if (entrada < tablero.tam)
-		return base[entrada.col - 1 + (entrada.fil - 1) * (tablero.tam.col)];
+	if (entrada < tablero.get_tam())
+		return base[entrada.col - 1 + (entrada.fil - 1) * (tablero.get_tam().col)];
 
 	CasillaVacia* retorno = nullptr;
 	return retorno;
@@ -61,8 +61,8 @@ void VentanaTablero::dibuja() {
 	}
 	GLdouble auxx, auxy;
 	Coordenadas auxiliares;
-	for (int f = 1; f <= tablero.tam.fil; f++) {
-		for (int c = 1; c <= tablero.tam.col; c++) {
+	for (int f = 1; f <= tablero.get_tam().fil; f++) {
+		for (int c = 1; c <= tablero.get_tam().col; c++) {
 
 			auxx = (c - 1) * lado + origenx + lado / 2;
 			auxy = (f - 1) * lado + origeny + lado / 2;
@@ -77,7 +77,7 @@ void VentanaTablero::dibuja() {
 
 		}
 	}
-	if ( tablero.Piezaamover < tablero.tam && !tablero.seleccion.v.empty())
+	if ( tablero.Piezaamover < tablero.get_tam() && !tablero.seleccion.v.empty())
 		tablero.get_pieza(tablero.Piezaamover)->print(tx, ty);
 	
 	glPopMatrix();
@@ -96,14 +96,14 @@ VentanaTablero::VentanaTablero(const GLdouble& Ancho, const GLdouble& Alto, std:
 
 
 
-	base.resize(tablero.tam.fil * tablero.tam.col);
+	base.resize(tablero.get_tam().fil * tablero.get_tam().col);
 	Color color = BLANCO;
 	int x = 1;
 	for (auto& iter : base) {
 		iter = new CasillaVacia(color,lado);
 
 		x++;
-		if (x % tablero.tam.col != 1) {
+		if (x % tablero.get_tam().col != 1) {
 			color = !color;
 		}
 	}

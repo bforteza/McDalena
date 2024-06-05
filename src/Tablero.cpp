@@ -194,10 +194,15 @@ void Tablero::move(const Coordenadas& e)
 	if (dynamic_cast<Rey*>(aux) != nullptr ) {
 		if (e.col - Piezaamover.col == 2) {
 			fmove(e + Coordenadas(1, 0), Piezaamover + Coordenadas(1, 0));
+			dynamic_cast<Rey*>(aux)->move = true;
 		}
 		if (e.col - Piezaamover.col == -2) {
 			fmove(e + Coordenadas(-1, 0), Piezaamover + Coordenadas(-1, 0));
+			dynamic_cast<Rey*>(aux)->move = true;
 		}
+	}
+	if (dynamic_cast<Torre*>(aux) != nullptr) {
+		dynamic_cast<Torre*>(aux)->move = true;
 	}
 
 	fmove(Piezaamover, e);

@@ -18,5 +18,6 @@ public:
     };
 
     friend class Rey;
+    friend class Tablero;
 };
 

@@ -14,5 +14,6 @@ public:
         if (color == NEGRO)
             sprite_pieza = new Sprite("bin/imagenes/ReyN.png", 0, 0, 100, 100);
     };
+    friend class Tablero;
 };
 
