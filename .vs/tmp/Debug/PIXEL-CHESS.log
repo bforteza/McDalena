@@ -1,0 +1,33 @@
+﻿  Ajedrez.cpp
+  Alfil.cpp
+  Boton.cpp
+  Caballo.cpp
+C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\src\Boton.cpp(37,90): warning C4244: 'argumento': conversión de 'const GLdouble' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\src\Boton.cpp(37,84): warning C4244: 'argumento': conversión de 'const GLdouble' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\src\Boton.cpp(37,82): warning C4244: 'argumento': conversión de 'const GLdouble' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\src\Boton.cpp(37,80): warning C4244: 'argumento': conversión de 'const GLdouble' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\src\Boton.cpp(38,55): warning C4244: 'argumento': conversión de 'const GLdouble' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\src\Boton.cpp(38,48): warning C4244: 'argumento': conversión de 'const GLdouble' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\src\Boton.cpp(38,45): warning C4244: 'argumento': conversión de 'const GLdouble' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\src\Boton.cpp(38,42): warning C4244: 'argumento': conversión de 'const GLdouble' a 'float'; posible pérdida de datos
+  CasillaVacia.cpp
+  Coordenadas.cpp
+  Peon.cpp
+  Pieza.cpp
+  Reina.cpp
+  Rey.cpp
+  Tablero.cpp
+  Torre.cpp
+  Ventana.cpp
+  VentanaTablero.cpp
+C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\src\VentanaTablero.cpp(14,36): warning C4244: '=': conversión de 'GLdouble' a 'int'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\src\VentanaTablero.cpp(15,36): warning C4244: '=': conversión de 'GLdouble' a 'int'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\src\VentanaTablero.cpp(89,43): warning C4244: 'argumento': conversión de 'GLdouble' a 'const float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\src\VentanaTablero.cpp(89,37): warning C4244: 'argumento': conversión de 'GLdouble' a 'const float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\src\VentanaTablero.cpp(117,33): warning C4244: 'argumento': conversión de 'GLdouble' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\src\VentanaTablero.cpp(127,25): warning C4244: 'argumento': conversión de 'GLdouble' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\src\VentanaTablero.cpp(127,19): warning C4244: 'argumento': conversión de 'GLdouble' a 'float'; posible pérdida de datos
+  Generando código...
+C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\src\VentanaTablero.cpp(64): warning C4172: devolución de dirección de la variable local o temporal: retorno
+C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\src\Tablero.cpp(67): warning C4172: devolución de dirección de la variable local o temporal: retorno
+  PIXEL-CHESS.vcxproj -> C:\Users\mariu\OneDrive\Documentos\GitHub\McDalena\bin\PIXEL-CHESS.exe
