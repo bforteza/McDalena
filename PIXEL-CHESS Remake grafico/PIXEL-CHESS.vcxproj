@@ -141,6 +141,7 @@
     <ClInclude Include="src\Menu.h" />
     <ClInclude Include="src\MenuMusica.h" />
     <ClInclude Include="src\PantallaInicio.h" />
+    <ClInclude Include="src\Partida.h" />
     <ClInclude Include="src\Peon.h" />
     <ClInclude Include="src\Pieza.h" />
     <ClInclude Include="src\Reina.h" />
@@ -157,6 +158,7 @@
     <ClCompile Include="src\Menu.cpp" />
     <ClCompile Include="src\MenuMusica.cpp" />
     <ClCompile Include="src\PantallaInicio.cpp" />
+    <ClCompile Include="src\Partida.cpp" />
     <ClCompile Include="src\Peon.cpp" />
     <ClCompile Include="src\Pieza.cpp" />
     <ClCompile Include="src\Reina.cpp" />

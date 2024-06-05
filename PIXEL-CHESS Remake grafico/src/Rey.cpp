@@ -44,3 +44,7 @@ VectorCoordenadas Rey::premove(Tablero* tablero, const Coordenadas& posicion)
 	return retorno;
 
 }
+
+void Rey::gpieza(std::ofstream& out) const {
+	out << static_cast<int>(color) << tipo <<std::endl;
+}

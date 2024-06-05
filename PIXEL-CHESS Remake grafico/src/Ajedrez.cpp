@@ -6,10 +6,10 @@
 #include "Tablero.h"
 #include <vector>
 #include <Menu.h>
+#include <iostream>
+#include "Partida.h"
 #pragma once
 using std::vector;
-
-bool pgn = 0;
 
 Menu menu;
 void OnDraw(void);
@@ -69,45 +69,7 @@ int main(int argc, char* argv[])
 
 	return 0;
 }
-/*
-void PGN(Tablero& tab,Juego mod) //Para modificar el tablero actual lo paso como referencia
-{
-    if (pgn) 
-    {
-        Tablero::Tablero(mod);
-        tab.print();
-        vector<Casilla*> movs = tab.get_mov();
-        for (int i = 0; i < movs.size(); i++) //Recorro las posiciones guardadas 
-        {
-            Pieza* pieza = dynamic_cast<Pieza*>(movs[i]);
-            Pieza* pieza2 = dynamic_cast<Pieza*>(movs[i + 1]);
-            if (pieza == nullptr || pieza2 == nullptr) {
-                continue; // Por seguridad, por si alguna conversión falla, continúa con el siguiente movimiento
-            }
-            Color aux = movs[i]->get_color_casilla();
-            Color aux2 = movs[i + 1]->get_color_casilla();
 
-            //Con este bucle itero sobre todo el tablero
-            for (int f = 0; f < tab.cuadricula.size(); f++) {
-                for (int c = 0; c < tab.cuadricula[f].size(); c++) {
-                    Casilla*& casilla = tab.get_casilla(c, f);
-
-                    if (casilla == movs[i]) {
-                        delete casilla;
-                        casilla = new CasillaVacia(aux);
-                    }
-                    else if (casilla == movs[i + 1]) {
-                        pieza2->set_color_casilla(aux2);
-                        tab.asignar(c, f, pieza2);
-                    }
-                }
-            }
-        }
-    }
-    
-}
-
-*/
 
 void OnDraw(void)
 {

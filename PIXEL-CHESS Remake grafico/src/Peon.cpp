@@ -45,3 +45,7 @@ VectorCoordenadas Peon::premove(Tablero* tablero, const Coordenadas& posicion)
 
 	return retorno;
 }
+
+void Peon::gpieza(std::ofstream& out) const {
+	out << static_cast<int>(color) << tipo << std::endl;
+}

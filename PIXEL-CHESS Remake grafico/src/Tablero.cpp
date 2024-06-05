@@ -91,6 +91,87 @@ Tablero::Tablero(Juego juego) {
 	buscar_piezas();
 }
 
+Tablero::Tablero(Juego juego, vector<Pieza*>& piezas) {
+	if (juego == SC) {
+		tam.fil = 6;
+		tam.col = 5;
+		origenx = -3.25;
+		origeny = 3.85;
+		spriteorigenx = 179;
+		spriteorigeny = 27;
+
+	}
+	if (juego == UP) {
+		tam.fil = 5;
+		tam.col = 4;
+		origenx = -2.75;
+		origeny = 3.45;
+		spriteorigenx = 212;
+		spriteorigeny = 60;
+	}
+
+	cuadricula.resize(tam.fil * tam.col);
+	base.resize(tam.fil);
+	for (size_t i = 0; i < base.size(); i++) {
+		base[i].resize(tam.col); // Cambiar el número de columnas en cada fila
+	}
+	Color color = NEGRO;
+
+	for (auto& iter : cuadricula) {
+		iter = nullptr;
+	}
+	if (tam.col % 2 != 0)
+	{
+		for (auto& fila : base) {
+			for (auto& casilla : fila) {
+				casilla = new CasillaVacia(color);
+				color = !color;
+			}
+		}
+	}
+	if (tam.col % 2 == 0)
+	{
+		for (auto& fila : base) {
+			for (auto& casilla : fila) {
+				casilla = new CasillaVacia(color);
+				color = !color;
+			}
+			color = !color;
+		}
+	}
+
+	for (int i = 0; i < piezas.size() - 1; ++i) 
+	{
+		Color aux = piezas[i]->get_color();
+		std::string type = piezas[i]->get_tipo();
+
+		for (int f = 0; f < tam.fil; f++) {
+			for (int c = 0; c < tam.col; c++)
+			{
+				if (type == "Rey")
+				{
+					asignar({ c,f }, new Rey(aux));
+				}
+				else if (type == "Reina") {
+					asignar({ c,f }, new Reina(aux));
+				}
+				else if (type == "Caballo") {
+					asignar({ c,f }, new Caballo(aux));
+				}
+				else if (type == "Peon") {
+					asignar({ c,f }, new Peon(aux));
+				}
+				else if (type == "Torre") {
+					asignar({ c,f }, new Torre(aux));
+				}
+				else if (type == "Alfil") {
+					asignar({ c,f }, new Alfil(aux));
+				}
+			}
+		}
+	}
+}
+
 Pieza*& Tablero::get_pieza(Coordenadas entrada) {
 
 	if (entrada < tam)

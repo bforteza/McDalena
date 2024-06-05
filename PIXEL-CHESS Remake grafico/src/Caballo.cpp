@@ -20,6 +20,9 @@ VectorCoordenadas Caballo::premove(Tablero* tablero, const Coordenadas& posicion
 	return VectorCoordenadas();
 }
 
+void Caballo::gpieza(std::ofstream& out) const {
+	out << static_cast<int>(color) << tipo << std::endl;
+}
 
 
 

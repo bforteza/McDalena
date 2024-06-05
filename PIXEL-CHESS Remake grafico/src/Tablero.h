@@ -49,5 +49,6 @@ public:
 
 	//inicializadores
 	Tablero(Juego juego);
+	Tablero(Juego juego, vector<Pieza*>& piezas);
 };
 
