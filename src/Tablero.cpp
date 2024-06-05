@@ -192,6 +192,23 @@ void Tablero::move(const Coordenadas& e)
 	turno = !turno;
 }
 
+void Tablero::entrada(const Coordenadas& e)
+{
+	if (((turno == BLANCO) ? p_blancas : p_negras) << e && Piezaamover.col == 0) {
+		Piezaamover = e;
+		seleccionar(premove(e));
+	}
+	else if (Piezaamover.col && seleccion << e) {
+		move(e);
+	}
+	else if (Piezaamover.col && !(seleccion << e) && !(e == Piezaamover)) {
+
+		borrar_seleccion();
+		Piezaamover.col = 0;
+
+	}
+}
+
 void Tablero::asignar(Coordenadas e, Pieza* entrada) {
 	if (get_pieza(e) == nullptr) {
 		get_pieza(e) = entrada;

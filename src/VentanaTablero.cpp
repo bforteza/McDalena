@@ -2,8 +2,8 @@
 void VentanaTablero::detecta(GLdouble x, GLdouble y)
 {
 
-	GLdouble tx = x - Ancho / 2;
-	GLdouble ty = Alto / 2 - y;
+	 tx = x - Ancho / 2;
+	 ty = Alto / 2 - y;
 
 	int auxx, auxy;
 	
@@ -18,6 +18,7 @@ void VentanaTablero::detecta(GLdouble x, GLdouble y)
 	if (Coordenadas(auxx, auxy) < tablero.tam)
 		get_CasillaVacia({ auxx,auxy })->set_verde();
 
+	
 }
 
 void VentanaTablero::click(GLdouble x, GLdouble y)
@@ -25,8 +26,7 @@ void VentanaTablero::click(GLdouble x, GLdouble y)
 
 	Ventana::click(x, y);
 
-	GLdouble tx = x - Ancho / 2;
-	GLdouble ty = Alto / 2 - y;
+	
 
 	int auxx, auxy;
 	
@@ -34,24 +34,9 @@ void VentanaTablero::click(GLdouble x, GLdouble y)
 
 	auxx = (int) ((tx - origenx) / (lado)) + 1;
 	auxy = (int) ((ty - origeny) / (lado)) + 1;
-	Coordenadas aux(auxx, auxy);
 
-
-	if (((tablero.turno == BLANCO) ? tablero.p_blancas : tablero.p_negras) << aux && tablero.Piezaamover.col == 0) {
-		tablero.Piezaamover = aux;
-		tablero.seleccionar(tablero.premove(aux));
-	}
-	else if (tablero.Piezaamover.col && tablero.seleccion << aux) {
-		tablero.move(aux);
-		
-
-	}
-	else if (tablero.Piezaamover.col && !(tablero.seleccion << aux) && !(aux == tablero.Piezaamover)) {
-
-		tablero.borrar_seleccion();
-		tablero.Piezaamover.col = 0;
-
-	}
+	tablero.entrada({auxx,auxy});
+	
 
 }
 
@@ -74,26 +59,31 @@ void VentanaTablero::dibuja() {
 
 
 	glPushMatrix();
-	glTranslated(origenx + lado / 2, origeny + lado / 2, 0);
+	
 	for (auto& iter : tablero.seleccion.v) {
 		get_CasillaVacia(iter)->set_rojo();
 	}
 	GLdouble auxx, auxy;
+	Coordenadas auxiliares;
 	for (int f = 1; f <= tablero.tam.fil; f++) {
 		for (int c = 1; c <= tablero.tam.col; c++) {
 
-			auxx = (c - 1) * lado;
-			auxy = (f - 1) * lado;
+			auxx = (c - 1) * lado + origenx + lado / 2;
+			auxy = (f - 1) * lado + origeny + lado / 2;
 
-
-			get_CasillaVacia({ c,f })->print(auxx, auxy);
-			if (tablero.get_pieza({ c,f }) != nullptr)
-				tablero.get_pieza({ c,f })->print(auxx, auxy);
+			auxiliares.col = c;
+			auxiliares.fil = f;
+			get_CasillaVacia(auxiliares)->print(auxx, auxy);
+			if (tablero.get_pieza(auxiliares) != nullptr && !(auxiliares == tablero.Piezaamover))
+				tablero.get_pieza(auxiliares)->print(auxx, auxy);
+			
 
 
 		}
 	}
-
+	if ( tablero.Piezaamover < tablero.tam)
+		tablero.get_pieza(tablero.Piezaamover)->print(tx, ty);
+	
 	glPopMatrix();
 	
 

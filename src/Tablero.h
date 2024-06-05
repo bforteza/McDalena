@@ -50,6 +50,7 @@ public:
 	VectorCoordenadas premove(const Coordenadas& e);
 	void move(const Coordenadas& e);
 
+	void entrada(const Coordenadas& e);
 	//inicializadores
 	Tablero(Juego juego);
 
