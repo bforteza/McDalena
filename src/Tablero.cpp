@@ -40,10 +40,10 @@ Tablero::Tablero(Juego juego) {
 	}
 	if (juego == UP) {
 
-		asignar({ A , 2 }, new Peon(BLANCO));
-		asignar({ D , 4 }, new Peon(NEGRO));
+		asignar({ D , 2 }, new Peon(BLANCO));
+		asignar({ A , 4 }, new Peon(NEGRO));
 
-		asignar({ B,3 }, new Rey(BLANCO));
+		asignar({ D,1 }, new Rey(BLANCO));
 		asignar({ A,5 }, new Rey(NEGRO));
 
 		asignar({ B,1 }, new Alfil(BLANCO));
@@ -67,7 +67,6 @@ Pieza*& Tablero::get_pieza(const Coordenadas entrada) {
 	return retorno;
 }
 
-
 Coordenadas Tablero::rey(const Color color)
 {
 	if (color == BLANCO) {
@@ -86,7 +85,6 @@ Coordenadas Tablero::rey(const Color color)
 	}
 	return Coordenadas();
 }
-
 
 bool Tablero::jaque(Color color)
 {
@@ -185,18 +183,38 @@ VectorCoordenadas Tablero::premove(const Coordenadas& e)
 
 void Tablero::move(const Coordenadas& e)
 {
-	
+	//coronación
+	Pieza*& aux = get_pieza(Piezaamover);
+	if (dynamic_cast<Peon*>(aux) != nullptr && (e.fil == tam.fil || e.fil == 1 )) {
+		Color Peoncolor = aux->get_color();
+		delete aux;
+		aux = new Reina(Peoncolor);
+	}
+	//enroque
+	if (dynamic_cast<Rey*>(aux) != nullptr ) {
+		if (e.col - Piezaamover.col == 2) {
+			fmove(e + Coordenadas(1, 0), Piezaamover + Coordenadas(1, 0));
+		}
+		if (e.col - Piezaamover.col == -2) {
+			fmove(e + Coordenadas(-1, 0), Piezaamover + Coordenadas(-1, 0));
+		}
+	}
+
 	fmove(Piezaamover, e);
 	borrar_seleccion();
 	Piezaamover.col = 0;
+	Piezaamover.fil = 0;
 	turno = !turno;
+
+	
 }
 
 void Tablero::entrada(const Coordenadas& e)
 {
 	if (((turno == BLANCO) ? p_blancas : p_negras) << e && Piezaamover.col == 0) {
-		Piezaamover = e;
 		seleccionar(premove(e));
+		if (!seleccion.v.empty())
+			Piezaamover = e;
 	}
 	else if (Piezaamover.col && seleccion << e) {
 		move(e);

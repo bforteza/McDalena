@@ -54,10 +54,6 @@ void VentanaTablero::dibuja() {
 	Ventana::dibuja();
 
 
-		
-
-
-
 	glPushMatrix();
 	
 	for (auto& iter : tablero.seleccion.v) {
@@ -74,14 +70,14 @@ void VentanaTablero::dibuja() {
 			auxiliares.col = c;
 			auxiliares.fil = f;
 			get_CasillaVacia(auxiliares)->print(auxx, auxy);
-			if (tablero.get_pieza(auxiliares) != nullptr && !(auxiliares == tablero.Piezaamover))
+			if (tablero.get_pieza(auxiliares) != nullptr && (!(auxiliares == tablero.Piezaamover) || tablero.seleccion.v.empty()))
 				tablero.get_pieza(auxiliares)->print(auxx, auxy);
 			
 
 
 		}
 	}
-	if ( tablero.Piezaamover < tablero.tam)
+	if ( tablero.Piezaamover < tablero.tam && !tablero.seleccion.v.empty())
 		tablero.get_pieza(tablero.Piezaamover)->print(tx, ty);
 	
 	glPopMatrix();

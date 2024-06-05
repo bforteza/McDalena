@@ -14,7 +14,7 @@ enum Juego { UP, SC };
 class Tablero
 {
 private:
-	//logica
+	
 	vector<Pieza*> cuadricula;
 
 	Coordenadas tam; //tamaño
@@ -22,7 +22,6 @@ private:
 	VectorCoordenadas seleccion, p_blancas, p_negras;
 
 
-	//GL gluut
 	
 
 	void asignar(Coordenadas e, Pieza* entrada);
@@ -33,7 +32,7 @@ private:
 
 public:
 
-	//parametros
+	
 
 	Coordenadas get_tam() { return tam; };
 	Pieza*& get_pieza(const Coordenadas entrada);
