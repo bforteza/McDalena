@@ -22,7 +22,7 @@ void Boton::click(GLdouble rx, GLdouble ry)
 	if ((rx) > (x - Ancho / 2) && rx < (x + Ancho / 2) &&
 		(ry) >(y - Alto / 2) && ry < (y + Alto / 2))
 	{
-		funcion();
+		function();
 	}
 	
 }
@@ -33,9 +33,9 @@ void Boton::click(GLdouble rx, GLdouble ry)
 Boton::Boton(const GLdouble& Ancho, const GLdouble& Alto,
 	const GLdouble& x, const GLdouble& y,
 	std::string Path1, std::string Path2,
-	void (*func)() )
+	std::function<void()> func)
 	: Ancho(Ancho), Alto(Alto), x(x), y(y) , sprite( ETSIDI::Sprite(Path1.c_str(),x,y,Ancho,Alto)),
-		sprite2(ETSIDI::Sprite(Path2.c_str() , x, y, Ancho, Alto)), dibujado(nullptr), funcion(func)
+		sprite2(ETSIDI::Sprite(Path2.c_str() , x, y, Ancho, Alto)), dibujado(nullptr), function(func)
 {
 	
 }

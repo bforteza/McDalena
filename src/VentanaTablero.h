@@ -20,7 +20,7 @@ public:
     void detecta(GLdouble x, GLdouble y);
     void click();
     void dibuja() ;
-
+    void restart();
    
     VentanaTablero(const GLdouble& Ancho, const GLdouble& Alto, std::string Path, Juego juego);
 };

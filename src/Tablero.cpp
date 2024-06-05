@@ -1,61 +1,8 @@
 #include "Tablero.h"
 
-Tablero::Tablero(Juego juego) {
-	if (juego == SC) {
-		tam.fil = 6;
-		tam.col = 5;
-		
-	}
-	if (juego == UP) {
-		tam.fil = 5;
-		tam.col = 4;
-		
-	}
-	
-
-	cuadricula.resize(tam.fil * tam.col);
-	
-	
-	if (juego == SC) {
-		for (int c = 1; c <= tam.col; c++) {
-			asignar({ c , 2 }, new Peon(BLANCO));
-			asignar({ c , 5 }, new Peon(NEGRO));
-		}
-		asignar({ A,1 }, new Reina(BLANCO));
-		asignar({ E,6 }, new Reina(NEGRO));
-		
-		asignar({ B,1 }, new Rey(BLANCO));
-		asignar({ D,6 }, new Rey(NEGRO));
-		
-		asignar({ C,1 }, new Alfil(BLANCO));
-		asignar({ C,6 }, new Alfil(NEGRO));
-
-		asignar({ D,1 }, new Caballo(BLANCO));
-		asignar({ B,6 }, new Caballo(NEGRO));
-
-		asignar({ E,1 }, new Torre(BLANCO));
-		asignar({ A,6 }, new Torre(NEGRO));
-
-		
-	}
-	if (juego == UP) {
-
-		asignar({ D , 2 }, new Peon(BLANCO));
-		asignar({ A , 4 }, new Peon(NEGRO));
-
-		asignar({ D,1 }, new Rey(BLANCO));
-		asignar({ A,5 }, new Rey(NEGRO));
-
-		asignar({ B,1 }, new Alfil(BLANCO));
-		asignar({ C,5 }, new Alfil(NEGRO));
-
-		asignar({ C,1 }, new Caballo(BLANCO));
-		asignar({ B,5 }, new Caballo(NEGRO));
-
-		asignar({ A,1 }, new Torre(BLANCO));
-		asignar({ D,5 }, new Torre(NEGRO));
-	}
-	buscar_piezas();
+Tablero::Tablero(Juego _juego) {
+	juego = _juego;
+	restart();
 }
 
 Pieza*& Tablero::get_pieza(const Coordenadas entrada) {
@@ -264,4 +211,78 @@ Pieza* Tablero::get_pieza(const Coordenadas entrada) const
 vector<Pieza*>& Tablero::get_cuadricula()
 {
 	return cuadricula;
+}
+
+void Tablero::restart()
+{
+	for (auto& iter : cuadricula) {
+		if (iter != nullptr)
+			delete iter;
+	}
+	for (auto& iter : muertas) {
+		if (iter != nullptr)
+			delete iter;
+	}
+	cuadricula.clear();
+	muertas.clear();
+	p_blancas.clear();
+	p_negras.clear();
+
+	
+	if (juego == SC) {
+		tam.fil = 6;
+		tam.col = 5;
+
+	}
+	if (juego == UP) {
+		tam.fil = 5;
+		tam.col = 4;
+
+	}
+
+
+	cuadricula.resize(tam.fil * tam.col);
+
+
+	if (juego == SC) {
+		for (int c = 1; c <= tam.col; c++) {
+			asignar({ c , 2 }, new Peon(BLANCO));
+			asignar({ c , 5 }, new Peon(NEGRO));
+		}
+		asignar({ A,1 }, new Reina(BLANCO));
+		asignar({ E,6 }, new Reina(NEGRO));
+
+		asignar({ B,1 }, new Rey(BLANCO));
+		asignar({ D,6 }, new Rey(NEGRO));
+
+		asignar({ C,1 }, new Alfil(BLANCO));
+		asignar({ C,6 }, new Alfil(NEGRO));
+
+		asignar({ D,1 }, new Caballo(BLANCO));
+		asignar({ B,6 }, new Caballo(NEGRO));
+
+		asignar({ E,1 }, new Torre(BLANCO));
+		asignar({ A,6 }, new Torre(NEGRO));
+
+
+	}
+	if (juego == UP) {
+
+		asignar({ D , 2 }, new Peon(BLANCO));
+		asignar({ A , 4 }, new Peon(NEGRO));
+
+		asignar({ D,1 }, new Rey(BLANCO));
+		asignar({ A,5 }, new Rey(NEGRO));
+
+		asignar({ B,1 }, new Alfil(BLANCO));
+		asignar({ C,5 }, new Alfil(NEGRO));
+
+		asignar({ C,1 }, new Caballo(BLANCO));
+		asignar({ B,5 }, new Caballo(NEGRO));
+
+		asignar({ A,1 }, new Torre(BLANCO));
+		asignar({ D,5 }, new Torre(NEGRO));
+	}
+	buscar_piezas();
+	
 }

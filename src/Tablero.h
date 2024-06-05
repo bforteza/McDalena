@@ -14,7 +14,7 @@ enum Juego { UP, SC };
 class Tablero
 {
 private:
-	
+	Juego juego;
 	vector<Pieza*> cuadricula;
 	Coordenadas tam; //tamaño
 	vector<Pieza*> muertas;
@@ -40,13 +40,14 @@ public:
 	Pieza* get_pieza(const Coordenadas entrada) const;
 	vector<Pieza*>& get_cuadricula();
 	
-
+	void restart();
 	
 
 
 	void entrada(const Coordenadas& e);
 	//inicializadores
 	Tablero(Juego juego);
+
 	~Tablero() {
 		for (auto& iter : cuadricula) {
 			if (iter != nullptr)

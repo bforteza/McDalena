@@ -1,6 +1,7 @@
 #pragma once
 #include "freeglut.h"
 #include <string>
+#include <functional>
 #include "ETSIDI.h"
 class Boton
 {
@@ -12,7 +13,7 @@ class Boton
 	ETSIDI::Sprite sprite;
 	ETSIDI::Sprite sprite2;
 
-	void (*funcion)();
+	std::function<void()> function;
 public:
 	void dibuja();
 	void detectar(GLdouble rx, GLdouble ry);
@@ -20,7 +21,7 @@ public:
 	Boton(const GLdouble& Ancho, const GLdouble& Alto, 
 		const GLdouble& x, const GLdouble& y,
 		std::string Path1,std::string Path2 ,
-		void (*func)() );
+		std::function<void()> func);
 
 
 };
