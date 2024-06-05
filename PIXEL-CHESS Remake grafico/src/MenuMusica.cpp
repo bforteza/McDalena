@@ -8,7 +8,7 @@ void MenuMusica::dibuja()
 	//dibujo del fondo
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D,
-		ETSIDI::getTexture("imagenes/Fondo2.png").id);
+		ETSIDI::getTexture("bin/imagenes/Fondo2.png").id);
 	glEnable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
 	glColor3f(1, 1, 1);
@@ -122,16 +122,16 @@ void MenuMusica::detectar(int x, int y)
 	{
 		if ((y > 39) && (y < 83))
 		{
-			volver = { "imagenes/Volver.png", -3,3,1, 1 };
+			volver = { "bin/imagenes/Volver.png", -3,3,1, 1 };
 		}
 		else
 		{
-			volver = { "imagenes/PreVolver.png", -3,3,1, 1 };
+			volver = { "bin/imagenes/PreVolver.png", -3,3,1, 1 };
 		}
 	}
 	else
 	{
-		volver = { "imagenes/PreVolver.png", -3,3,1, 1 };
+		volver = { "bin/imagenes/PreVolver.png", -3,3,1, 1 };
 	}
 }
 
@@ -233,12 +233,12 @@ void MenuMusica::clicar(int x, int y,int& estado, int &muteado)
 		}
 		if (muteado %2==0)
 		{
-			mute = { "imagenes/Mute.png", 3,3,1, 1 };
+			mute = { "bin/imagenes/Mute.png", 3,3,1, 1 };
 			ETSIDI::stopMusica();
 		}
 		else
 		{
-			mute = { "imagenes/NoMute.png", 3,3,1, 1 };
+			mute = { "bin/imagenes/NoMute.png", 3,3,1, 1 };
 		}
 	}
 	if ((x > 97) && (x < 153))

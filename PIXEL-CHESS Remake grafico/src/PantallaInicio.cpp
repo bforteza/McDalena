@@ -6,7 +6,7 @@ void PantallaInicio::dibuja()
 	//dibujo del fondo
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D,
-		ETSIDI::getTexture("imagenes/Fondo2.png").id);
+		ETSIDI::getTexture("bin/imagenes/Fondo2.png").id);
 	glEnable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
 	glColor3f(1, 1, 1);

@@ -4,12 +4,12 @@ void Peon::print(int col, int fil, double origenx, double origeny) {
 
 		if (color == NEGRO)
 		{
-			sprite_pieza = new Sprite("imagenes/PeonN.png", 1.66 + origenx + fil * 1.072 - 1.65, -2.5 + origeny - 1.072 * col + 2.48, 0.8, 0.8);
+			sprite_pieza = new Sprite("bin/imagenes/PeonN.png", 1.66 + origenx + fil * 1.072 - 1.65, -2.5 + origeny - 1.072 * col + 2.48, 0.8, 0.8);
 
 		}
 		if (color == BLANCO)
 		{
-			sprite_pieza = new Sprite("imagenes/PeonB.png", 1.66 + origenx + fil * 1.072 - 1.65, -2.5 + origeny - 1.072 * col + 2.48, 0.8, 0.8);
+			sprite_pieza = new Sprite("bin/imagenes/PeonB.png", 1.66 + origenx + fil * 1.072 - 1.65, -2.5 + origeny - 1.072 * col + 2.48, 0.8, 0.8);
 
 		}
 	sprite_pieza->draw();

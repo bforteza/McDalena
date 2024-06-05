@@ -15,7 +15,7 @@ class Tablero
 {
 private:
 	vector<Pieza*> cuadricula;
-	Sprite volver = { "imagenes/PreVolver.png", -3,3,1, 1 };
+	Sprite volver = { "bin/imagenes/PreVolver.png", -3,3,1, 1 };
 	Coordenadas tam;				//tamaño
 	vector<Pieza*> muertas;
 

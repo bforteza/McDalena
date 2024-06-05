@@ -3,10 +3,10 @@
 using ETSIDI::Sprite;
 class MenuMusica
 {
-	Sprite papel = { "imagenes/menumusica.png", 0, 0.0,6, 7 };
-	Sprite titulomusica = { "imagenes/musica2.png", 0.05,0.5,6, 6 };
-	Sprite mute = { "imagenes/NoMute.png", 3,3,1, 1 };
-	Sprite volver = { "imagenes/PreVolver.png", -3,3,1, 1 };
+	Sprite papel = { "bin/imagenes/menumusica.png", 0, 0.0,6, 7 };
+	Sprite titulomusica = { "bin/imagenes/musica2.png", 0.05,0.5,6, 6 };
+	Sprite mute = { "bin/imagenes/NoMute.png", 3,3,1, 1 };
+	Sprite volver = { "bin/imagenes/PreVolver.png", -3,3,1, 1 };
 	int Color_LeapOfFaith[3]{ 0,0,0 };
 	int T_LeapOfFaith = 48;
 	int Color_LiveFreeOrDie[3]{ 0,0,0 };

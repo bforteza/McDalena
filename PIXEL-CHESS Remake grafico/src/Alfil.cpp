@@ -5,11 +5,11 @@ void Alfil::print(int col, int fil, double origenx, double origeny) {
 	//std::cout << ((color_pieza == NEGRO) ? "A" : "a");
 		if (color == NEGRO)
 		{
-			sprite_pieza = new Sprite("imagenes/AlfilN.png", 1.66 + origenx + fil * 1.072 - 1.65, -2.5 + origeny - 1.072 * col + 2.45, 0.8, 0.8);
+			sprite_pieza = new Sprite("bin/imagenes/AlfilN.png", 1.66 + origenx + fil * 1.072 - 1.65, -2.5 + origeny - 1.072 * col + 2.45, 0.8, 0.8);
 		}
 		if (color == BLANCO)
 		{
-			sprite_pieza = new Sprite("imagenes/AlfilB.png", 1.66 + origenx + fil * 1.072 - 1.65, -2.5 + origeny - 1.072 * col + 2.45, 0.8, 0.8);
+			sprite_pieza = new Sprite("bin/imagenes/AlfilB.png", 1.66 + origenx + fil * 1.072 - 1.65, -2.5 + origeny - 1.072 * col + 2.45, 0.8, 0.8);
 
 		}
 

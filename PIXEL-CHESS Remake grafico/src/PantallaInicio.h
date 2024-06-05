@@ -4,7 +4,7 @@
 using ETSIDI::Sprite;
 class PantallaInicio
 {
-	Sprite pixelchess = { "imagenes/pixelchess.png", 0.4,2.6,14, 9 };
+	Sprite pixelchess = { "bin/imagenes/pixelchess.png", 0.4,2.6,14, 9 };
 	int Color_UnPeon[3]  { 0,0,0 };
 	int Color_Speed[3]  { 0,0,0 };
 	int Color_Musica[3]  { 0,0,0 };

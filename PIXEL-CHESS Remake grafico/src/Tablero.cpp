@@ -208,7 +208,7 @@ void Tablero::print() {
 	//Habilitamos la carga de texturas 2D
 	glBindTexture(GL_TEXTURE_2D,
 		//Cargamos el sprite de fondo
-		ETSIDI::getTexture("imagenes/Fondo.png").id);
+		ETSIDI::getTexture("bin/imagenes/Fondo.png").id);
 	glEnable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
 	//Generamos un polígono que cuadre en la ventana
@@ -382,16 +382,16 @@ void Tablero::detectar(int x, int y, Juego juego)
 	{
 		if ((y > 39) && (y < 83))
 		{
-			volver = { "imagenes/Volver.png", -3,3,1, 1 };
+			volver = { "bin/imagenes/Volver.png", -3,3,1, 1 };
 		}
 		else
 		{
-			volver = { "imagenes/PreVolver.png", -3,3,1, 1 };
+			volver = { "bin/imagenes/PreVolver.png", -3,3,1, 1 };
 		}
 	}
 	else
 	{
-		volver = { "imagenes/PreVolver.png", -3,3,1, 1 };
+		volver = { "bin/imagenes/PreVolver.png", -3,3,1, 1 };
 	}
 
 
