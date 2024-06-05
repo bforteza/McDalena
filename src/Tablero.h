@@ -27,27 +27,21 @@ private:
 	void buscar_piezas();
 	bool fmove(const Coordenadas& origen, const Coordenadas& destino);
 	void move(const Coordenadas& e);
-	
+	void seleccionar(const VectorCoordenadas&);
 	bool jaque(Color color);
+	VectorCoordenadas premove(const Coordenadas& e);
 public:
 	VectorCoordenadas seleccion;
 	Coordenadas Piezaamover{ 0,0 };
 	Color turno = BLANCO;
 	
-
 	Coordenadas get_tam() { return tam; };
 	Pieza*& get_pieza(const Coordenadas entrada);
 	Pieza* get_pieza(const Coordenadas entrada) const;
+	vector<Pieza*>& get_cuadricula();
 	
 
-
-
-
-
-	void seleccionar(const VectorCoordenadas&);
 	
-
-	VectorCoordenadas premove(const Coordenadas& e);
 
 
 	void entrada(const Coordenadas& e);
@@ -64,6 +58,5 @@ public:
 		}
 	}
 
-	friend class VentanaTablero;
 };
 

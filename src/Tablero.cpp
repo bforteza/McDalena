@@ -3,7 +3,7 @@
 Tablero::Tablero(Juego juego) {
 	if (juego == SC) {
 		tam.fil = 6;
-		tam.col = 6;
+		tam.col = 5;
 		
 	}
 	if (juego == UP) {
@@ -259,4 +259,9 @@ Pieza* Tablero::get_pieza(const Coordenadas entrada) const
 	if (entrada < tam)
 		return cuadricula[entrada.col - 1 + (entrada.fil - 1) * (tam.col)];
 	return nullptr;
+}
+
+vector<Pieza*>& Tablero::get_cuadricula()
+{
+	return cuadricula;
 }

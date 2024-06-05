@@ -14,7 +14,7 @@ protected:
 	
 public:
 
-	virtual void dibuja() const;
+	virtual void dibuja() ;
 	virtual void detecta(GLdouble x, GLdouble y);
 	virtual void click(GLdouble x, GLdouble y);
 	Ventana(const GLdouble& Ancho, const GLdouble& Alto, std::string Path);

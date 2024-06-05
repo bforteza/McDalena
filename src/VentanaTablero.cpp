@@ -1,7 +1,7 @@
 #include "VentanaTablero.h"
 void VentanaTablero::detecta(GLdouble x, GLdouble y)
 {
-
+	Ventana::detecta(x,y);
 	 tx = x - Ancho / 2;
 	 ty = Alto / 2 - y;
 
@@ -11,8 +11,8 @@ void VentanaTablero::detecta(GLdouble x, GLdouble y)
 	Color color = NEGRO;
 
 
-	auxx =  ((tx - origenx) / (lado)) + 1;
-	auxy =  ((ty - origeny) / (lado)) + 1;
+	auxx = (int) (((tx - origenx) / (lado))  + 1);
+	auxy = (int) (((ty - origeny) / (lado))   + 1);
 
 
 	if (Coordenadas(auxx, auxy) < tablero.get_tam())
@@ -53,8 +53,10 @@ void VentanaTablero::dibuja() {
 
 	Ventana::dibuja();
 
-
+	
 	glPushMatrix();
+	
+
 	
 	for (auto& iter : tablero.seleccion.v) {
 		get_CasillaVacia(iter)->set_rojo();
@@ -89,27 +91,37 @@ VentanaTablero::VentanaTablero(const GLdouble& Ancho, const GLdouble& Alto, std:
 	: tablero(juego), Ventana::Ventana(Ancho, Alto, Path)
 {
 	if (juego == UP) {
-		origenx = -100;
-		origeny = -100;
-		lado = 75;
+		origenx = -Ancho / 4;
+		origeny = -Alto / 4;
+		lado = Ancho / 8;
 	}
 
+	if (juego == SC) {
+		origenx = -Ancho/4;
+		origeny = -Alto/4;
+		lado = Ancho/10;
+	}
 
 
 	base.resize(tablero.get_tam().fil * tablero.get_tam().col);
 	Color color = BLANCO;
 	int x = 1;
 	for (auto& iter : base) {
+
 		iter = new CasillaVacia(color,lado);
 
-		x++;
-		if (x % tablero.get_tam().col != 1) {
+		color = !color;
+		
+		if (x % tablero.get_tam().col == 0 && !(tablero.get_tam().col % 2 ) ) {
 			color = !color;
 		}
+		x++;
 	}
 
-	for (auto& iter : tablero.cuadricula) {
+	for (auto& iter : tablero.get_cuadricula()) {
 		if (iter != nullptr)
 			iter->set_size(lado, lado);
 	}
+	add_boton(Boton(100, 100, -300, 300, "bin/imagenes/Volver.png", "bin/imagenes/PreVolver.png", nullptr));
+	
 }

@@ -13,7 +13,7 @@
 
 Tablero tablero(UP);
 
-VentanaTablero   prueba(800, 800, "bin/imagenes/Fondo.png", UP);
+VentanaTablero  prueba(700, 700, "bin/imagenes/Fondo.png",UP);
 
 void OnDraw(void);
 void OnTimer(int value);
@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
    //Inicializar el gestor de ventanas FREEGLUT
 //y crear la ventana
 	glutInit(&argc, argv);
-	glutInitWindowSize(800, 800);
+	glutInitWindowSize(700, 700);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutCreateWindow("MiJuego");
 	//habilitar luces y definir perspectiva

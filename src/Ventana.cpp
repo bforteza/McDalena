@@ -1,6 +1,6 @@
 #include "Ventana.h"
 
-void Ventana::dibuja() const
+void Ventana::dibuja() 
 {
 
 	gluPerspective(90.0, Ancho / Alto, (Alto/2) * 0.8, (Alto/2) * 1.2);
@@ -36,12 +36,12 @@ void Ventana::dibuja() const
 	glPushMatrix();
 
 
-	glPopMatrix();
+	
 
 	for (auto iter : botones) {
 		iter.dibuja();
 	}
-
+	glPopMatrix();
 }
 
 
