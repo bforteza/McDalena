@@ -8,12 +8,13 @@
 #include "Ventana.h"
 #include "Boton.h"
 #include "VentanaTablero.h"
+#include "Coordinador.h"
 #pragma once
 
 
 Tablero tablero(UP);
 
-VentanaTablero  prueba(700, 700, "bin/imagenes/Fondo.png",UP);
+Coordinador prueba{ 700,700 };
 
 void OnDraw(void);
 void OnTimer(int value);

@@ -22,6 +22,7 @@ void Boton::click(GLdouble rx, GLdouble ry)
 	if ((rx) > (x - Ancho / 2) && rx < (x + Ancho / 2) &&
 		(ry) >(y - Alto / 2) && ry < (y + Alto / 2))
 	{
+		if (function != nullptr)
 		function();
 	}
 	

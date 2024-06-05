@@ -123,7 +123,7 @@ VentanaTablero::VentanaTablero(const GLdouble& Ancho, const GLdouble& Alto, std:
 			iter->set_size(lado, lado);
 	}
 	
-	add_boton(Boton(100, 100, -300, 300, "bin/imagenes/Volver.png", "bin/imagenes/PreVolver.png", nullptr));
+	
 	add_boton(Boton(50, 50, 300, 300, "bin/imagenes/restart.png", "bin/imagenes/restartrojo.png", std::bind(&VentanaTablero::restart,this) ) ) ;
 	
 }
