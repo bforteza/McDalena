@@ -4,38 +4,22 @@
 
 void CasillaVacia::set_verde()
 {
-	verde = true;
-
+	sprite_casilla = &casilla_verde;
 }
 
 void CasillaVacia::set_rojo()
 {
-	rojo = true;
+	sprite_casilla = &casilla_roja;
+
 }
 
-void CasillaVacia::print(const float x, const float y, const float lado) {
+void CasillaVacia::print(const float x, const float y) {
 
-
-	if (color == NEGRO)
-	{
-		sprite_casilla = new Sprite("bin/imagenes/cuadrado2.png", x, y, lado , lado);
-	}
-	if (color == BLANCO)
-	{
-		sprite_casilla = new Sprite("bin/imagenes/cuadrado.png", x, y, lado , lado);
-	}
-	if (verde)
-	{
-		sprite_casilla = new Sprite("bin/imagenes/cuadradoverde.png", x, y, lado , lado);
-		verde = false;
-	}
-	if (rojo)
-	{
-		sprite_casilla = new Sprite("bin/imagenes/cuadradorojo.png", x,y ,lado, lado);
-		rojo = false;
-	}
-
-
+	if (sprite_casilla == nullptr)
+		sprite_casilla = &casilla;
+	glTranslated(x, y, 0);
 	sprite_casilla->draw();
+	glTranslated(-x, -y, 0);
+	sprite_casilla = &casilla;
 
 }

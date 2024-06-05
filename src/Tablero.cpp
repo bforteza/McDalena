@@ -14,9 +14,7 @@ Tablero::Tablero(Juego juego) {
 	
 
 	cuadricula.resize(tam.fil * tam.col);
-	/*
 	
-	}*/
 	
 	if (juego == SC) {
 		for (int c = 1; c <= tam.col; c++) {
@@ -187,7 +185,11 @@ VectorCoordenadas Tablero::premove(const Coordenadas& e)
 
 void Tablero::move(const Coordenadas& e)
 {
+	
 	fmove(Piezaamover, e);
+	borrar_seleccion();
+	Piezaamover.col = 0;
+	turno = !turno;
 }
 
 void Tablero::asignar(Coordenadas e, Pieza* entrada) {

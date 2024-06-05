@@ -11,8 +11,8 @@ void VentanaTablero::detecta(GLdouble x, GLdouble y)
 	Color color = NEGRO;
 
 
-	auxx = (int) ((tx - origenx) / (lado)) + 1;
-	auxy = (int) ((ty - origeny) / (lado)) + 1;
+	auxx =  ((tx - origenx) / (lado)) + 1;
+	auxy =  ((ty - origeny) / (lado)) + 1;
 
 
 	if (Coordenadas(auxx, auxy) < tablero.tam)
@@ -43,9 +43,7 @@ void VentanaTablero::click(GLdouble x, GLdouble y)
 	}
 	else if (tablero.Piezaamover.col && tablero.seleccion << aux) {
 		tablero.move(aux);
-		tablero.borrar_seleccion();
-		tablero.Piezaamover.col = 0;
-		tablero.turno = !tablero.turno;
+		
 
 	}
 	else if (tablero.Piezaamover.col && !(tablero.seleccion << aux) && !(aux == tablero.Piezaamover)) {
@@ -88,9 +86,9 @@ void VentanaTablero::dibuja() {
 			auxy = (f - 1) * lado;
 
 
-			get_CasillaVacia({ c,f })->print(auxx, auxy, lado);
+			get_CasillaVacia({ c,f })->print(auxx, auxy);
 			if (tablero.get_pieza({ c,f }) != nullptr)
-				tablero.get_pieza({ c,f })->print(auxx, auxy, lado);
+				tablero.get_pieza({ c,f })->print(auxx, auxy);
 
 
 		}
@@ -104,11 +102,19 @@ void VentanaTablero::dibuja() {
 VentanaTablero::VentanaTablero(const GLdouble& Ancho, const GLdouble& Alto, std::string Path, Juego juego)
 	: tablero(juego), Ventana::Ventana(Ancho, Alto, Path)
 {
+	if (juego == UP) {
+		origenx = -100;
+		origeny = -100;
+		lado = 75;
+	}
+
+
+
 	base.resize(tablero.tam.fil * tablero.tam.col);
 	Color color = BLANCO;
 	int x = 1;
 	for (auto& iter : base) {
-		iter = new CasillaVacia(color);
+		iter = new CasillaVacia(color,lado);
 
 		x++;
 		if (x % tablero.tam.col != 1) {
@@ -116,9 +122,8 @@ VentanaTablero::VentanaTablero(const GLdouble& Ancho, const GLdouble& Alto, std:
 		}
 	}
 
-	if (juego == UP) {
-		origenx = -300;
-		origeny = -300;
-		lado = 100;
+	for (auto& iter : tablero.cuadricula) {
+		if (iter != nullptr)
+			iter->set_size(lado, lado);
 	}
 }
