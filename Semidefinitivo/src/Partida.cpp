@@ -2,10 +2,10 @@
 
 void Partida::guardar(Tablero& tab)
 {
-	for (int f = tab.get_tam().fil; f != 0; f--) {
-		for (int c = 1; c < tab.get_tam().col; c++)
+	for (int f = 0; f < tab.get_tam().fil; f++) {
+		for (int c = 0; c < tab.get_tam().col; c++)
 		{
-			posicionesg.push_back(tab.get_pieza(Coordenadas(c, f)));
+			posicionesg.push_back(tab.get_pieza(Coordenadas(c,f)));
 		}
 	}//Guardo las posiciones de todas las piezas en el momento en el que se decide guardar la partida
 

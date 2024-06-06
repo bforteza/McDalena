@@ -4,6 +4,7 @@
 #include <ETSIDI.h>
 #include "Tablero.h"
 #include <vector>
+#include <Menu.h>
 #include <iostream>
 #include <fstream>
 #include <string>
