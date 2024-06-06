@@ -21,10 +21,11 @@ protected:
 	Color color{};
 
 	Sprite* sprite_pieza{}; //Sprite Correspondiente
-	float lado=150;
+	double lado=150;
 public:
 	//metodos otención de datos
 	virtual Color get_color() { return color; };
+	virtual double get_lado() { return lado; };
 
 	virtual void print(const GLdouble x, const GLdouble y) {
 		glTranslated(x, y, 0);
@@ -42,13 +43,14 @@ public:
 		color = color_asignado;
 	}
 
-	void set_size(float ancho, float alto) {
-		sprite_pieza->setSize(ancho, alto);
-		sprite_pieza->setCenter(ancho / 2, alto / 2);
+	void set_size(float _lado) {
+		sprite_pieza->setSize(_lado, _lado);
+		sprite_pieza->setCenter(_lado / 2, _lado / 2);
+		lado = _lado;
 	}
 
 	//inicializador
 	Pieza(Color pieza) : color(pieza) {};
-
+	
 	
 };

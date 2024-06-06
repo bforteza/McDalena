@@ -1,17 +1,16 @@
 #include "VentanaTablero.h"
 void VentanaTablero::detecta(GLdouble x, GLdouble y)
 {
-
-	if (ventana_coronado == true && auxiliar==1)
+	if (tablero.coronacion == true && !ventana_coronado)
 	{
 		add_boton(Boton(50, 50, 300, 220, "bin/imagenes/TorreB.png", "bin/imagenes/TorreN.png", std::bind(&VentanaTablero::poner_torre, this)));
 		add_boton(Boton(50, 50, 300, 140, "bin/imagenes/ReinaB.png", "bin/imagenes/ReinaN.png", std::bind(&VentanaTablero::poner_reina, this)));
 		add_boton(Boton(50, 50, 300, 80, "bin/imagenes/AlfilB.png", "bin/imagenes/AlfilN.png", std::bind(&VentanaTablero::poner_alfil, this)));
 		add_boton(Boton(50, 50, 300, 0, "bin/imagenes/CaballoB.png", "bin/imagenes/CaballoN.png", std::bind(&VentanaTablero::poner_caballo, this)));
-		auxiliar = 0;//antirrepeticion
-		
+		ventana_coronado = true;
 	}
 
+	
 	Ventana::detecta(x,y);
 	 tx = x - Ancho / 2;
 	 ty = Alto / 2 - y;
@@ -29,7 +28,7 @@ void VentanaTablero::detecta(GLdouble x, GLdouble y)
 	if (Coordenadas(auxx, auxy) < tablero.get_tam())
 		get_CasillaVacia({ auxx,auxy })->set_verde();
 
-	
+
 }
 
 void VentanaTablero::click()
@@ -93,7 +92,7 @@ void VentanaTablero::dibuja() {
 	if ( tablero.Piezaamover < tablero.get_tam() && !tablero.seleccion.v.empty())
 		tablero.get_pieza(tablero.Piezaamover)->print(tx, ty);
 
-	tablero.get_coronado(ventana_coronado);
+	
 	glPopMatrix();
 	
 
@@ -132,7 +131,7 @@ VentanaTablero::VentanaTablero(const GLdouble& Ancho, const GLdouble& Alto, std:
 
 	for (auto& iter : tablero.get_cuadricula()) {
 		if (iter != nullptr)
-			iter->set_size(lado, lado);
+			iter->set_size(lado);
 	}
 	
 	
@@ -144,50 +143,50 @@ void VentanaTablero::restart() {
 	tablero.restart();
 	for (auto& iter : tablero.get_cuadricula()) {
 		if (iter != nullptr)
-			iter->set_size(lado, lado);
+			iter->set_size(lado);
 	}
 }
+
 void VentanaTablero::poner_torre()
 {
-	tablero.set_identificador_coronacion(1);
-	tablero.set_coronado(false);
-		eliminar_boton(Boton(50, 50, 300, 220, "bin/imagenes/restart.png", "bin/imagenes/restartrojo.png", std::bind(&VentanaTablero::poner_torre, this)));
-		eliminar_boton(Boton(50, 50, 300, 140, "bin/imagenes/restart.png", "bin/imagenes/restartrojo.png", std::bind(&VentanaTablero::poner_reina, this)));
-		eliminar_boton(Boton(50, 50, 300, 80, "bin/imagenes/restart.png", "bin/imagenes/restartrojo.png", std::bind(&VentanaTablero::poner_alfil, this)));
-		eliminar_boton(Boton(50, 50, 300, 80, "bin/imagenes/restart.png", "bin/imagenes/restartrojo.png", std::bind(&VentanaTablero::poner_alfil, this)));
-		auxiliar = 1;
+
+	tablero.set_coronacion('R');
+	eliminar_boton();
+	eliminar_boton();
+	eliminar_boton();
+	eliminar_boton();
+	
+	ventana_coronado = false;
 		
 	
 }
 void VentanaTablero::poner_reina()
 {
-	tablero.set_identificador_coronacion(2);
-	tablero.set_coronado(false);
-	eliminar_boton(Boton(50, 50, 300, 220, "bin/imagenes/restart.png", "bin/imagenes/restartrojo.png", std::bind(&VentanaTablero::poner_torre, this)));
-	eliminar_boton(Boton(50, 50, 300, 140, "bin/imagenes/restart.png", "bin/imagenes/restartrojo.png", std::bind(&VentanaTablero::poner_reina, this)));
-	eliminar_boton(Boton(50, 50, 300, 80, "bin/imagenes/restart.png", "bin/imagenes/restartrojo.png", std::bind(&VentanaTablero::poner_alfil, this)));
-	eliminar_boton(Boton(50, 50, 300, 80, "bin/imagenes/restart.png", "bin/imagenes/restartrojo.png", std::bind(&VentanaTablero::poner_alfil, this)));
-	auxiliar = 1;
+	tablero.set_coronacion('Q');
+	eliminar_boton();
+	eliminar_boton();
+	eliminar_boton();
+	eliminar_boton();
+	
+	ventana_coronado = false;
 
 }
 void VentanaTablero::poner_alfil()
 {
-	tablero.set_identificador_coronacion(3);
-		tablero.set_coronado(false);
-		eliminar_boton(Boton(50, 50, 300, 220, "bin/imagenes/restart.png", "bin/imagenes/restartrojo.png", std::bind(&VentanaTablero::poner_torre, this)));
-		eliminar_boton(Boton(50, 50, 300, 140, "bin/imagenes/restart.png", "bin/imagenes/restartrojo.png", std::bind(&VentanaTablero::poner_reina, this)));
-		eliminar_boton(Boton(50, 50, 300, 80, "bin/imagenes/restart.png", "bin/imagenes/restartrojo.png", std::bind(&VentanaTablero::poner_alfil, this)));
-		eliminar_boton(Boton(50, 50, 300, 80, "bin/imagenes/restart.png", "bin/imagenes/restartrojo.png", std::bind(&VentanaTablero::poner_alfil, this)));
-		auxiliar = 1;
+	tablero.set_coronacion('B');
+		eliminar_boton();
+		eliminar_boton();
+		eliminar_boton();
+		eliminar_boton();
+		ventana_coronado = false;
 }
 void VentanaTablero::poner_caballo()
 {
-	tablero.set_identificador_coronacion(4);
-	tablero.set_coronado(false);
-	eliminar_boton(Boton(50, 50, 300, 220, "bin/imagenes/restart.png", "bin/imagenes/restartrojo.png", std::bind(&VentanaTablero::poner_torre, this)));
-	eliminar_boton(Boton(50, 50, 300, 140, "bin/imagenes/restart.png", "bin/imagenes/restartrojo.png", std::bind(&VentanaTablero::poner_reina, this)));
-	eliminar_boton(Boton(50, 50, 300, 80, "bin/imagenes/restart.png", "bin/imagenes/restartrojo.png", std::bind(&VentanaTablero::poner_alfil, this)));
-	eliminar_boton(Boton(50, 50, 300, 80, "bin/imagenes/restart.png", "bin/imagenes/restartrojo.png", std::bind(&VentanaTablero::poner_alfil, this)));
-	auxiliar = 1;
+	tablero.set_coronacion('N');
+	eliminar_boton();
+	eliminar_boton();
+	eliminar_boton();
+	eliminar_boton();
+	ventana_coronado = false;
 
 }

@@ -14,14 +14,17 @@ enum Juego { UP, SC };
 class Tablero
 {
 private:
-	int identificador_coronacion=0;
-	bool coronado=false;
+	
 	Juego juego;
 	vector<Pieza*> cuadricula;
 	Coordenadas tam; //tamaño
 	vector<Pieza*> muertas;
 	VectorCoordenadas p_blancas, p_negras;
 
+
+
+	
+	Coordenadas PeonCoronacion;
 
 	Coordenadas rey(const Color color);
 	void borrar_seleccion();
@@ -33,6 +36,8 @@ private:
 	bool jaque(Color color);
 	VectorCoordenadas premove(const Coordenadas& e);
 public:
+
+	bool coronacion = false;
 	VectorCoordenadas seleccion;
 	Coordenadas Piezaamover{ 0,0 };
 	Color turno = BLANCO;
@@ -41,19 +46,10 @@ public:
 	Pieza*& get_pieza(const Coordenadas entrada);
 	Pieza* get_pieza(const Coordenadas entrada) const;
 	vector<Pieza*>& get_cuadricula();
-
-	void get_coronado(bool &_coronado)
-	{
-		_coronado=coronado;
-	}
-	void set_coronado(bool _coronado)
-	{
-		coronado = _coronado;
-	}
-	void set_identificador_coronacion(int _identificadorcoronacion)
-	{
-		identificador_coronacion = _identificadorcoronacion;
-	}
+	
+	void set_coronacion(char e);
+	
+	
 
 	void restart();
 	

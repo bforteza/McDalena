@@ -1,0 +1,8 @@
+﻿  VentanaTablero.cpp
+C:\Users\tomeu\Desktop\C\github\McDalena\Semidefinitivo\src\VentanaTablero.cpp(84,46): warning C4244: 'argumento': conversión de 'GLdouble' a 'const float'; posible pérdida de datos
+C:\Users\tomeu\Desktop\C\github\McDalena\Semidefinitivo\src\VentanaTablero.cpp(84,40): warning C4244: 'argumento': conversión de 'GLdouble' a 'const float'; posible pérdida de datos
+C:\Users\tomeu\Desktop\C\github\McDalena\Semidefinitivo\src\VentanaTablero.cpp(122,33): warning C4244: 'argumento': conversión de 'GLdouble' a 'float'; posible pérdida de datos
+C:\Users\tomeu\Desktop\C\github\McDalena\Semidefinitivo\src\VentanaTablero.cpp(134,19): warning C4244: 'argumento': conversión de 'GLdouble' a 'float'; posible pérdida de datos
+C:\Users\tomeu\Desktop\C\github\McDalena\Semidefinitivo\src\VentanaTablero.cpp(146,19): warning C4244: 'argumento': conversión de 'GLdouble' a 'float'; posible pérdida de datos
+C:\Users\tomeu\Desktop\C\github\McDalena\Semidefinitivo\src\VentanaTablero.cpp(59,1): warning C4172: devolución de dirección de la variable local o temporal: retorno
+  PIXEL-CHESS.vcxproj -> C:\Users\tomeu\Desktop\C\github\McDalena\Semidefinitivo\bin\PIXEL-CHESS.exe

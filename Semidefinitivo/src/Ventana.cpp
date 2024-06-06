@@ -56,7 +56,7 @@ void Ventana::add_boton(Boton entrada)
 	botones.push_back(entrada);
 }
 
-void Ventana::eliminar_boton(Boton entrada)
+void Ventana::eliminar_boton()
 {
 	botones.pop_back();
 }

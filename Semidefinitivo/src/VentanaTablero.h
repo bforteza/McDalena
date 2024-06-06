@@ -10,19 +10,20 @@ private:
     GLdouble finalx, finaly;
     GLdouble lado;
     std::vector< CasillaVacia* > base;
-    bool ventana_coronado;
+    bool ventana_coronado = false;
 
     
     
 
     CasillaVacia*& get_CasillaVacia(const Coordenadas entrada);
 public:
-    int auxiliar=1;
+    
     void detecta(GLdouble x, GLdouble y);
     void click();
     void dibuja() ;
     void restart();
    
+
     void poner_torre();
     void poner_alfil();
     void poner_reina();

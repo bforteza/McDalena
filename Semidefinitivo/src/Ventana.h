@@ -20,7 +20,7 @@ public:
 	virtual void click();
 	Ventana(const GLdouble& Ancho, const GLdouble& Alto, std::string Path);
 	void add_boton(Boton entrada);
-	void eliminar_boton(Boton entrada);
+	void eliminar_boton();
 	//ejemplo
 	//prueba.add_boton(Boton(100, 100, -350, 350, "bin/imagenes/Volver.png", "bin/imagenes/PreVolver.png"));
 };

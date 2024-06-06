@@ -132,35 +132,12 @@ void Tablero::move(const Coordenadas& e)
 {
 	//coronación
 	Pieza*& aux = get_pieza(Piezaamover);
-	if (dynamic_cast<Peon*>(aux) != nullptr && (e.fil == tam.fil || e.fil == 1 )) {
-		Color Peoncolor = aux->get_color();
-		coronado = true;
+	
+	if (dynamic_cast<Peon*>(aux) != nullptr && (e.fil == tam.fil || e.fil == 1)) {
 
-		if (identificador_coronacion == 1)
-		{
-			delete aux;
-			aux = new Torre(Peoncolor);
-		}
-		if (identificador_coronacion == 2 || identificador_coronacion== 0)
-		{
-			delete aux;
-			aux = new Reina(Peoncolor);
-		}
-		if (identificador_coronacion == 3)
-		{
-			delete aux;
-			aux = new Alfil(Peoncolor);
-		}
-		if (identificador_coronacion == 4)
-		{
-			delete aux;
-			aux = new Caballo(Peoncolor);
-		}
+		PeonCoronacion = e;
+		coronacion = true;
 		
-	}
-	else
-	{
-		coronado = false;
 	}
 	//enroque
 	if (dynamic_cast<Rey*>(aux) != nullptr ) {
@@ -181,25 +158,31 @@ void Tablero::move(const Coordenadas& e)
 	borrar_seleccion();
 	Piezaamover.col = 0;
 	Piezaamover.fil = 0;
-	turno = !turno;
 
+
+	if (!coronacion)
+		turno = !turno;
+	
+	
 }
 
 void Tablero::entrada(const Coordenadas& e)
 {
-	if (((turno == BLANCO) ? p_blancas : p_negras) << e && Piezaamover.col == 0) {
-		seleccionar(premove(e));
-		if (!seleccion.v.empty())
-			Piezaamover = e;
-	}
-	else if (Piezaamover.col && seleccion << e) {
-		move(e);
-	}
-	else if (Piezaamover.col && !(seleccion << e) && !(e == Piezaamover)) {
+	if (!coronacion) {
+		if (((turno == BLANCO) ? p_blancas : p_negras) << e && Piezaamover.col == 0) {
+			seleccionar(premove(e));
+			if (!seleccion.v.empty())
+				Piezaamover = e;
+		}
+		else if (Piezaamover.col && seleccion << e) {
+			move(e);
+		}
+		else if (Piezaamover.col && !(seleccion << e) && !(e == Piezaamover)) {
 
-		borrar_seleccion();
-		Piezaamover.col = 0;
+			borrar_seleccion();
+			Piezaamover.col = 0;
 
+		}
 	}
 }
 
@@ -235,6 +218,43 @@ Pieza* Tablero::get_pieza(const Coordenadas entrada) const
 vector<Pieza*>& Tablero::get_cuadricula()
 {
 	return cuadricula;
+}
+
+void Tablero::set_coronacion(char e)
+{
+	if (coronacion == true){
+	
+		Pieza*& aux = get_pieza(PeonCoronacion);
+		Color color = aux->get_color();
+		float lado = aux->get_lado();
+		
+		delete aux;
+
+		switch (e)
+		{
+		case 'R':
+			aux = new Torre(color);
+			break;
+		case 'Q':
+			aux = new Reina(color);
+			break;
+		case 'N':
+			aux = new Caballo(color);
+			break;	
+		case 'B':
+			aux = new Alfil(color);
+			break;	
+		default:
+			break;
+		}
+		
+		aux->set_size(lado);
+		
+	
+
+	    turno = !turno;
+		coronacion = false;
+	}
 }
 
 void Tablero::restart()
