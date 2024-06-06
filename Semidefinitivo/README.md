@@ -1,0 +1,1 @@
+Esta es la plantilla sugerida por el profesor, a partir de ahora va a ser las bases de nuestro proyecto

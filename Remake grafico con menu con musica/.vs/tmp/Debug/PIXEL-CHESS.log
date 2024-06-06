@@ -1,0 +1,10 @@
+﻿  VentanaTablero.cpp
+C:\Users\mariu\OneDrive\Escritorio\Remake grafico - copia\src\VentanaTablero.cpp(14,36): warning C4244: '=': conversión de 'GLdouble' a 'int'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\Remake grafico - copia\src\VentanaTablero.cpp(15,36): warning C4244: '=': conversión de 'GLdouble' a 'int'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\Remake grafico - copia\src\VentanaTablero.cpp(97,43): warning C4244: 'argumento': conversión de 'GLdouble' a 'const float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\Remake grafico - copia\src\VentanaTablero.cpp(97,37): warning C4244: 'argumento': conversión de 'GLdouble' a 'const float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\Remake grafico - copia\src\VentanaTablero.cpp(131,35): warning C4244: 'argumento': conversión de 'GLdouble' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\Remake grafico - copia\src\VentanaTablero.cpp(158,25): warning C4244: 'argumento': conversión de 'GLdouble' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\Remake grafico - copia\src\VentanaTablero.cpp(158,19): warning C4244: 'argumento': conversión de 'GLdouble' a 'float'; posible pérdida de datos
+C:\Users\mariu\OneDrive\Escritorio\Remake grafico - copia\src\VentanaTablero.cpp(72): warning C4172: devolución de dirección de la variable local o temporal: retorno
+  PIXEL-CHESS.vcxproj -> C:\Users\mariu\OneDrive\Escritorio\Remake grafico - copia\bin\PIXEL-CHESS.exe
