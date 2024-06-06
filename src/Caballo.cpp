@@ -5,7 +5,7 @@
 
 VectorCoordenadas Caballo::premove(Tablero* tablero, const Coordenadas& posicion)
 {
-	VectorCoordenadas direcciones({ {1,2},{2,1},{-1,-2},{-1,-2},{1,-2},{-2,1},{-1,2},{2,-1} });
+	VectorCoordenadas direcciones({ {1,2},{2,1},{-1,-2},{-2,-1},{1,-2},{-2,1},{-1,2},{2,-1} });
 	Coordenadas tam = tablero->get_tam();
 	VectorCoordenadas retorno;
 	for (auto& iter : direcciones.v) {
