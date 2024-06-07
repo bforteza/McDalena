@@ -41,7 +41,15 @@ bool Tablero::jaque(Color color)
 	for (auto& aux : piezas.v) {
 		VCaux += get_pieza(aux)->premove(this, aux);
 		if (VCaux << c_rey)
+		{
+			verificarjaque = true;
 			return true;
+		}
+		else
+		{
+			verificarjaque = false;
+		}
+			
 	}
 	return false;
 }
@@ -99,6 +107,7 @@ bool Tablero::fmove(const Coordenadas& origen, const Coordenadas& destino)
 
 VectorCoordenadas Tablero::premove(const Coordenadas& e)
 {
+
 	Pieza* aux = get_pieza(e);
 	if (aux != nullptr) {
 		bool muerte = false;
@@ -259,6 +268,7 @@ void Tablero::set_coronacion(char e)
 
 void Tablero::restart()
 {
+	turno=BLANCO;
 	for (auto& iter : cuadricula) {
 		if (iter != nullptr)
 			delete iter;

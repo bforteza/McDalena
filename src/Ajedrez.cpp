@@ -7,6 +7,7 @@
 #include <vector>
 #include "Ventana.h"
 #include "Boton.h"
+#include "BotonEnclavado.h"
 #include "VentanaTablero.h"
 #include "Coordinador.h"
 #pragma once
@@ -70,10 +71,7 @@ void OnTimer(int value)
 	
 	
 	prueba.detecta(x_raton, y_raton);
-	if (click) {
-		prueba.click();
-		//tablero.clicar(x_raton, y_raton);
-	}
+
 
 	glutTimerFunc(25, OnTimer, 0);
 	glutPostRedisplay();
@@ -91,10 +89,11 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 }
 void OnMouseClick(int boton, int state, int x, int y)
 {
+	
 	if (boton == GLUT_LEFT && state == GLUT_DOWN)
 	{
 		click = true;
-		std::cout << x << " " << y << "\n";
+		prueba.click();
 	}
 	if (boton == GLUT_LEFT && state == GLUT_UP)
 	{

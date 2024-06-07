@@ -22,7 +22,7 @@ private:
 	VectorCoordenadas p_blancas, p_negras;
 
 
-
+	
 	
 	Coordenadas PeonCoronacion;
 
@@ -37,6 +37,7 @@ private:
 	VectorCoordenadas premove(const Coordenadas& e);
 public:
 
+	bool verificarjaque = false;
 	bool coronacion = false;
 	VectorCoordenadas seleccion;
 	Coordenadas Piezaamover{ 0,0 };
@@ -49,7 +50,7 @@ public:
 	
 	void set_coronacion(char e);
 	
-	
+	bool get_turno() { return turno; };
 
 	void restart();
 	

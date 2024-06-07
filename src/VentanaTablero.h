@@ -11,7 +11,10 @@ private:
     GLdouble lado;
     std::vector< CasillaVacia* > base;
     bool ventana_coronado = false;
-
+    bool ventana_turno;
+    bool ventana_jaque = false;
+    bool stand_by=false;
+    ETSIDI::Sprite turno=("bin/imagenes/JueganBlancas.png");
     
     
 
@@ -28,6 +31,8 @@ public:
     void poner_alfil();
     void poner_reina();
     void poner_caballo();
+    void eliminar_jaque();
+    void restart_v2();
     VentanaTablero(const GLdouble& Ancho, const GLdouble& Alto, std::string Path, Juego juego);
 };
 

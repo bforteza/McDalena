@@ -136,6 +136,7 @@
   <ItemGroup>
     <ClInclude Include="src\Alfil.h" />
     <ClInclude Include="src\Boton.h" />
+    <ClInclude Include="src\BotonEnclavado.h" />
     <ClInclude Include="src\Caballo.h" />
     <ClInclude Include="src\CasillaVacia.h" />
     <ClInclude Include="src\Coordenadas.h" />
@@ -153,6 +154,7 @@
     <ClCompile Include="src\Ajedrez.cpp" />
     <ClCompile Include="src\Alfil.cpp" />
     <ClCompile Include="src\Boton.cpp" />
+    <ClCompile Include="src\BotonEnclavado.cpp" />
     <ClCompile Include="src\Caballo.cpp" />
     <ClCompile Include="src\CasillaVacia.cpp" />
     <ClCompile Include="src\Coordenadas.cpp" />

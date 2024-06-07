@@ -5,6 +5,7 @@
 #include "ETSIDI.h"
 class Boton
 {
+protected:
 	GLdouble Ancho;
 	GLdouble Alto;
 	GLdouble x;
@@ -15,9 +16,9 @@ class Boton
 
 	std::function<void()> function;
 public:
-	void dibuja();
-	void detectar(GLdouble rx, GLdouble ry);
-	void click(GLdouble rx, GLdouble ry);
+	 void dibuja();
+	 void detectar(GLdouble rx, GLdouble ry);
+	 void click(GLdouble rx, GLdouble ry);
 	Boton(const GLdouble& Ancho, const GLdouble& Alto, 
 		const GLdouble& x, const GLdouble& y,
 		std::string Path1,std::string Path2 ,
