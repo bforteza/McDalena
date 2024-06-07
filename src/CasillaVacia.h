@@ -13,23 +13,21 @@ class CasillaVacia
     bool rojo = false;
     bool azul = false;
 
-    Sprite casilla, casilla_verde, casilla_roja,casilla_azul;
+    Sprite casilla, casilla_verde, casilla_seleccionada;
 
 public:
     Color color;
-    CasillaVacia(Color _color, float _lado) : color(_color) , lado(_lado),
-    casilla((_color == BLANCO) ? "bin/imagenes/cuadrado.png" : "bin/imagenes/cuadrado2.png", 0, 0 , lado, lado ),
-    casilla_verde("bin/imagenes/BlancoTenue.png",0,0,lado,lado),
-    casilla_azul("bin/imagenes/NegroTenue.png", 0, 0, lado, lado),
-    casilla_roja("bin/imagenes/cuadradoverde.png",0,0, lado , lado)
+    CasillaVacia(Color _color, float _lado) : color(_color), lado(_lado),
+        casilla((_color == BLANCO) ? "bin/imagenes/cuadrado.png" : "bin/imagenes/cuadrado2.png", 0, 0, lado, lado),
+        casilla_verde("bin/imagenes/cuadradoverde.png", 0, 0, lado, lado),
+        casilla_seleccionada((_color == BLANCO) ? "bin/imagenes/BlancoTenue.png" : "bin/imagenes/NegroTenue.png", 0, 0, lado, lado)
     {
     
     
     };
     
     void set_verde();
-    void set_rojo();
-    void set_azul();
+    void set_selecionado();
 
     virtual void print(const float x, const float y) ;
 };

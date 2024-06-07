@@ -7,15 +7,8 @@ void CasillaVacia::set_verde()
 	sprite_casilla = &casilla_verde;
 }
 
-void CasillaVacia::set_rojo()
-{
-	sprite_casilla = &casilla_roja;
-
-}
-void CasillaVacia::set_azul()
-{
-	sprite_casilla = &casilla_azul;
-
+void CasillaVacia::set_selecionado() {
+	sprite_casilla = &casilla_seleccionada;
 }
 
 void CasillaVacia::print(const float x, const float y) {

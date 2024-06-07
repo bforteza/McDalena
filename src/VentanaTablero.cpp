@@ -1,30 +1,6 @@
 #include "VentanaTablero.h"
 void VentanaTablero::detecta(GLdouble x, GLdouble y)
 {
-	if (tablero.coronacion == true && !ventana_coronado)
-	{
-		add_boton(Boton(50, 50, 300, 220, "bin/imagenes/TorreB.png", "bin/imagenes/TorreN.png", std::bind(&VentanaTablero::poner_torre, this)));
-		add_boton(Boton(50, 50, 300, 140, "bin/imagenes/ReinaB.png", "bin/imagenes/ReinaN.png", std::bind(&VentanaTablero::poner_reina, this)));
-		add_boton(Boton(50, 50, 300, 80, "bin/imagenes/AlfilB.png", "bin/imagenes/AlfilN.png", std::bind(&VentanaTablero::poner_alfil, this)));
-		add_boton(Boton(50, 50, 300, 0, "bin/imagenes/CaballoB.png", "bin/imagenes/CaballoN.png", std::bind(&VentanaTablero::poner_caballo, this)));
-		ventana_coronado = true;
-	}
-	ventana_turno=tablero.get_turno();
-	std::cout << tablero.verificarjaque << std::endl;
-
-	if (tablero.verificarjaque == true && !ventana_jaque)
-	{
-		add_boton(Boton(150, 50, 250, -80, "bin/imagenes/JaqueMate.png", "bin/imagenes/GananBlancas.png", std::bind(&VentanaTablero::restart_v2, this)));
-		ventana_jaque = true;
-	}
-	if (ventana_turno == 0)
-	{
-		turno = { "bin/imagenes/JueganBlancas.png",0, -240, 300, 50 };
-	}
-	else
-	{
-		turno = { "bin/imagenes/JueganNegras.png", 0, 320, 300, 50 };
-	}
 	
 	
 	Ventana::detecta(x,y);
@@ -40,17 +16,10 @@ void VentanaTablero::detecta(GLdouble x, GLdouble y)
 	auxx = (int) (((tx - origenx) / (lado))  + 1);
 	auxy = (int) (((ty - origeny) / (lado))   + 1);
 
-
-	if (Coordenadas(auxx, auxy) < tablero.get_tam())
+	Coordenadas auxiliares = { auxx,auxy };
+	if (auxiliares < tablero.get_tam())
 	{
-		if (get_CasillaVacia({ auxx,auxy })->color == NEGRO)
-		{
-			get_CasillaVacia({ auxx,auxy })->set_azul();
-		}
-		if (get_CasillaVacia({ auxx,auxy })->color == BLANCO)
-		{
-			get_CasillaVacia({ auxx,auxy })->set_verde();
-		}
+		get_CasillaVacia(auxiliares)->set_selecionado();
 	}
 
 		
@@ -86,8 +55,8 @@ CasillaVacia*& VentanaTablero::get_CasillaVacia(const Coordenadas entrada)
 
 void VentanaTablero::dibuja() {
 
-	if (stand_by == false)
-	{
+	
+	
 		Ventana::dibuja();
 
 
@@ -96,7 +65,7 @@ void VentanaTablero::dibuja() {
 
 
 		for (auto& iter : tablero.seleccion.v) {
-			get_CasillaVacia(iter)->set_rojo();
+			get_CasillaVacia(iter)->set_verde();
 		}
 		GLdouble auxx, auxy;
 		Coordenadas auxiliares;
@@ -123,8 +92,31 @@ void VentanaTablero::dibuja() {
 		glPopMatrix();
 
 
-	}
 	
+	if (tablero.coronacion == true && !ventana_coronado)
+	{
+		add_boton(Boton(50, 50, 300, 220, "bin/imagenes/TorreB.png", "bin/imagenes/TorreN.png", std::bind(&VentanaTablero::poner_torre, this)));
+		add_boton(Boton(50, 50, 300, 140, "bin/imagenes/ReinaB.png", "bin/imagenes/ReinaN.png", std::bind(&VentanaTablero::poner_reina, this)));
+		add_boton(Boton(50, 50, 300, 80, "bin/imagenes/AlfilB.png", "bin/imagenes/AlfilN.png", std::bind(&VentanaTablero::poner_alfil, this)));
+		add_boton(Boton(50, 50, 300, 0, "bin/imagenes/CaballoB.png", "bin/imagenes/CaballoN.png", std::bind(&VentanaTablero::poner_caballo, this)));
+		ventana_coronado = true;
+	}
+
+	
+	if (tablero.mate(tablero.get_turno()) && !ventana_jaque)
+	{
+		add_boton(Boton(150, 50, 250, -80, "bin/imagenes/JaqueMate.png", "bin/imagenes/GananBlancas.png", std::bind(&VentanaTablero::restart_v2, this)));
+		ventana_jaque = true;
+		tablero.mate(tablero.get_turno());
+	}
+	if (tablero.get_turno() == BLANCO)
+	{
+		turno = { "bin/imagenes/JueganBlancas.png",0, -240, 300, 50 };
+	}
+	else
+	{
+		turno = { "bin/imagenes/JueganNegras.png", 0, 320, 300, 50 };
+	}
 }
 
 VentanaTablero::VentanaTablero(const GLdouble& Ancho, const GLdouble& Alto, std::string Path, Juego juego)

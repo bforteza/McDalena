@@ -35,23 +35,33 @@ Coordenadas Tablero::rey(const Color color)
 
 bool Tablero::jaque(Color color)
 {
-	VectorCoordenadas& piezas = (color == BLANCO) ? p_blancas : p_negras;
+	VectorCoordenadas& piezas = (color == BLANCO) ?  p_negras : p_blancas;
 	VectorCoordenadas VCaux;
-	Coordenadas c_rey = rey(!color);
+	Coordenadas c_rey = rey(color);
 	for (auto& aux : piezas.v) {
 		VCaux += get_pieza(aux)->premove(this, aux);
 		if (VCaux << c_rey)
 		{
-			verificarjaque = true;
+		
 			return true;
-		}
-		else
-		{
-			verificarjaque = false;
 		}
 			
 	}
 	return false;
+}
+
+bool Tablero::ahogado(Color color)
+{
+	for (auto iter : vector<Coordenadas>(((color == BLANCO) ? p_blancas.v : p_negras.v))) {
+		if (!premove(iter).v.empty())
+			return false;
+	}
+	return true;
+}
+
+bool Tablero::mate(Color color)
+{
+	return (jaque(color) && ahogado(color));
 }
 
 void Tablero::seleccionar(const VectorCoordenadas& e)
@@ -120,7 +130,7 @@ VectorCoordenadas Tablero::premove(const Coordenadas& e)
 		for (auto& iter : vector<Coordenadas>(premoves.v) ) {
 
 			muerte = fmove(e, iter);
-			if (jaque(!c_pieza))
+			if (jaque(c_pieza))
 				premoves.eliminar(iter);
 			fmove(iter, e);
 			if (muerte) {

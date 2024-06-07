@@ -20,7 +20,7 @@ private:
 	Coordenadas tam; //tamaño
 	vector<Pieza*> muertas;
 	VectorCoordenadas p_blancas, p_negras;
-
+	Color turno = BLANCO;
 
 	
 	
@@ -33,15 +33,18 @@ private:
 	bool fmove(const Coordenadas& origen, const Coordenadas& destino);
 	void move(const Coordenadas& e);
 	void seleccionar(const VectorCoordenadas&);
-	bool jaque(Color color);
+	
 	VectorCoordenadas premove(const Coordenadas& e);
 public:
 
-	bool verificarjaque = false;
+	bool jaque(Color color);
+	bool ahogado(Color color);
+	bool mate(Color color);
+	
 	bool coronacion = false;
 	VectorCoordenadas seleccion;
 	Coordenadas Piezaamover{ 0,0 };
-	Color turno = BLANCO;
+
 	
 	Coordenadas get_tam() { return tam; };
 	Pieza*& get_pieza(const Coordenadas entrada);
@@ -50,7 +53,7 @@ public:
 	
 	void set_coronacion(char e);
 	
-	bool get_turno() { return turno; };
+	Color get_turno() { return turno; };
 
 	void restart();
 	
