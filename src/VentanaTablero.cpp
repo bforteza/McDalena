@@ -107,8 +107,18 @@ void VentanaTablero::dibuja() {
 	{
 		add_boton(new Boton(150, 50, 250, -80, "bin/imagenes/JaqueMate.png",
 			(tablero.get_turno() == NEGRO) ? "bin/imagenes/GananBlancas.png" : "bin/imagenes/GananNegras.png", std::bind(&VentanaTablero::restart, this)));
+
 		ventana_jaque = true;
-		tablero.mate(tablero.get_turno());
+		
+	}
+
+	if (tablero.ahogado(tablero.get_turno()) && !ventana_jaque)
+	{
+		add_boton(new Boton(150, 50, 250, -80, "bin/imagenes/Ahogado.png",
+			(tablero.get_turno() == NEGRO) ? "bin/imagenes/GananBlancas.png" : "bin/imagenes/GananNegras.png", std::bind(&VentanaTablero::restart, this)));
+
+		ventana_jaque = true;
+
 	}
 	if (tablero.get_turno() == BLANCO)
 	{
@@ -179,11 +189,9 @@ void VentanaTablero::poner_torre()
 {
 
 	tablero.set_coronacion('R');
-	eliminar_boton();
-	eliminar_boton();
-	eliminar_boton();
-	eliminar_boton();
-	
+	for (int i = botones.size() - 1; i >= 3; i--) {
+		botones.erase(botones.begin() + i);
+	}
 	ventana_coronado = false;
 		
 	
@@ -191,30 +199,26 @@ void VentanaTablero::poner_torre()
 void VentanaTablero::poner_reina()
 {
 	tablero.set_coronacion('Q');
-	eliminar_boton();
-	eliminar_boton();
-	eliminar_boton();
-	eliminar_boton();
-	
+	for (int i = botones.size() - 1; i >= 3; i--) {
+		botones.erase(botones.begin() + i);
+	}
 	ventana_coronado = false;
 
 }
 void VentanaTablero::poner_alfil()
 {
 	tablero.set_coronacion('B');
-		eliminar_boton();
-		eliminar_boton();
-		eliminar_boton();
-		eliminar_boton();
-		ventana_coronado = false;
+	for (int i = botones.size() - 1; i >= 3; i--) {
+		botones.erase(botones.begin() + i);
+	}
+	ventana_coronado = false;
 }
 void VentanaTablero::poner_caballo()
 {
 	tablero.set_coronacion('N');
-	eliminar_boton();
-	eliminar_boton();
-	eliminar_boton();
-	eliminar_boton();
+	for (int i = botones.size() - 1; i >= 3; i--) {
+		botones.erase(botones.begin() + i);
+	}
 	ventana_coronado = false;
 
 }

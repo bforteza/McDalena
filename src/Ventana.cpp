@@ -60,6 +60,8 @@ void Ventana::add_boton(Boton* entrada)
 
 void Ventana::eliminar_boton()
 {
+	if (botones.back() != nullptr)
+	delete botones.back();
 	botones.pop_back();
 }
 
@@ -77,6 +79,7 @@ void Ventana::click() {
 	
 
 	for (auto& iter : botones) {
+		if(iter != nullptr)
 		iter->click(tx, ty);
 	}
 	
