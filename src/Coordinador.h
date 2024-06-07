@@ -7,6 +7,7 @@ class Coordinador
 		char cancion1[30] = "bin/sonidos/Butterflies.mp3";
 		char cancion2[30] = "bin/sonidos/LeapOfFaith.mp3";
 		char cancion3[30] = "bin/sonidos/LiveFreeOrDie.mp3";
+		bool muteado = false;
 		
 public:
 	GLdouble ancho = 700, alto=700;
@@ -31,6 +32,7 @@ public:
 	void set_leapoffaith();
 	void set_livefreeordie();
 	void set_mute();
+	void set_unmute();
 	void set_integrantes();
 	Coordinador(GLdouble _ancho, GLdouble _alto);
 };
