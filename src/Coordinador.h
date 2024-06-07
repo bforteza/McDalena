@@ -11,12 +11,12 @@ class Coordinador
 		
 public:
 	GLdouble ancho = 700, alto=700;
-	VentanaTablero speedchess{ ancho,alto,"bin/imagenes/fondo.png",SC};
-	VentanaTablero unicopeon{ ancho,alto,"bin/imagenes/fondo.png",UP };
+	VentanaTablero speedchess{ ancho,alto,"imagenes/fondo.png",SC};
+	VentanaTablero unicopeon{ ancho,alto,"imagenes/fondo.png",UP };
 
-	Ventana Menu{ ancho, alto,"bin/imagenes/Fondo2.png" };
-	Ventana Integrantes{ ancho, alto,"bin/imagenes/FondoIntegrantes.png" };
-	Ventana MenuMusica{ ancho, alto,"bin/imagenes/fondomusica.png" };
+	Ventana Menu{ ancho, alto,"imagenes/Fondo2.png" };
+	Ventana Integrantes{ ancho, alto,"imagenes/FondoIntegrantes.png" };
+	Ventana MenuMusica{ ancho, alto,"imagenes/fondomusica.png" };
 
 	Ventana* actual;
 	void dibuja();

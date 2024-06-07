@@ -95,18 +95,18 @@ void VentanaTablero::dibuja() {
 	
 	if (tablero.coronacion == true && !ventana_coronado)
 	{
-		add_boton(new Boton(50, 50, 300, 220, "bin/imagenes/TorreB.png", "bin/imagenes/TorreN.png", std::bind(&VentanaTablero::poner_torre, this)));
-		add_boton(new Boton(50, 50, 300, 140, "bin/imagenes/ReinaB.png", "bin/imagenes/ReinaN.png", std::bind(&VentanaTablero::poner_reina, this)));
-		add_boton(new Boton(50, 50, 300, 80, "bin/imagenes/AlfilB.png", "bin/imagenes/AlfilN.png", std::bind(&VentanaTablero::poner_alfil, this)));
-		add_boton(new Boton(50, 50, 300, 0, "bin/imagenes/CaballoB.png", "bin/imagenes/CaballoN.png", std::bind(&VentanaTablero::poner_caballo, this)));
+		add_boton(new Boton(50, 50, 300, 220, "imagenes/TorreB.png", "imagenes/TorreN.png", std::bind(&VentanaTablero::poner_torre, this)));
+		add_boton(new Boton(50, 50, 300, 140, "imagenes/ReinaB.png", "imagenes/ReinaN.png", std::bind(&VentanaTablero::poner_reina, this)));
+		add_boton(new Boton(50, 50, 300, 80, "imagenes/AlfilB.png", "imagenes/AlfilN.png", std::bind(&VentanaTablero::poner_alfil, this)));
+		add_boton(new Boton(50, 50, 300, 0, "imagenes/CaballoB.png", "imagenes/CaballoN.png", std::bind(&VentanaTablero::poner_caballo, this)));
 		ventana_coronado = true;
 	}
 
 	
 	if (tablero.mate(tablero.get_turno()) && !ventana_jaque)
 	{
-		add_boton(new Boton(150, 50, 250, -80, "bin/imagenes/JaqueMate.png",
-			(tablero.get_turno() == NEGRO) ? "bin/imagenes/GananBlancas.png" : "bin/imagenes/GananNegras.png", std::bind(&VentanaTablero::restart, this)));
+		add_boton(new Boton(150, 50, 250, -80, "imagenes/JaqueMate.png",
+			(tablero.get_turno() == NEGRO) ? "imagenes/GananBlancas.png" : "imagenes/GananNegras.png", std::bind(&VentanaTablero::restart, this)));
 
 		ventana_jaque = true;
 		
@@ -114,19 +114,19 @@ void VentanaTablero::dibuja() {
 
 	if (tablero.ahogado(tablero.get_turno()) && !ventana_jaque)
 	{
-		add_boton(new Boton(150, 50, 250, -80, "bin/imagenes/Ahogado.png",
-			(tablero.get_turno() == NEGRO) ? "bin/imagenes/GananBlancas.png" : "bin/imagenes/GananNegras.png", std::bind(&VentanaTablero::restart, this)));
+		add_boton(new Boton(150, 50, 250, -80, "imagenes/Ahogado.png",
+			(tablero.get_turno() == NEGRO) ? "imagenes/GananBlancas.png" : "imagenes/GananNegras.png", std::bind(&VentanaTablero::restart, this)));
 
 		ventana_jaque = true;
 
 	}
 	if (tablero.get_turno() == BLANCO)
 	{
-		turno = { "bin/imagenes/JueganBlancas.png",0, -240, 300, 50 };
+		turno = { "imagenes/JueganBlancas.png",0, -240, 300, 50 };
 	}
 	else
 	{
-		turno = { "bin/imagenes/JueganNegras.png", 0, 320, 300, 50 };
+		turno = { "imagenes/JueganNegras.png", 0, 320, 300, 50 };
 	}
 }
 
@@ -167,7 +167,7 @@ VentanaTablero::VentanaTablero(const GLdouble& Ancho, const GLdouble& Alto, std:
 	}
 	
 	
-	add_boton(new Boton(50, 50, 300, 300, "bin/imagenes/restart.png", "bin/imagenes/restartrojo.png", std::bind(&VentanaTablero::restart,this) ) ) ;
+	add_boton(new Boton(50, 50, 300, 300, "imagenes/restart.png", "imagenes/restartrojo.png", std::bind(&VentanaTablero::restart,this) ) ) ;
 	
 }
 
