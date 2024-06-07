@@ -37,13 +37,12 @@ void Ventana::dibuja()
 
 
 	
-
-	for (auto iter : botones) {
-		iter.dibuja();
+	
+	for (auto& iter : botones) {
+		if (iter != nullptr)
+		iter->dibuja();
 	}
-	for (auto iter : botones_enclavados) {
-		iter.dibuja();
-	}
+	
 	glPopMatrix();
 }
 
@@ -54,13 +53,9 @@ Ventana::Ventana(const GLdouble& Ancho, const GLdouble& Alto,std::string Path)
 	
 }
 
-void Ventana::add_boton(Boton entrada)
+void Ventana::add_boton(Boton* entrada)
 {
-	botones.push_back(entrada);
-}
-void Ventana::add_botonenclavado(BotonEnclavado entrada)
-{
-	botones_enclavados.push_back(entrada);
+	botones.push_back( entrada);
 }
 
 void Ventana::eliminar_boton()
@@ -74,10 +69,7 @@ void Ventana::detecta(GLdouble x, GLdouble y) {
 	 ty = Alto / 2 - y;
 
 	for (auto& iter : botones) {
-		iter.detectar(tx, ty);
-	}
-	for (auto& iter : botones_enclavados) {
-		iter.detectar(tx, ty);
+		iter->detectar(tx, ty);
 	}
 }
 
@@ -85,9 +77,7 @@ void Ventana::click() {
 	
 
 	for (auto& iter : botones) {
-		iter.click(tx, ty);
+		iter->click(tx, ty);
 	}
-	for (auto& iter : botones_enclavados) {
-		iter.click(tx, ty);
-	}
+	
 }

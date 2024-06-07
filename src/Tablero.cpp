@@ -279,6 +279,7 @@ void Tablero::set_coronacion(char e)
 void Tablero::restart()
 {
 	turno=BLANCO;
+	coronacion = false;
 	for (auto& iter : cuadricula) {
 		if (iter != nullptr)
 			delete iter;
