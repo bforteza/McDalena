@@ -171,7 +171,6 @@ VentanaTablero::VentanaTablero(const GLdouble& Ancho, const GLdouble& Alto, std:
 	
 }
 
-
 void VentanaTablero::restart() {
 	tablero.restart();
 	for (auto& iter : tablero.get_cuadricula()) {
@@ -196,6 +195,7 @@ void VentanaTablero::poner_torre()
 		
 	
 }
+
 void VentanaTablero::poner_reina()
 {
 	tablero.set_coronacion('Q');
@@ -205,6 +205,7 @@ void VentanaTablero::poner_reina()
 	ventana_coronado = false;
 
 }
+
 void VentanaTablero::poner_alfil()
 {
 	tablero.set_coronacion('B');
@@ -213,6 +214,7 @@ void VentanaTablero::poner_alfil()
 	}
 	ventana_coronado = false;
 }
+
 void VentanaTablero::poner_caballo()
 {
 	tablero.set_coronacion('N');
@@ -222,6 +224,7 @@ void VentanaTablero::poner_caballo()
 	ventana_coronado = false;
 
 }
+
 void VentanaTablero::eliminar_jaque()
 {
 	eliminar_boton();

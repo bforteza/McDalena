@@ -1,21 +1,13 @@
 // Ajedrez.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
 //
-#include <iostream>
-#include <freeglut.h>
-#include <ETSIDI.h>
-#include "Tablero.h"
-#include <vector>
-#include "Ventana.h"
-#include "Boton.h"
-#include "BotonEnclavado.h"
-#include "VentanaTablero.h"
+
 #include "Coordinador.h"
 #pragma once
 
 
-Tablero tablero(UP);
 
-Coordinador prueba{ 700,700 };
+
+Coordinador JUEGO{ 700,700 };
 
 void OnDraw(void);
 void OnTimer(int value);
@@ -47,7 +39,6 @@ int main(int argc, char* argv[])
 	
 	glutDisplayFunc(OnDraw);
 	glutTimerFunc(25, OnTimer, 0);
-	glutKeyboardFunc(OnKeyboardDown);
 	glutMouseFunc(OnMouseClick);
 	glutPassiveMotionFunc(MouseMove);
 	glutMainLoop();
@@ -58,42 +49,23 @@ int main(int argc, char* argv[])
 
 void OnDraw(void)
 {
-	
-	
-	prueba.dibuja();
-	//tablero.dibuja();
+	JUEGO.dibuja();
 	glutSwapBuffers();
 }
 
 void OnTimer(int value)
 {
-
-	
-	
-	prueba.detecta(x_raton, y_raton);
-
-
+	JUEGO.detecta(x_raton, y_raton);
 	glutTimerFunc(25, OnTimer, 0);
 	glutPostRedisplay();
-
 }
-void OnKeyboardDown(unsigned char key, int x_t, int y_t)
-{
-	if (key == 'e')
-	{
 
-	}
-
-	glutPostRedisplay();
-
-}
 void OnMouseClick(int boton, int state, int x, int y)
-{
-	
+{	
 	if (boton == GLUT_LEFT && state == GLUT_DOWN)
 	{
 		click = true;
-		prueba.click();
+		JUEGO.click();
 	}
 	if (boton == GLUT_LEFT && state == GLUT_UP)
 	{
@@ -103,6 +75,5 @@ void OnMouseClick(int boton, int state, int x, int y)
 void MouseMove(int x, int y)
 {
 	x_raton = x;
-	y_raton = y;
-	
+	y_raton = y;	
 }
