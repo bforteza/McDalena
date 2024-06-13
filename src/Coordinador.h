@@ -4,9 +4,9 @@
 
 class Coordinador
 {
-		char cancion1[30] = "bin/sonidos/Butterflies.mp3";
-		char cancion2[30] = "bin/sonidos/LeapOfFaith.mp3";
-		char cancion3[30] = "bin/sonidos/LiveFreeOrDie.mp3";
+		char cancion1[30] = "sonidos/Butterflies.mp3";
+		char cancion2[30] = "sonidos/LeapOfFaith.mp3";
+		char cancion3[30] = "sonidos/LiveFreeOrDie.mp3";
 		bool muteado = false;
 		
 public:
