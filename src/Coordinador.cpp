@@ -76,31 +76,31 @@ Coordinador::Coordinador(GLdouble _ancho, GLdouble _alto) :
 	
 	actual = &Menu;
 	
-	Menu.add_boton(new Boton(600, 80, 0, 120, "imagenes/UnpeonNegro.png", "imagenes/UnpeonBlanco.png", std::bind(&Coordinador::set_unicopeon, this)));
-	Menu.add_boton(new Boton(350, 80, 0, 0, "imagenes/SpeedchessNegro.png", "imagenes/SpeedchessBlanco.png", std::bind(&Coordinador::set_speedchess, this)));
-	Menu.add_boton(new Boton(250, 80, 0, -120, "imagenes/MenuMusicaNegro.png", "imagenes/MenuMusicaBlanco.png", std::bind(&Coordinador::set_menumusica, this)));
-	Menu.add_boton(new Boton(200, 80, 0, -240, "imagenes/SalirNegro.png", "imagenes/SalirBlanco.png", std::bind(&Coordinador::set_salir, this)));
-	Menu.add_boton(new Boton(100, 100, 240, -240, "imagenes/Panda1.png", "imagenes/Panda2.png", std::bind(&Coordinador::set_integrantes, this)));
-	Menu.add_boton(new Boton(700, 90, 0, 240, "imagenes/pixelchess.png", "imagenes/pixelchess.png", nullptr));
-	Menu.add_boton(new BotonEnclavado(100, 100, -240, -240, "imagenes/NoMute.png", "imagenes/MuteAzul.png", "imagenes/Mute.png", std::bind(&Coordinador::set_mute, this), std::bind(&Coordinador::set_unmute, this)));
+	Menu.add_boton(new Boton(600, 80, 0, 120, "imagenes/UnpeonNegro.png", "imagenes/UnpeonBlanco.png",1, std::bind(&Coordinador::set_unicopeon, this)));
+	Menu.add_boton(new Boton(350, 80, 0, 0, "imagenes/SpeedchessNegro.png", "imagenes/SpeedchessBlanco.png", 1, std::bind(&Coordinador::set_speedchess, this)));
+	Menu.add_boton(new Boton(250, 80, 0, -120, "imagenes/MenuMusicaNegro.png", "imagenes/MenuMusicaBlanco.png", 1, std::bind(&Coordinador::set_menumusica, this)));
+	Menu.add_boton(new Boton(200, 80, 0, -240, "imagenes/SalirNegro.png", "imagenes/SalirBlanco.png", 1, std::bind(&Coordinador::set_salir, this)));
+	Menu.add_boton(new Boton(100, 100, 240, -240, "imagenes/Panda1.png", "imagenes/Panda2.png", 4, std::bind(&Coordinador::set_integrantes, this)));
+	Menu.add_boton(new Boton(700, 90, 0, 240, "imagenes/pixelchess.png", "imagenes/pixelchess.png", 1, nullptr));
+	Menu.add_boton(new BotonEnclavado(100, 100, -240, -240, "imagenes/NoMute.png", "imagenes/MuteAzul.png", "imagenes/Mute.png", 5, std::bind(&Coordinador::set_mute, this), std::bind(&Coordinador::set_unmute, this)));
 
-	speedchess.add_boton(new Boton(100, 100, -300, 300, "imagenes/Volver.png", "imagenes/PreVolver.png", std::bind(&Coordinador::set_menu, this)));
-	speedchess.add_boton(new BotonEnclavado(100, 100, -240, -260, "imagenes/NoMute.png", "imagenes/MuteAzul.png", "imagenes/Mute.png", std::bind(&Coordinador::set_mute, this), std::bind(&Coordinador::set_unmute, this)));
-	unicopeon.add_boton(new Boton(100, 100, -300, 300, "imagenes/Volver.png", "imagenes/PreVolver.png", std::bind(&Coordinador::set_menu, this)));
-	unicopeon.add_boton(new BotonEnclavado(100, 100, -240, -260, "imagenes/NoMute.png", "imagenes/MuteAzul.png", "imagenes/Mute.png", std::bind(&Coordinador::set_mute, this), std::bind(&Coordinador::set_unmute, this)));
+	speedchess.add_boton(new Boton(100, 100, -300, 300, "imagenes/Volver.png", "imagenes/PreVolver.png",2, std::bind(&Coordinador::set_menu, this)));
+	speedchess.add_boton(new BotonEnclavado(100, 100, -240, -260, "imagenes/NoMute.png", "imagenes/MuteAzul.png", "imagenes/Mute.png", 5, std::bind(&Coordinador::set_mute, this), std::bind(&Coordinador::set_unmute, this)));
+	unicopeon.add_boton(new Boton(100, 100, -300, 300, "imagenes/Volver.png", "imagenes/PreVolver.png",2, std::bind(&Coordinador::set_menu, this)));
+	unicopeon.add_boton(new BotonEnclavado(100, 100, -240, -260, "imagenes/NoMute.png", "imagenes/MuteAzul.png", "imagenes/Mute.png", 5, std::bind(&Coordinador::set_mute, this), std::bind(&Coordinador::set_unmute, this)));
 	
-	MenuMusica.add_boton(new Boton(100, 100, -300, 300, "imagenes/Volver.png", "imagenes/PreVolver.png", std::bind(&Coordinador::set_menu, this)));
-	MenuMusica.add_boton(new Boton(250, 50, -10, 140, "imagenes/ButterfliesNegro.png", "imagenes/ButterfliesAzul.png", std::bind(&Coordinador::set_butterflies, this)));
-	MenuMusica.add_boton(new Boton(250, 50, -10, 0, "imagenes/LeapoffaithNegro.png", "imagenes/LeapoffaithAzul.png", std::bind(&Coordinador::set_leapoffaith, this)));
-	MenuMusica.add_boton(new Boton(280, 50, -10, -140, "imagenes/LivefreeordieNegro.png", "imagenes/LivefreeordieAzul.png", std::bind(&Coordinador::set_livefreeordie, this)));
-	MenuMusica.add_boton(new BotonEnclavado(100, 100, 260, 260, "imagenes/NoMute.png","imagenes/MuteAzul.png", "imagenes/Mute.png", std::bind(&Coordinador::set_mute, this), std::bind(&Coordinador::set_unmute, this)));
+	MenuMusica.add_boton(new Boton(100, 100, -300, 300, "imagenes/Volver.png", "imagenes/PreVolver.png", 0,std::bind(&Coordinador::set_menu, this)));
+	MenuMusica.add_boton(new Boton(250, 50, -10, 140, "imagenes/ButterfliesNegro.png", "imagenes/ButterfliesAzul.png", 0, std::bind(&Coordinador::set_butterflies, this)));
+	MenuMusica.add_boton(new Boton(250, 50, -10, 0, "imagenes/LeapoffaithNegro.png", "imagenes/LeapoffaithAzul.png", 0, std::bind(&Coordinador::set_leapoffaith, this)));
+	MenuMusica.add_boton(new Boton(280, 50, -10, -140, "imagenes/LivefreeordieNegro.png", "imagenes/LivefreeordieAzul.png", 0, std::bind(&Coordinador::set_livefreeordie, this)));
+	MenuMusica.add_boton(new BotonEnclavado(100, 100, 260, 260, "imagenes/NoMute.png","imagenes/MuteAzul.png", "imagenes/Mute.png",5, std::bind(&Coordinador::set_mute, this), std::bind(&Coordinador::set_unmute, this)));
 
-	Integrantes.add_boton(new Boton(100, 100, -300, 300, "imagenes/Volver.png", "imagenes/PreVolver.png", std::bind(&Coordinador::set_menu, this)));
-	Integrantes.add_boton(new Boton(350, 50, -10, 240, "imagenes/Tomeu.png", "imagenes/Tomeu.png", nullptr));
-	Integrantes.add_boton(new Boton(250, 50, -10, 100, "imagenes/Mario.png", "imagenes/Mario.png",nullptr));
-	Integrantes.add_boton(new Boton(250, 50, -10, -40, "imagenes/David.png", "imagenes/David.png", nullptr));
-	Integrantes.add_boton(new Boton(280, 50, -10, -180, "imagenes/Matias.png", "imagenes/Matias.png",nullptr));
-	Integrantes.add_boton(new BotonEnclavado(100, 100, 260, 260, "imagenes/NoMute.png", "imagenes/MuteAzul.png", "imagenes/Mute.png", std::bind(&Coordinador::set_mute, this), std::bind(&Coordinador::set_unmute, this)));
+	Integrantes.add_boton(new Boton(100, 100, -300, 300, "imagenes/Volver.png", "imagenes/PreVolver.png", 1, std::bind(&Coordinador::set_menu, this)));
+	Integrantes.add_boton(new Boton(350, 50, -10, 240, "imagenes/Tomeu.png", "imagenes/Tomeu.png", 4, nullptr));
+	Integrantes.add_boton(new Boton(250, 50, -10, 100, "imagenes/Mario.png", "imagenes/Mario.png", 4, nullptr));
+	Integrantes.add_boton(new Boton(250, 50, -10, -40, "imagenes/David.png", "imagenes/David.png", 4, nullptr));
+
+	Integrantes.add_boton(new BotonEnclavado(100, 100, 260, 260, "imagenes/NoMute.png", "imagenes/MuteAzul.png", "imagenes/Mute.png", 5, std::bind(&Coordinador::set_mute, this), std::bind(&Coordinador::set_unmute, this)));
 	
-Integrantes.add_boton(new BotonEnclavado(100, 100, 260, 260, "imagenes/NoMute.png", "imagenes/MuteAzul.png", "imagenes/Mute.png", std::bind(&Coordinador::set_mute, this), std::bind(&Coordinador::set_unmute, this)));
+Integrantes.add_boton(new BotonEnclavado(100, 100, 260, 260, "imagenes/NoMute.png", "imagenes/MuteAzul.png", "imagenes/Mute.png", 5, std::bind(&Coordinador::set_mute, this), std::bind(&Coordinador::set_unmute, this)));
  }

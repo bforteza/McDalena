@@ -31,6 +31,10 @@ public:
     void poner_reina();
     void poner_caballo();
     void eliminar_jaque();
+
+    void savear();
+
+    void loadear();
     
     VentanaTablero(const GLdouble& Ancho, const GLdouble& Alto, std::string Path, Juego juego);
 };

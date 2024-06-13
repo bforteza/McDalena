@@ -2,9 +2,8 @@
 #include "iostream"
 BotonEnclavado::BotonEnclavado(const GLdouble& Ancho, const GLdouble& Alto,
 	const GLdouble& x, const GLdouble& y,
-	std::string Path1, std::string Path2, std::string Path3,
-	std::function<void()> func, std::function<void()> func2) :
-	Boton::Boton(Ancho, Alto, x, y, Path1, Path2, func), sprite3(ETSIDI::Sprite(Path3.c_str(), x, y, Ancho, Alto)),function2(func2)
+	std::string Path1, std::string Path2, std::string Path3,int caso_sonido,std::function<void()> func, std::function<void()> func2) :
+	Boton::Boton(Ancho, Alto, x, y, Path1, Path2,caso_sonido, func), sprite3(ETSIDI::Sprite(Path3.c_str(), x, y, Ancho, Alto)),function2(func2)
 {
 
 }
@@ -49,10 +48,12 @@ void BotonEnclavado::click(GLdouble rx, GLdouble ry)
 				if (marca_enclavamiento == false)
 				{
 					function();
+					PlaySonido(Caso_sonido);
 				}
 				if (marca_enclavamiento == true)
 				{
 					function2();
+					//PlaySonido(Caso_sonido);
 				}
 				marca_enclavamiento=!marca_enclavamiento;
 				

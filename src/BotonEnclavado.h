@@ -13,7 +13,7 @@ public:
 
 	BotonEnclavado(const GLdouble& Ancho, const GLdouble& Alto,
 		const GLdouble& x, const GLdouble& y,
-		std::string Path1, std::string Path2, std::string Path3,
+		std::string Path1, std::string Path2, std::string, int caso_sonido,
 		std::function<void()> func, std::function<void()> func2);
 };
 

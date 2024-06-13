@@ -19,6 +19,7 @@ class Pieza
 {
 protected:
 	Color color{};
+
 	Sprite* sprite_pieza{}; //Sprite Correspondiente
 	double lado=150;
 public:
