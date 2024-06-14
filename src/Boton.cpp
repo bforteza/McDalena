@@ -7,10 +7,11 @@ void Boton::dibuja()
 }
 void Boton::PlaySonido(int caso)
 {
+	std::string sonido = "sonidos/panda.mp3";
 		if(caso==1) ETSIDI::play("sonidos/claves.mp3");
 		if (caso == 2) ETSIDI::play("sonidos/volver.mp3");
 		if (caso == 3) ETSIDI::play("sonidos/reinicio.mp3");
-		if (caso == 4) ETSIDI::play("sonidos/panda.mp3");
+		if (caso == 4) ETSIDI::play(sonido.c_str());
 		if (caso == 5) ETSIDI::play("sonidos/mute.mp3");
 		if (caso == 6) ETSIDI::play("sonidos/save.mp3");
 		if (caso == 7) ETSIDI::play("sonidos/palos.mp3");
