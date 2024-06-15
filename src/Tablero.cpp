@@ -351,3 +351,49 @@ void Tablero::restart()
 	buscar_piezas();
 	
 }
+
+Tablero::Tablero(Juego juego, vector<Pieza*>& piezas) {
+
+	if (juego == SC) {
+		tam.fil = 6;
+		tam.col = 5;
+
+	}
+	if (juego == UP) {
+		tam.fil = 5;
+		tam.col = 4;
+	}
+
+	cuadricula.resize(tam.fil * tam.col);
+
+	for (int i = 0; i < piezas.size() - 1; ++i)
+	{
+		Color aux = piezas[i]->get_color();
+		std::string type = piezas[i]->get_tipo();
+
+		for (int f = 0; f < tam.fil; f++) {
+			for (int c = 0; c < tam.col; c++)
+			{
+				if (type == "Rey")
+				{
+					asignar({ c,f }, new Rey(aux));
+				}
+				else if (type == "Reina") {
+					asignar({ c,f }, new Reina(aux));
+				}
+				else if (type == "Caballo") {
+					asignar({ c,f }, new Caballo(aux));
+				}
+				else if (type == "Peon") {
+					asignar({ c,f }, new Peon(aux));
+				}
+				else if (type == "Torre") {
+					asignar({ c,f }, new Torre(aux));
+				}
+				else if (type == "Alfil") {
+					asignar({ c,f }, new Alfil(aux));
+				}
+			}
+		}
+	}
+}

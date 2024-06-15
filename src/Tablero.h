@@ -56,12 +56,13 @@ public:
 	Color get_turno() { return turno; };
 
 	void restart();
-	
+	Juego get_juego() { return juego; }
 
 
 	void entrada(const Coordenadas& e);
 	//inicializadores
 	Tablero(Juego juego);
+	Tablero(Juego juego, vector<Pieza*>& piezas);
 
 	~Tablero() {
 		for (auto& iter : cuadricula) {

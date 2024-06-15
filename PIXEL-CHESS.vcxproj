@@ -141,6 +141,7 @@
     <ClInclude Include="src\CasillaVacia.h" />
     <ClInclude Include="src\Coordenadas.h" />
     <ClInclude Include="src\Coordinador.h" />
+    <ClInclude Include="src\Partida.h" />
     <ClInclude Include="src\Peon.h" />
     <ClInclude Include="src\Pieza.h" />
     <ClInclude Include="src\Reina.h" />
@@ -159,6 +160,7 @@
     <ClCompile Include="src\CasillaVacia.cpp" />
     <ClCompile Include="src\Coordenadas.cpp" />
     <ClCompile Include="src\Coordinador.cpp" />
+    <ClCompile Include="src\Partida.cpp" />
     <ClCompile Include="src\Peon.cpp" />
     <ClCompile Include="src\Pieza.cpp" />
     <ClCompile Include="src\Reina.cpp" />

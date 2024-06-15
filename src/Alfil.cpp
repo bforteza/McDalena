@@ -9,3 +9,8 @@ VectorCoordenadas Alfil::premove(Tablero* tablero, const Coordenadas& posicion)
 	return Pieza::premove_dir(direcciones, tablero, posicion);
 
 }
+
+void Alfil::gpieza(std::ofstream& out) const {
+	out << static_cast<int>(color);
+	out << " " << tipo << std::endl;
+}

@@ -2,7 +2,9 @@
 #include <vector>
 #include "Coordenadas.h"
 #include <iostream>
+#include <string>
 #include "ETSIDI.h"
+#include <fstream>
 
 class Tablero;
 
@@ -19,6 +21,7 @@ class Pieza
 {
 protected:
 	Color color{};
+	std::string tipo{};
 
 	Sprite* sprite_pieza{}; //Sprite Correspondiente
 	double lado=150;
@@ -48,9 +51,30 @@ public:
 		sprite_pieza->setCenter(_lado / 2, _lado / 2);
 		lado = _lado;
 	}
+	virtual void set_tipo(){}
 
 	//inicializador
 	Pieza(Color pieza) : color(pieza) {};
+	// Constructor de copia
+	Pieza(const Pieza& otra) : color(otra.color), tipo(otra.tipo) {}
+
 	
-	
+	//Sobrecargas y métodos necesarios para el guardado/cargado
+
+	virtual void gpieza(std::ofstream& out) const {}
+	void cpieza(int c, std::string t);
+	std::string get_tipo() { return tipo; }
+
+	friend std::ostream& operator<<(std::ostream& os, const Pieza& p) {
+		os << static_cast<int>(p.color);
+		return os;
+	}
+
+	friend std::istream& operator>>(std::istream& is, Pieza& p) {
+		int c;
+		is >> c;
+		p.color = static_cast<Color>(c);
+		return is;
+	}
 };
+

@@ -18,9 +18,9 @@ class CasillaVacia
 public:
     Color color;
     CasillaVacia(Color _color, float _lado) : color(_color), lado(_lado),
-        casilla((_color == BLANCO) ? "imagenes/cuadrado.png" : "imagenes/cuadrado2.png", 0, 0, lado, lado),
-        casilla_verde("imagenes/cuadradoverde.png", 0, 0, lado, lado),
-        casilla_seleccionada((_color == BLANCO) ? "imagenes/BlancoTenue.png" : "imagenes/NegroTenue.png", 0, 0, lado, lado)
+        casilla((_color == BLANCO) ? "bin/imagenes/cuadrado.png" : "bin/imagenes/cuadrado2.png", 0, 0, lado, lado),
+        casilla_verde("bin/imagenes/cuadradoverde.png", 0, 0, lado, lado),
+        casilla_seleccionada((_color == BLANCO) ? "bin/imagenes/BlancoTenue.png" : "bin/imagenes/NegroTenue.png", 0, 0, lado, lado)
     {
     
     

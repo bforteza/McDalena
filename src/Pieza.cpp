@@ -31,3 +31,7 @@ VectorCoordenadas Pieza::premove_dir(Coordenadas(&dir)[4], Tablero* tablero, con
 	return retorno;
 }
 
+void Pieza::cpieza(int c, std::string t) {
+	color = static_cast<Color>(c);
+	tipo = t;
+}

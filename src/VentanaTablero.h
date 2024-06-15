@@ -1,11 +1,14 @@
 #pragma once
 #include "Ventana.h"
 #include "Tablero.h"
+#include "Partida.h"
+
 class VentanaTablero :
     public Ventana
 {
 private:
     Tablero tablero;
+    Partida partida;
     GLdouble origenx, origeny;
     GLdouble finalx, finaly;
     GLdouble lado;
@@ -13,8 +16,7 @@ private:
     bool ventana_coronado = false;
     bool ventana_jaque = false;
     
-    ETSIDI::Sprite turno=("imagenes/JueganBlancas.png");
-    
+    ETSIDI::Sprite turno=("bin/imagenes/JueganBlancas.png");
     
 
     CasillaVacia*& get_CasillaVacia(const Coordenadas entrada);
