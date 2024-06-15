@@ -22,28 +22,23 @@ public:
 	void operator += (const Coordenadas e);
 };
 
-class VectorCoordenadas {
+class VectorCoordenadas : public std::vector<Coordenadas> {
 public:
-
-	std::vector<Coordenadas> v{};
 
 	void eliminar(const Coordenadas&); //elimina la coordenada si coinciden los parametros
 	const VectorCoordenadas operator+ (const VectorCoordenadas& e); //devuelve un vector concatenado
 	void operator+= (const VectorCoordenadas& e); //se concatena el vector de entrada a la función
 	void operator+= (const Coordenadas& e); //se añade como último parámetro del vector
-
-	void clear(); //vacia el vector
-
 	bool operator<<(const Coordenadas& e); //comprueba que las coordenadas formen parte de este vector
 
 	VectorCoordenadas() = default;
 
 	~VectorCoordenadas() {
-		v.clear();
+
 	}
 
 	bool operator==(const VectorCoordenadas& other) const;
 
 	VectorCoordenadas(const std::vector<Coordenadas>& _v)
-		: v(_v) {};
+		: vector(_v) {};
 };
