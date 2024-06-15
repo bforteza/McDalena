@@ -64,7 +64,7 @@ void VentanaTablero::dibuja() {
 
 
 
-		for (auto& iter : tablero.seleccion.v) {
+		for (auto& iter : tablero.seleccion) {
 			get_CasillaVacia(iter)->set_verde();
 		}
 		GLdouble auxx, auxy;
@@ -78,14 +78,14 @@ void VentanaTablero::dibuja() {
 				auxiliares.col = c;
 				auxiliares.fil = f;
 				get_CasillaVacia(auxiliares)->print(auxx, auxy);
-				if (tablero.get_pieza(auxiliares) != nullptr && (!(auxiliares == tablero.Piezaamover) || tablero.seleccion.v.empty()))
+				if (tablero.get_pieza(auxiliares) != nullptr && (!(auxiliares == tablero.Piezaamover) || tablero.seleccion.empty()))
 					tablero.get_pieza(auxiliares)->print(auxx, auxy);
 
 
 
 			}
 		}
-		if (tablero.Piezaamover < tablero.get_tam() && !tablero.seleccion.v.empty())
+		if (tablero.Piezaamover < tablero.get_tam() && !tablero.seleccion.empty())
 			tablero.get_pieza(tablero.Piezaamover)->print(tx, ty);
 
 		turno.draw();

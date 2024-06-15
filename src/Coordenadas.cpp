@@ -27,23 +27,20 @@ const VectorCoordenadas VectorCoordenadas::operator+(const VectorCoordenadas& e)
 
 void VectorCoordenadas::operator+=(const VectorCoordenadas& e)
 {
-	v.reserve(v.size() + e.v.size());
-	v.insert(v.end(), e.v.begin(), e.v.end());
+	reserve(size() + e.size());
+	insert(end(), e.begin(), e.end());
 }
 
 void VectorCoordenadas::operator+=(const Coordenadas& e)
 {
-	v.push_back(e);
+	push_back(e);
 }
 
-void VectorCoordenadas::clear()
-{
-	v.clear();
-}
+
 
 bool VectorCoordenadas::operator<<(const Coordenadas& e)
 {
-	for (auto& iter : v) {
+	for (auto& iter : *this) {
 		if (iter == e)
 			return true;
 	}
@@ -53,9 +50,10 @@ bool VectorCoordenadas::operator<<(const Coordenadas& e)
 void VectorCoordenadas::eliminar(const Coordenadas& e)
 {
 	int i = 0;
-	for (auto& iter : v) {
+	for (auto& iter : *this) {
 		if (iter == e) {
-			v.erase(v.begin() + i);
+			erase(begin() + i);
+			return;
 		}
 		i++;
 	}

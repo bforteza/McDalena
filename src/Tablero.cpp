@@ -17,14 +17,14 @@ Pieza*& Tablero::get_pieza(const Coordenadas entrada) {
 Coordenadas Tablero::rey(const Color color)
 {
 	if (color == BLANCO) {
-		for (auto& iter : p_blancas.v) {
+		for (auto& iter : p_blancas) {
 			if (dynamic_cast<Rey*>(get_pieza(iter)) != nullptr) {
 				return iter;
 			}
 		}
 	}
 	if (color == NEGRO) {
-		for (auto& iter : p_negras.v) {
+		for (auto& iter : p_negras) {
 			if (dynamic_cast<Rey*>(get_pieza(iter)) != nullptr) {
 				return iter;
 			}
@@ -38,7 +38,7 @@ bool Tablero::jaque(Color color)
 	VectorCoordenadas& piezas = (color == BLANCO) ?  p_negras : p_blancas;
 	VectorCoordenadas VCaux;
 	Coordenadas c_rey = rey(color);
-	for (auto& aux : piezas.v) {
+	for (auto& aux : piezas) {
 		VCaux += get_pieza(aux)->premove(this, aux);
 		if (VCaux << c_rey)
 		{
@@ -52,8 +52,8 @@ bool Tablero::jaque(Color color)
 
 bool Tablero::ahogado(Color color)
 {
-	for (auto iter : vector<Coordenadas>(((color == BLANCO) ? p_blancas.v : p_negras.v))) {
-		if (!premove(iter).v.empty())
+	for (auto iter : vector<Coordenadas>(((color == BLANCO) ? p_blancas : p_negras))) {
+		if (!premove(iter).empty())
 			return false;
 	}
 	return true;
@@ -127,7 +127,7 @@ VectorCoordenadas Tablero::premove(const Coordenadas& e)
 		
 		premoves += aux->premove(this, e);
 
-		for (auto& iter : vector<Coordenadas>(premoves.v) ) {
+		for (auto& iter : vector<Coordenadas>(premoves) ) {
 
 			muerte = fmove(e, iter);
 			if (jaque(c_pieza))
@@ -190,7 +190,7 @@ void Tablero::entrada(const Coordenadas& e)
 	if (!coronacion) {
 		if (((turno == BLANCO) ? p_blancas : p_negras) << e && Piezaamover.col == 0) {
 			seleccionar(premove(e));
-			if (!seleccion.v.empty())
+			if (!seleccion.empty())
 				Piezaamover = e;
 		}
 		else if (Piezaamover.col && seleccion << e) {
