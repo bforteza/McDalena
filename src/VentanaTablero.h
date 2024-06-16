@@ -22,7 +22,7 @@ public:
     
     void detecta(GLdouble x, GLdouble y);
     void click();
-    void dibuja() ;
+    void dibuja();
     void restart();
    
 

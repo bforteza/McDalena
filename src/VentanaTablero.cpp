@@ -2,7 +2,6 @@
 void VentanaTablero::detecta(GLdouble x, GLdouble y)
 {
 	
-	
 	Ventana::detecta(x,y);
 	 tx = x - Ancho / 2;
 	 ty = Alto / 2 - y;
@@ -30,12 +29,8 @@ void VentanaTablero::click()
 
 	Ventana::click();
 
-	add_boton(new Boton(50, 50, -300, 200, "imagenes/Save.png", "imagenes/Save_2.png",6, std::bind(&VentanaTablero::savear, this)));
-	add_boton(new Boton(50, 50, -300, 1, "imagenes/Load.png", "imagenes/Load_2.png", 6, std::bind(&VentanaTablero::loadear, this)));
-
 	int auxx, auxy;
 	
-
 
 	auxx = (int) ((tx - origenx) / (lado)) + 1;
 	auxy = (int) ((ty - origeny) / (lado)) + 1;
@@ -61,7 +56,6 @@ void VentanaTablero::dibuja() {
 
 
 		glPushMatrix();
-
 
 
 		for (auto& iter : tablero.seleccion) {
@@ -165,11 +159,11 @@ VentanaTablero::VentanaTablero(const GLdouble& Ancho, const GLdouble& Alto, std:
 		if (iter != nullptr)
 			iter->set_size(lado);
 	}
-
-	add_boton(new Boton(50, 50, 300, 300, "imagenes/restart.png", "imagenes/restartrojo.png", 7, std::bind(&VentanaTablero::restart, this)));
-
-
 	
+	add_boton(new Boton(50, 50, 300, 300, "imagenes/restart.png", "imagenes/restartrojo.png", 7, std::bind(&VentanaTablero::restart, this)));
+	
+	add_boton(new Boton(50, 50, -300, 200, "imagenes/Save.png", "imagenes/Save_2.png", 6, std::bind(&VentanaTablero::savear, this)));
+	add_boton(new Boton(50, 50, -300, 1, "imagenes/Load.png", "imagenes/Load_2.png", 6, std::bind(&VentanaTablero::loadear, this)));
 }
 
 void VentanaTablero::restart() {
@@ -178,8 +172,11 @@ void VentanaTablero::restart() {
 		if (iter != nullptr)
 			iter->set_size(lado);
 	}
-	for (int i = botones.size() -1 ; i >= 3; i--) {
-		botones.erase(botones.begin() + i);
+	if (ventana_jaque == true)
+	{
+		for (int i = botones.size() - 1; i >= 4; i--) {
+			botones.erase(botones.begin() + i);
+		}
 	}
 	ventana_coronado = false;
 	ventana_jaque = false;
@@ -189,7 +186,7 @@ void VentanaTablero::poner_torre()
 {
 
 	tablero.set_coronacion('R');
-	for (int i = botones.size() - 1; i >= 3; i--) {
+	for (int i = botones.size() - 1; i >= 4; i--) {
 		botones.erase(botones.begin() + i);
 	}
 	ventana_coronado = false;
@@ -200,7 +197,7 @@ void VentanaTablero::poner_torre()
 void VentanaTablero::poner_reina()
 {
 	tablero.set_coronacion('Q');
-	for (int i = botones.size() - 1; i >= 3; i--) {
+	for (int i = botones.size() - 1; i >= 4; i--) {
 		botones.erase(botones.begin() + i);
 	}
 	ventana_coronado = false;
@@ -210,7 +207,7 @@ void VentanaTablero::poner_reina()
 void VentanaTablero::poner_alfil()
 {
 	tablero.set_coronacion('B');
-	for (int i = botones.size() - 1; i >= 3; i--) {
+	for (int i = botones.size() - 1; i >= 4; i--) {
 		botones.erase(botones.begin() + i);
 	}
 	ventana_coronado = false;
@@ -219,7 +216,7 @@ void VentanaTablero::poner_alfil()
 void VentanaTablero::poner_caballo()
 {
 	tablero.set_coronacion('N');
-	for (int i = botones.size() - 1; i >= 3; i--) {
+	for (int i = botones.size() - 1; i >= 4; i--) {
 		botones.erase(botones.begin() + i);
 	}
 	ventana_coronado = false;

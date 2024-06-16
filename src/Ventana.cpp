@@ -42,10 +42,21 @@ void Ventana::dibuja()
 		if (iter != nullptr)
 		iter->dibuja();
 	}
+
+	for (auto& iter : animaciones) {
+		if (iter != nullptr)
+			iter->dibuja();
+	}
 	
 	glPopMatrix();
 }
-
+void Ventana::anima()
+	{
+	for (auto& iter : animaciones) {
+		if (iter != nullptr)
+			iter->anima();
+	}
+	}
 
 Ventana::Ventana(const GLdouble& Ancho, const GLdouble& Alto,std::string Path)
 	: Ancho(Ancho), Alto(Alto), texturePath(Path)
@@ -58,11 +69,23 @@ void Ventana::add_boton(Boton* entrada)
 	botones.push_back( entrada);
 }
 
+void Ventana::add_animacion(Animacion* animacion)
+{
+	animaciones.push_back(animacion);
+}
+
 void Ventana::eliminar_boton()
 {
 	if (botones.back() != nullptr)
 	delete botones.back();
 	botones.pop_back();
+}
+
+void Ventana::eliminar_animacion()
+{
+	if (animaciones.back() != nullptr)
+		delete animaciones.back();
+	animaciones.pop_back();
 }
 
 
@@ -79,8 +102,24 @@ void Ventana::click() {
 	
 
 	for (auto& iter : botones) {
-		if(iter != nullptr)
-		iter->click(tx, ty);
+		if (iter != nullptr)
+		{
+			iter->click(tx, ty);
+		}
+		
 	}
 	
+}
+
+void Ventana::mutear() {
+
+
+	for (auto& iter : botones) {
+		if (iter != nullptr)
+		{
+			iter->set_mute(mute);
+		}
+
+	}
+
 }

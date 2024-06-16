@@ -8,14 +8,14 @@ class Coordinador
 		char cancion2[30] = "sonidos/LeapOfFaith.mp3";
 		char cancion3[30] = "sonidos/LiveFreeOrDie.mp3";
 		bool muteado = false;
-		
+
 public:
 	GLdouble ancho = 700, alto=700;
 	VentanaTablero speedchess{ ancho,alto,"imagenes/fondo.png",SC};
 	VentanaTablero unicopeon{ ancho,alto,"imagenes/fondo.png",UP };
 
 	Ventana Menu{ ancho, alto,"imagenes/Fondo2.png" };
-	Ventana Integrantes{ ancho, alto,"imagenes/FondoIntegrantes.png" };
+	Ventana Integrantes{ ancho, alto,"imagenes/Tatooine.png" };
 	Ventana MenuMusica{ ancho, alto,"imagenes/fondomusica.png" };
 
 	Ventana* actual;
@@ -34,6 +34,7 @@ public:
 	void set_mute();
 	void set_unmute();
 	void set_integrantes();
+	void activa_vader() {}
 	Coordinador(GLdouble _ancho, GLdouble _alto);
 };
 

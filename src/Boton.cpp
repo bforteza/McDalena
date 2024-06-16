@@ -7,15 +7,19 @@ void Boton::dibuja()
 }
 void Boton::PlaySonido(int caso)
 {
-	std::string sonido = "sonidos/panda.mp3";
-		if(caso==1) ETSIDI::play("sonidos/claves.mp3");
+	if (mute == false)
+	{
+		if (caso == 1) ETSIDI::play("sonidos/claves.mp3");
 		if (caso == 2) ETSIDI::play("sonidos/volver.mp3");
 		if (caso == 3) ETSIDI::play("sonidos/reinicio.mp3");
-		if (caso == 4) ETSIDI::play(sonido.c_str());
+		if (caso == 4) ETSIDI::play("sonidos/panda.mp3");
 		if (caso == 5) ETSIDI::play("sonidos/mute.mp3");
 		if (caso == 6) ETSIDI::play("sonidos/save.mp3");
 		if (caso == 7) ETSIDI::play("sonidos/palos.mp3");
 		if (caso == 8) ETSIDI::play("sonidos/mate.mp3");
+		if (caso == 9) ETSIDI::play("sonidos/Respiracion.mp3");
+	}
+	
 }
 void Boton::detectar(GLdouble rx, GLdouble ry)
 {
@@ -53,5 +57,4 @@ Boton::Boton(const GLdouble& Ancho, const GLdouble& Alto,
 	: Ancho(Ancho), Alto(Alto), x(x), y(y) , sprite( ETSIDI::Sprite(Path1.c_str(),x,y,Ancho,Alto)),
 		sprite2(ETSIDI::Sprite(Path2.c_str() , x, y, Ancho, Alto)), dibujado(nullptr), function(func), Caso_sonido(caso_sonido)
 {
-	
 }
