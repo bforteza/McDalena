@@ -14,6 +14,7 @@ protected:
 	ETSIDI::Sprite sprite;
 	ETSIDI::Sprite sprite2;
 	int Caso_sonido;
+	bool mute = 0;
 	std::function<void()> function;
 	void PlaySonido(int caso);
 	
@@ -21,6 +22,8 @@ public:
 	 virtual void dibuja();
 	 virtual void detectar(GLdouble rx, GLdouble ry);
 	 virtual void click(GLdouble rx, GLdouble ry);
+
+	 void set_mute(bool _mute) { mute = _mute; }
 
 	Boton(const GLdouble& Ancho, const GLdouble& Alto, 
 		const GLdouble& x, const GLdouble& y,

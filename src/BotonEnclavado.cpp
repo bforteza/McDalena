@@ -53,7 +53,7 @@ void BotonEnclavado::click(GLdouble rx, GLdouble ry)
 				if (marca_enclavamiento == true)
 				{
 					function2();
-					//PlaySonido(Caso_sonido);
+					PlaySonido(Caso_sonido);
 				}
 				marca_enclavamiento=!marca_enclavamiento;
 				

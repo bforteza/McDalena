@@ -135,6 +135,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Alfil.h" />
+    <ClInclude Include="src\Animacion.h" />
+    <ClInclude Include="src\AnimacionMovil.h" />
     <ClInclude Include="src\Boton.h" />
     <ClInclude Include="src\BotonEnclavado.h" />
     <ClInclude Include="src\Caballo.h" />
@@ -154,6 +156,8 @@
   <ItemGroup>
     <ClCompile Include="src\Ajedrez.cpp" />
     <ClCompile Include="src\Alfil.cpp" />
+    <ClCompile Include="src\Animacion.cpp" />
+    <ClCompile Include="src\AnimacionMovil.cpp" />
     <ClCompile Include="src\Boton.cpp" />
     <ClCompile Include="src\BotonEnclavado.cpp" />
     <ClCompile Include="src\Caballo.cpp" />

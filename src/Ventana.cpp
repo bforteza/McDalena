@@ -43,6 +43,11 @@ void Ventana::dibuja()
 		iter->dibuja();
 	}
 	
+	for (auto& iter : animaciones) {
+		if (iter != nullptr)
+			iter->dibuja();
+	}
+
 	glPopMatrix();
 }
 
@@ -83,4 +88,37 @@ void Ventana::click() {
 		iter->click(tx, ty);
 	}
 	
+}
+
+void Ventana::anima()
+{
+	for (auto& iter : animaciones) {
+		if (iter != nullptr)
+			iter->anima();
+	}
+}
+
+void Ventana::add_animacion(Animacion* animacion)
+{
+	animaciones.push_back(animacion);
+}
+
+void Ventana::eliminar_animacion()
+{
+	if (animaciones.back() != nullptr)
+		delete animaciones.back();
+	animaciones.pop_back();
+}
+
+void Ventana::mutear() {
+
+
+	for (auto& iter : botones) {
+		if (iter != nullptr)
+		{
+			iter->set_mute(mute);
+		}
+
+	}
+
 }

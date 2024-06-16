@@ -16,7 +16,7 @@ private:
     bool ventana_coronado = false;
     bool ventana_jaque = false;
     
-    ETSIDI::Sprite turno=("bin/imagenes/JueganBlancas.png");
+    ETSIDI::Sprite turno=("imagenes/JueganBlancas.png");
     
 
     CasillaVacia*& get_CasillaVacia(const Coordenadas entrada);
