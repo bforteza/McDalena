@@ -5,7 +5,7 @@ class Caballo :
 {
 public:
    
-
+    virtual char puntos() { return 3; }
     virtual VectorCoordenadas premove(Tablero* tablero, const Coordenadas& posicion);
 
     Caballo(Color color) : Pieza::Pieza(color) {

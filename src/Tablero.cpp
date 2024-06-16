@@ -5,6 +5,23 @@ Tablero::Tablero(Juego _juego) {
 	restart();
 }
 
+Tablero::Tablero(const Tablero& copia)
+{
+	juego = copia.juego;
+	turno = copia.turno;
+	tam = copia.tam;
+	p_blancas = copia.p_blancas;
+	p_negras = copia.p_negras;
+	coronacion = copia.coronacion;
+	cuadricula.reserve(tam.col * tam.fil);
+	
+	for (auto iter : p_blancas) {
+		asignar(iter, new 
+	}
+	
+
+}
+
 Pieza*& Tablero::get_pieza(const Coordenadas entrada) {
 
 	if (entrada < tam)
@@ -182,6 +199,7 @@ void Tablero::move(const Coordenadas& e)
 	if (!coronacion)
 		turno = !turno;
 	
+	std::cout << evalue();
 	
 }
 
@@ -350,4 +368,26 @@ void Tablero::restart()
 	}
 	buscar_piezas();
 	
+}
+
+
+int Tablero::evalue()
+{
+	int retorno = 0;
+	for (auto& iter : p_blancas) {
+		retorno += get_pieza(iter)->puntos();
+	}
+	for (auto& iter : p_negras) {
+		retorno -= get_pieza(iter)->puntos();
+	}
+	return retorno;
+}
+
+VectorCoordenadas Tablero::all_premoves(Color color)
+{
+	VectorCoordenadas retorno;
+	for (auto iter : (color == BLANCO) ? p_blancas : p_negras) {
+		
+	}
+	return VectorCoordenadas();
 }

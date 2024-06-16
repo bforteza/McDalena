@@ -13,7 +13,7 @@
 enum Juego { UP, SC };
 class Tablero
 {
-private:
+protected:
 	
 	Juego juego;
 	vector<Pieza*> cuadricula;
@@ -62,7 +62,7 @@ public:
 	void entrada(const Coordenadas& e);
 	//inicializadores
 	Tablero(Juego juego);
-
+	Tablero(const Tablero& copia);
 	~Tablero() {
 		for (auto& iter : cuadricula) {
 			if (iter != nullptr)
@@ -73,6 +73,10 @@ public:
 				delete iter;
 		}
 	}
+	//inteligencia
+	int evalue();
+
+	VectorCoordenadas all_premoves(Color color);
 
 };
 

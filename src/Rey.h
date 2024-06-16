@@ -6,14 +6,9 @@ class Rey :
     bool move = false;
 public:
    
-   
+    virtual char puntos() { return 0; }
     virtual VectorCoordenadas premove(Tablero* tablero, const Coordenadas& posicion);
-    Rey(Color color) : Pieza::Pieza(color) {
-        if (color == BLANCO)
-            sprite_pieza = new Sprite("imagenes/ReyB.png", 0, 0, 100, 100);
-        if (color == NEGRO)
-            sprite_pieza = new Sprite("imagenes/ReyN.png", 0, 0, 100, 100);
-    };
+    Rey(Color color) : Pieza::Pieza(color) {};
     friend class Tablero;
 };
 

@@ -134,39 +134,63 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AfilG.h" />
+    <ClInclude Include="CaballoG.h" />
+    <ClInclude Include="ReyG.h" />
+    <ClInclude Include="src\AfilG.h" />
     <ClInclude Include="src\Alfil.h" />
     <ClInclude Include="src\Boton.h" />
     <ClInclude Include="src\BotonEnclavado.h" />
     <ClInclude Include="src\Caballo.h" />
+    <ClInclude Include="src\CaballoG.h" />
     <ClInclude Include="src\CasillaVacia.h" />
     <ClInclude Include="src\Coordenadas.h" />
     <ClInclude Include="src\Coordinador.h" />
+    <ClInclude Include="src\Inteligencia.h" />
     <ClInclude Include="src\Peon.h" />
+    <ClInclude Include="src\PeonG.h" />
     <ClInclude Include="src\Pieza.h" />
+    <ClInclude Include="src\PiezaGrafica.h" />
     <ClInclude Include="src\Reina.h" />
+    <ClInclude Include="src\ReinaG.h" />
     <ClInclude Include="src\Rey.h" />
+    <ClInclude Include="src\ReyG.h" />
     <ClInclude Include="src\Tablero.h" />
     <ClInclude Include="src\Torre.h" />
+    <ClInclude Include="src\TorreG.h" />
     <ClInclude Include="src\Ventana.h" />
     <ClInclude Include="src\VentanaTablero.h" />
+    <ClInclude Include="TorreG.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AfilG.cpp" />
+    <ClCompile Include="CaballoG.cpp" />
+    <ClCompile Include="ReyG.cpp" />
+    <ClCompile Include="src\AfilG.cpp" />
     <ClCompile Include="src\Ajedrez.cpp" />
     <ClCompile Include="src\Alfil.cpp" />
     <ClCompile Include="src\Boton.cpp" />
     <ClCompile Include="src\BotonEnclavado.cpp" />
     <ClCompile Include="src\Caballo.cpp" />
+    <ClCompile Include="src\CaballoG.cpp" />
     <ClCompile Include="src\CasillaVacia.cpp" />
     <ClCompile Include="src\Coordenadas.cpp" />
     <ClCompile Include="src\Coordinador.cpp" />
+    <ClCompile Include="src\Inteligencia.cpp" />
     <ClCompile Include="src\Peon.cpp" />
+    <ClCompile Include="src\PeonG.cpp" />
     <ClCompile Include="src\Pieza.cpp" />
+    <ClCompile Include="src\PiezaGrafica.cpp" />
     <ClCompile Include="src\Reina.cpp" />
+    <ClCompile Include="src\ReinaG.cpp" />
     <ClCompile Include="src\Rey.cpp" />
+    <ClCompile Include="src\ReyG.cpp" />
     <ClCompile Include="src\Tablero.cpp" />
     <ClCompile Include="src\Torre.cpp" />
+    <ClCompile Include="src\TorreG.cpp" />
     <ClCompile Include="src\Ventana.cpp" />
     <ClCompile Include="src\VentanaTablero.cpp" />
+    <ClCompile Include="TorreG.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

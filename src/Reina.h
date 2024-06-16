@@ -5,15 +5,10 @@ class Reina :
 {
 public:
     
-
+    virtual char puntos() { return 9; }
     virtual VectorCoordenadas premove(Tablero* tablero, const Coordenadas& posicion);
 
-    Reina(Color color) : Pieza::Pieza(color) {
-        if (color == BLANCO)
-            sprite_pieza = new Sprite("imagenes/ReinaB.png", 0, 0, 100, 100);
-        if (color == NEGRO)
-            sprite_pieza = new Sprite("imagenes/ReinaN.png", 0, 0, 100, 100);
-    };
+    Reina(Color color) : Pieza::Pieza(color) {};
         
 };
 

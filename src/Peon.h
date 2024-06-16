@@ -8,13 +8,8 @@ class Peon :
 {
 public:
    
-   
+    virtual char puntos() { return 1; }
     virtual VectorCoordenadas premove(Tablero* tablero, const Coordenadas& posicion);
-    Peon(Color color) : Pieza::Pieza(color) {
-        if (color == BLANCO)
-            sprite_pieza = new Sprite("imagenes/PeonB.png", 0, 0, 100, 100);
-        if (color == NEGRO)
-            sprite_pieza = new Sprite("imagenes/PeonN.png", 0, 0, 100, 100);
-    };
+    Peon(Color color) : Pieza::Pieza(color) {};
 };
 
