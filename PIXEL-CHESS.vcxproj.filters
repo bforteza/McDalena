@@ -15,172 +15,70 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Tablero.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Pieza.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Peon.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Torre.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Caballo.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Alfil.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Rey.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Reina.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Coordenadas.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\CasillaVacia.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Ventana.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Boton.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\VentanaTablero.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Coordinador.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\BotonEnclavado.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Inteligencia.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\PiezaGrafica.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\PeonG.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="TorreG.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="AfilG.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ReinaG.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="ReyG.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="CaballoG.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AfilG.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\CaballoG.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ReyG.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\TorreG.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\Pieza.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Peon.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="src\Torre.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Caballo.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Alfil.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Rey.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Reina.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Ajedrez.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Coordenadas.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\CasillaVacia.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de recursos</Filter>
     </ClCompile>
     <ClCompile Include="src\Tablero.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de recursos</Filter>
     </ClCompile>
-    <ClCompile Include="src\Ventana.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\Rey.cpp">
+      <Filter>Archivos de recursos</Filter>
     </ClCompile>
-    <ClCompile Include="src\Boton.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\Reina.cpp">
+      <Filter>Archivos de recursos</Filter>
     </ClCompile>
-    <ClCompile Include="src\VentanaTablero.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\Pieza.cpp">
+      <Filter>Archivos de recursos</Filter>
     </ClCompile>
-    <ClCompile Include="src\Coordinador.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\BotonEnclavado.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\Peon.cpp">
+      <Filter>Archivos de recursos</Filter>
     </ClCompile>
     <ClCompile Include="src\Inteligencia.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de recursos</Filter>
     </ClCompile>
-    <ClCompile Include="src\PiezaGrafica.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\Coordenadas.cpp">
+      <Filter>Archivos de recursos</Filter>
     </ClCompile>
-    <ClCompile Include="src\PeonG.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\Caballo.cpp">
+      <Filter>Archivos de recursos</Filter>
     </ClCompile>
-    <ClCompile Include="TorreG.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\Alfil.cpp">
+      <Filter>Archivos de recursos</Filter>
     </ClCompile>
-    <ClCompile Include="AfilG.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="src\Ajedrez.cpp">
+      <Filter>Archivos de recursos</Filter>
     </ClCompile>
-    <ClCompile Include="src\ReinaG.cpp">
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Alfil.h">
       <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="ReyG.cpp">
+    </ClInclude>
+    <ClInclude Include="src\Caballo.h">
       <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="CaballoG.cpp">
+    </ClInclude>
+    <ClInclude Include="src\Coordenadas.h">
       <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\AfilG.cpp">
+    </ClInclude>
+    <ClInclude Include="src\Inteligencia.h">
       <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\CaballoG.cpp">
+    </ClInclude>
+    <ClInclude Include="src\Peon.h">
       <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ReyG.cpp">
+    </ClInclude>
+    <ClInclude Include="src\Pieza.h">
       <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\TorreG.cpp">
+    </ClInclude>
+    <ClInclude Include="src\Reina.h">
       <Filter>Archivos de origen</Filter>
-    </ClCompile>
+    </ClInclude>
+    <ClInclude Include="src\Rey.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tablero.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Torre.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

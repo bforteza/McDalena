@@ -14,9 +14,12 @@ Tablero::Tablero(const Tablero& copia)
 	p_negras = copia.p_negras;
 	coronacion = copia.coronacion;
 	cuadricula.reserve(tam.col * tam.fil);
-	
-	for (auto iter : p_blancas) {
-		asignar(iter, new 
+
+	for (auto iter : copia.p_blancas) {
+		asignar(iter, get_pieza(iter)->puntero());
+	}
+	for (auto iter : copia.p_negras) {
+		asignar(iter, get_pieza(iter)->puntero());
 	}
 	
 
@@ -263,7 +266,7 @@ void Tablero::set_coronacion(char e)
 	
 		Pieza*& aux = get_pieza(PeonCoronacion);
 		Color color = aux->get_color();
-		float lado = aux->get_lado();
+	
 		
 		delete aux;
 
@@ -285,8 +288,7 @@ void Tablero::set_coronacion(char e)
 			break;
 		}
 		
-		aux->set_size(lado);
-		
+
 	
 
 	    turno = !turno;
@@ -367,6 +369,37 @@ void Tablero::restart()
 		asignar({ D,5 }, new Torre(NEGRO));
 	}
 	buscar_piezas();
+	
+}
+
+void Tablero::print()
+{	
+	int f = 1;
+	int c = 1;
+	std::cout << "  A B C D\n";
+	std::cout << f;
+	for (auto& iter : cuadricula) {
+		if (iter) {
+			std::cout << " ";
+			iter->print();
+			
+		}
+		else
+			if (seleccion << Coordenadas(c, f))
+				std::cout << " -";
+			else
+				std::cout << " _";
+		if (tam.col == c) {
+			f++;
+
+			std::cout << "\n";
+
+			if (f <= tam.fil)
+				std::cout << f;
+			c = 0;
+		}
+		c++;
+	}
 	
 }
 

@@ -24,9 +24,9 @@ protected:
 public:
 	//metodos otención de datos
 	virtual Color get_color() { return color; };
-	
+	virtual void print() {};
 	virtual char puntos() { return 0; };
-	
+	virtual Pieza* puntero() { return  nullptr; }
 
 	virtual VectorCoordenadas premove(Tablero* tablero, const Coordenadas& posicion) {
 		VectorCoordenadas res;

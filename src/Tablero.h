@@ -6,7 +6,7 @@
 #include "Rey.h"
 #include "Torre.h"
 #include "Caballo.h"
-#include "CasillaVacia.h"
+
 
 
 
@@ -56,7 +56,7 @@ public:
 	Color get_turno() { return turno; };
 
 	void restart();
-	
+	void print();
 
 
 	void entrada(const Coordenadas& e);
