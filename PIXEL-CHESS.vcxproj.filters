@@ -15,117 +15,111 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Animacion.h">
+    <ClInclude Include="src\Tablero.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\AnimacionMovil.h">
+    <ClInclude Include="src\Pieza.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Boton.h">
+    <ClInclude Include="src\Peon.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\BotonEnclavado.h">
+    <ClInclude Include="src\Torre.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Caballo.h">
+    <ClInclude Include="src\Caballo.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\CasillaVacia.h">
+    <ClInclude Include="src\Alfil.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Coordenadas.h">
+    <ClInclude Include="src\Rey.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Coordinador.h">
+    <ClInclude Include="src\Reina.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Partida.h">
+    <ClInclude Include="src\Coordenadas.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Peon.h">
+    <ClInclude Include="src\CasillaVacia.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Pieza.h">
+    <ClInclude Include="src\Ventana.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Reina.h">
+    <ClInclude Include="src\Boton.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Rey.h">
+    <ClInclude Include="src\VentanaTablero.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Tablero.h">
+    <ClInclude Include="src\Coordinador.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Torre.h">
+    <ClInclude Include="src\BotonEnclavado.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Ventana.h">
+    <ClInclude Include="src\Animacion.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\VentanaTablero.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Alfil.h">
+    <ClInclude Include="src\AnimacionMovil.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\VentanaTablero.cpp">
+    <ClCompile Include="src\Pieza.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Ventana.cpp">
+    <ClCompile Include="src\Peon.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Torre.cpp">
+    <ClCompile Include="src\Torre.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Tablero.cpp">
+    <ClCompile Include="src\Caballo.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Rey.cpp">
+    <ClCompile Include="src\Alfil.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Reina.cpp">
+    <ClCompile Include="src\Rey.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Pieza.cpp">
+    <ClCompile Include="src\Reina.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Peon.cpp">
+    <ClCompile Include="src\Ajedrez.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Partida.cpp">
+    <ClCompile Include="src\Coordenadas.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Coordinador.cpp">
+    <ClCompile Include="src\CasillaVacia.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Coordenadas.cpp">
+    <ClCompile Include="src\Tablero.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\CasillaVacia.cpp">
+    <ClCompile Include="src\Ventana.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Caballo.cpp">
+    <ClCompile Include="src\Boton.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\BotonEnclavado.cpp">
+    <ClCompile Include="src\VentanaTablero.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Boton.cpp">
+    <ClCompile Include="src\Coordinador.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\AnimacionMovil.cpp">
+    <ClCompile Include="src\BotonEnclavado.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Animacion.cpp">
+    <ClCompile Include="src\Animacion.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Alfil.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Universidad Politécnica de Madrid\David\Escritorio\PIXEL-CHESS\PIXEL-CHESS\src\Ajedrez.cpp">
+    <ClCompile Include="src\AnimacionMovil.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
