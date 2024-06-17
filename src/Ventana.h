@@ -17,10 +17,11 @@ protected:
 	std::vector<Boton*> botones;
 	std::vector<Animacion*> animaciones;
 	int mute;
-	
+
 public:
 
-	virtual void dibuja() ;
+
+	virtual void dibuja();
 	virtual void detecta(GLdouble x, GLdouble y);
 	virtual void click();
 	Ventana(const GLdouble& Ancho, const GLdouble& Alto, std::string Path);

@@ -1,6 +1,6 @@
 #include "boton.h"
 #pragma once
-class BotonEnclavado:public Boton
+class BotonEnclavado :public Boton
 {
 	bool marca_enclavamiento = 0;
 	ETSIDI::Sprite sprite3;

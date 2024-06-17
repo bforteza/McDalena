@@ -14,7 +14,7 @@ VectorCoordenadas Caballo::premove(Tablero* tablero, const Coordenadas& posicion
 	for (auto iter : std::vector<Coordenadas>(direcciones)) {
 		if ((iter < tam) && tablero->get_pieza(iter) == nullptr)
 			retorno += iter;
-		else if((iter < tam) && tablero->get_pieza(iter)->get_color() != color)
+		else if ((iter < tam) && tablero->get_pieza(iter)->get_color() != color)
 			retorno += iter;
 	}
 
@@ -22,5 +22,8 @@ VectorCoordenadas Caballo::premove(Tablero* tablero, const Coordenadas& posicion
 }
 
 
-
+void Caballo::gpieza(std::ofstream& out) const {
+	out << static_cast<int>(color);
+	out << " " << tipo << std::endl;
+}
 

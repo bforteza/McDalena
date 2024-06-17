@@ -4,8 +4,8 @@ class Alfil :
     public Pieza
 {
 public:
-   
-
+    void set_tipo() { tipo = "Alfil"; }
+    void gpieza(std::ofstream& out) const;
     virtual VectorCoordenadas premove(Tablero* tablero, const Coordenadas& posicion);
     Alfil(Color color) : Pieza::Pieza(color) {
         if (color == BLANCO)

@@ -27,14 +27,19 @@ VectorCoordenadas Rey::premove(Tablero* tablero, const Coordenadas& posicion)
 	if (!move) {
 		Torre* Tizq = dynamic_cast<Torre*>(tablero->get_pieza(posicion + Coordenadas(-3, 0)));
 		Torre* Tder = dynamic_cast<Torre*>(tablero->get_pieza(posicion + Coordenadas(+3, 0)));
-		if (( Tizq != nullptr && !Tizq->move && (tablero->get_pieza(posicion + Coordenadas(-2, 0))) == nullptr
-			&& (tablero->get_pieza(posicion + Coordenadas(-1, 0))) == nullptr    ))
+		if ((Tizq != nullptr && !Tizq->move && (tablero->get_pieza(posicion + Coordenadas(-2, 0))) == nullptr
+			&& (tablero->get_pieza(posicion + Coordenadas(-1, 0))) == nullptr))
 			retorno += posicion + Coordenadas(-2, 0);
 		if ((Tder != nullptr && !Tder->move) && (tablero->get_pieza(posicion + Coordenadas(+2, 0))) == nullptr
-			&& (tablero->get_pieza(posicion + Coordenadas(+1, 0))) == nullptr)  
+			&& (tablero->get_pieza(posicion + Coordenadas(+1, 0))) == nullptr)
 			retorno += posicion + Coordenadas(+2, 0);
 	}
 
 	return retorno;
 
+}
+
+void Rey::gpieza(std::ofstream& out) const {
+	out << static_cast<int>(color);
+	out << " " << tipo << std::endl;
 }

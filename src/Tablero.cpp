@@ -1,4 +1,5 @@
 #include "Tablero.h"
+#include <string>
 
 Tablero::Tablero(Juego _juego) {
 	juego = _juego;
@@ -35,17 +36,17 @@ Coordenadas Tablero::rey(const Color color)
 
 bool Tablero::jaque(Color color)
 {
-	VectorCoordenadas& piezas = (color == BLANCO) ?  p_negras : p_blancas;
+	VectorCoordenadas& piezas = (color == BLANCO) ? p_negras : p_blancas;
 	VectorCoordenadas VCaux;
 	Coordenadas c_rey = rey(color);
 	for (auto& aux : piezas) {
 		VCaux += get_pieza(aux)->premove(this, aux);
 		if (VCaux << c_rey)
 		{
-		
+
 			return true;
 		}
-			
+
 	}
 	return false;
 }
@@ -124,10 +125,10 @@ VectorCoordenadas Tablero::premove(const Coordenadas& e)
 		VectorCoordenadas premoves;
 
 		Color c_pieza = aux->get_color();
-		
+
 		premoves += aux->premove(this, e);
 
-		for (auto& iter : vector<Coordenadas>(premoves) ) {
+		for (auto& iter : vector<Coordenadas>(premoves)) {
 
 			muerte = fmove(e, iter);
 			if (jaque(c_pieza))
@@ -136,7 +137,7 @@ VectorCoordenadas Tablero::premove(const Coordenadas& e)
 			if (muerte) {
 				get_pieza(iter) = muertas.back();
 				muertas.pop_back();
-				((c_pieza==BLANCO) ? p_negras : p_blancas)  += iter;
+				((c_pieza == BLANCO) ? p_negras : p_blancas) += iter;
 			}
 
 		}
@@ -151,15 +152,15 @@ void Tablero::move(const Coordenadas& e)
 {
 	//coronación
 	Pieza*& aux = get_pieza(Piezaamover);
-	
+
 	if (dynamic_cast<Peon*>(aux) != nullptr && (e.fil == tam.fil || e.fil == 1)) {
 
 		PeonCoronacion = e;
 		coronacion = true;
-		
+
 	}
 	//enroque
-	if (dynamic_cast<Rey*>(aux) != nullptr ) {
+	if (dynamic_cast<Rey*>(aux) != nullptr) {
 		if (e.col - Piezaamover.col == 2) {
 			fmove(e + Coordenadas(1, 0), Piezaamover + Coordenadas(1, 0));
 			dynamic_cast<Rey*>(aux)->move = true;
@@ -181,8 +182,8 @@ void Tablero::move(const Coordenadas& e)
 
 	if (!coronacion)
 		turno = !turno;
-	
-	
+
+
 }
 
 void Tablero::entrada(const Coordenadas& e)
@@ -241,12 +242,12 @@ vector<Pieza*>& Tablero::get_cuadricula()
 
 void Tablero::set_coronacion(char e)
 {
-	if (coronacion == true){
-	
+	if (coronacion == true) {
+
 		Pieza*& aux = get_pieza(PeonCoronacion);
 		Color color = aux->get_color();
 		float lado = aux->get_lado();
-		
+
 		delete aux;
 
 		switch (e)
@@ -259,26 +260,26 @@ void Tablero::set_coronacion(char e)
 			break;
 		case 'N':
 			aux = new Caballo(color);
-			break;	
+			break;
 		case 'B':
 			aux = new Alfil(color);
-			break;	
+			break;
 		default:
 			break;
 		}
-		
-		aux->set_size(lado);
-		
-	
 
-	    turno = !turno;
+		aux->set_size(lado);
+
+
+
+		turno = !turno;
 		coronacion = false;
 	}
 }
 
 void Tablero::restart()
 {
-	turno=BLANCO;
+	turno = BLANCO;
 	coronacion = false;
 	for (auto& iter : cuadricula) {
 		if (iter != nullptr)
@@ -293,7 +294,7 @@ void Tablero::restart()
 	p_blancas.clear();
 	p_negras.clear();
 
-	
+
 	if (juego == SC) {
 		tam.fil = 6;
 		tam.col = 5;
@@ -349,5 +350,274 @@ void Tablero::restart()
 		asignar({ D,5 }, new Torre(NEGRO));
 	}
 	buscar_piezas();
-	
+
+}
+
+Tablero::Tablero(Juego juego, vector<Pieza*>& piezas) {
+
+	if (juego == SC) {
+		tam.fil = 6;
+		tam.col = 5;
+
+	}
+	if (juego == UP) {
+		tam.fil = 5;
+		tam.col = 4;
+	}
+
+	cuadricula.resize(tam.fil * tam.col);
+
+	for (int i = 0; i < piezas.size() - 1; ++i)
+	{
+		Color aux = piezas[i]->get_color();
+		std::string type = piezas[i]->get_tipo();
+
+		for (int f = 0; f < tam.fil; f++) {
+			for (int c = 0; c < tam.col; c++)
+			{
+				if (type == "Rey")
+				{
+					asignar({ c,f }, new Rey(aux));
+				}
+				else if (type == "Reina") {
+					asignar({ c,f }, new Reina(aux));
+				}
+				else if (type == "Caballo") {
+					asignar({ c,f }, new Caballo(aux));
+				}
+				else if (type == "Peon") {
+					asignar({ c,f }, new Peon(aux));
+				}
+				else if (type == "Torre") {
+					asignar({ c,f }, new Torre(aux));
+				}
+				else if (type == "Alfil") {
+					asignar({ c,f }, new Alfil(aux));
+				}
+			}
+		}
+	}
+}
+
+
+void Tablero::guarda() {
+
+
+
+	std::string nombre_fichero;
+
+	if (juego == SC) {
+
+		nombre_fichero = "guardadoSC.txt";
+	}
+	else if (juego == UP) {
+
+		nombre_fichero = "guardadoUP.txt";
+	}
+
+
+	std::ofstream fich{ nombre_fichero };
+
+
+	if (!fich) {
+
+		std::cout << "Error" << std::endl;
+		exit(EXIT_FAILURE);
+	}
+
+	fich << get_turno() << std::endl;
+
+
+
+	buscar_piezas();
+
+	for (auto& iter : p_blancas) {
+		if (dynamic_cast<Rey*>(get_pieza(iter)) != nullptr) {
+			fich << "R" << " " << (char)(iter.col + 48) << " " << (char)(iter.fil + 48) << " " << "B" << " " << get_pieza(iter)->get_lado() << std::endl;
+		}
+		if (dynamic_cast<Caballo*>(get_pieza(iter)) != nullptr) {
+			fich << "C" << " " << (char)(iter.col + 48) << " " << (char)(iter.fil + 48) << " " << "B" << " " << get_pieza(iter)->get_lado() << std::endl;
+		}
+		if (dynamic_cast<Alfil*>(get_pieza(iter)) != nullptr) {
+			fich << "A" << " " << (char)(iter.col + 48) << " " << (char)(iter.fil + 48) << " " << "B" << " " << get_pieza(iter)->get_lado() << std::endl;
+		}
+		if (dynamic_cast<Torre*>(get_pieza(iter)) != nullptr) {
+			fich << "T" << " " << (char)(iter.col + 48) << " " << (char)(iter.fil + 48) << " " << "B" << " " << get_pieza(iter)->get_lado() << std::endl;
+		}
+		if (dynamic_cast<Peon*>(get_pieza(iter)) != nullptr) {
+			fich << "P" << " " << (char)(iter.col + 48) << " " << (char)(iter.fil + 48) << " " << "B" << " " << get_pieza(iter)->get_lado() << std::endl;
+		}
+		if (dynamic_cast<Reina*>(get_pieza(iter)) != nullptr) {
+			fich << "Q" << " " << (char)(iter.col + 48) << " " << (char)(iter.fil + 48) << " " << "B" << " " << get_pieza(iter)->get_lado() << std::endl;
+		}
+	}
+
+
+	for (auto& iter : p_negras) {
+		if (dynamic_cast<Rey*>(get_pieza(iter)) != nullptr) {
+			fich << "R" << " " << (char)(iter.col + 48) << " " << (char)(iter.fil + 48) << " " << "N" << " " << get_pieza(iter)->get_lado() << std::endl;
+		}
+		if (dynamic_cast<Caballo*>(get_pieza(iter)) != nullptr) {
+			fich << "C" << " " << (char)(iter.col + 48) << " " << (char)(iter.fil + 48) << " " << "N" << " " << get_pieza(iter)->get_lado() << std::endl;
+		}
+		if (dynamic_cast<Alfil*>(get_pieza(iter)) != nullptr) {
+			fich << "A" << " " << (char)(iter.col + 48) << " " << (char)(iter.fil + 48) << " " << "N" << " " << get_pieza(iter)->get_lado() << std::endl;
+		}
+		if (dynamic_cast<Torre*>(get_pieza(iter)) != nullptr) {
+			fich << "T" << " " << (char)(iter.col + 48) << " " << (char)(iter.fil + 48) << " " << "N" << " " << get_pieza(iter)->get_lado() << std::endl;
+		}
+		if (dynamic_cast<Peon*>(get_pieza(iter)) != nullptr) {
+			fich << "P" << " " << (char)(iter.col + 48) << " " << (char)(iter.fil + 48) << " " << "N" << " " << get_pieza(iter)->get_lado() << std::endl;
+		}
+		if (dynamic_cast<Reina*>(get_pieza(iter)) != nullptr) {
+			fich << "Q" << " " << (char)(iter.col + 48) << " " << (char)(iter.fil + 48) << " " << "N" << " " << get_pieza(iter)->get_lado() << std::endl;
+		}
+	}
+
+
+}
+
+
+void Tablero::lodea() {
+
+	std::string nombre_fichero;
+
+	if (juego == SC) {
+
+		nombre_fichero = "guardadoSC.txt";
+	}
+	else if (juego == UP) {
+
+		nombre_fichero = "guardadoUP.txt";
+	}
+
+
+	std::ifstream fich{ nombre_fichero };
+
+
+	if (!fich) {
+
+		std::cout << "Error" << std::endl;
+		exit(EXIT_FAILURE);
+	}
+
+	int turno_;
+
+	fich >> turno_;
+
+	if (turno_ == 0) {
+		turno = BLANCO;
+	}
+	else turno = NEGRO;
+
+
+	for (auto& iter : cuadricula) {
+		if (iter != nullptr)
+			delete iter;
+	}
+
+	cuadricula.clear();
+	p_blancas.clear();
+	p_negras.clear();
+
+
+	if (juego == SC) {
+		tam.fil = 6;
+		tam.col = 5;
+
+	}
+	if (juego == UP) {
+		tam.fil = 5;
+		tam.col = 4;
+
+	}
+	cuadricula.resize(tam.fil * tam.col);
+
+
+	char pieza;
+	int col;
+	int fil;
+	char color;
+	float lado;
+
+
+
+
+	while (!fich.eof()) {
+
+		fich >> pieza;
+		fich >> col;
+		fich >> fil;
+		fich >> color;
+		fich >> lado;
+
+
+		if (color == 'B') {
+
+			switch (pieza) {
+
+			case 'R':
+				asignar({ col,fil }, new Rey(BLANCO));
+				break;
+
+			case 'C':
+				asignar({ col,fil }, new Caballo(BLANCO));
+				break;
+
+			case 'T':
+				asignar({ col,fil }, new Torre(BLANCO));
+				break;
+
+			case 'A':
+				asignar({ col,fil }, new Alfil(BLANCO));
+				break;
+
+			case 'Q':
+				asignar({ col,fil }, new Reina(BLANCO));
+				break;
+
+			case 'P':
+				asignar({ col,fil }, new Peon(BLANCO));
+				break;
+
+			}
+		}
+
+		else if (color == 'N') {
+
+			switch (pieza) {
+
+			case 'R':
+				asignar({ col,fil }, new Rey(NEGRO));
+				break;
+
+			case 'C':
+				asignar({ col,fil }, new Caballo(NEGRO));
+				break;
+
+			case 'T':
+				asignar({ col,fil }, new Torre(NEGRO));
+				break;
+
+			case 'A':
+				asignar({ col,fil }, new Alfil(NEGRO));
+				break;
+
+			case 'Q':
+				asignar({ col,fil }, new Reina(NEGRO));
+				break;
+
+			case 'P':
+				asignar({ col,fil }, new Peon(NEGRO));
+				break;
+			}
+
+
+		}
+		Pieza*& aux = get_pieza({ col, fil });
+		aux->set_size(lado);
+	}
+
+	buscar_piezas();
+
 }

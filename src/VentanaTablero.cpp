@@ -1,19 +1,20 @@
 #include "VentanaTablero.h"
 void VentanaTablero::detecta(GLdouble x, GLdouble y)
 {
-	
-	Ventana::detecta(x,y);
-	 tx = x - Ancho / 2;
-	 ty = Alto / 2 - y;
+
+
+	Ventana::detecta(x, y);
+	tx = x - Ancho / 2;
+	ty = Alto / 2 - y;
 
 	int auxx, auxy;
-	
+
 
 	Color color = NEGRO;
 
 
-	auxx = (int) (((tx - origenx) / (lado))  + 1);
-	auxy = (int) (((ty - origeny) / (lado))   + 1);
+	auxx = (int)(((tx - origenx) / (lado)) + 1);
+	auxy = (int)(((ty - origeny) / (lado)) + 1);
 
 	Coordenadas auxiliares = { auxx,auxy };
 	if (auxiliares < tablero.get_tam())
@@ -21,7 +22,7 @@ void VentanaTablero::detecta(GLdouble x, GLdouble y)
 		get_CasillaVacia(auxiliares)->set_selecionado();
 	}
 
-		
+
 }
 
 void VentanaTablero::click()
@@ -30,13 +31,14 @@ void VentanaTablero::click()
 	Ventana::click();
 
 	int auxx, auxy;
-	
 
-	auxx = (int) ((tx - origenx) / (lado)) + 1;
-	auxy = (int) ((ty - origeny) / (lado)) + 1;
 
-	tablero.entrada({auxx,auxy});
-	
+
+	auxx = (int)((tx - origenx) / (lado)) + 1;
+	auxy = (int)((ty - origeny) / (lado)) + 1;
+
+	tablero.entrada({ auxx,auxy });
+
 
 }
 
@@ -51,42 +53,43 @@ CasillaVacia*& VentanaTablero::get_CasillaVacia(const Coordenadas entrada)
 
 void VentanaTablero::dibuja() {
 
-	
-		Ventana::dibuja();
+
+	Ventana::dibuja();
 
 
-		glPushMatrix();
+	glPushMatrix();
 
 
-		for (auto& iter : tablero.seleccion) {
-			get_CasillaVacia(iter)->set_verde();
+
+	for (auto& iter : tablero.seleccion) {
+		get_CasillaVacia(iter)->set_verde();
+	}
+	GLdouble auxx, auxy;
+	Coordenadas auxiliares;
+	for (int f = 1; f <= tablero.get_tam().fil; f++) {
+		for (int c = 1; c <= tablero.get_tam().col; c++) {
+
+			auxx = (c - 1) * lado + origenx + lado / 2;
+			auxy = (f - 1) * lado + origeny + lado / 2;
+
+			auxiliares.col = c;
+			auxiliares.fil = f;
+			get_CasillaVacia(auxiliares)->print(auxx, auxy);
+			if (tablero.get_pieza(auxiliares) != nullptr && (!(auxiliares == tablero.Piezaamover) || tablero.seleccion.empty()))
+				tablero.get_pieza(auxiliares)->print(auxx, auxy);
+
+
+
 		}
-		GLdouble auxx, auxy;
-		Coordenadas auxiliares;
-		for (int f = 1; f <= tablero.get_tam().fil; f++) {
-			for (int c = 1; c <= tablero.get_tam().col; c++) {
+	}
+	if (tablero.Piezaamover < tablero.get_tam() && !tablero.seleccion.empty())
+		tablero.get_pieza(tablero.Piezaamover)->print(tx, ty);
 
-				auxx = (c - 1) * lado + origenx + lado / 2;
-				auxy = (f - 1) * lado + origeny + lado / 2;
-
-				auxiliares.col = c;
-				auxiliares.fil = f;
-				get_CasillaVacia(auxiliares)->print(auxx, auxy);
-				if (tablero.get_pieza(auxiliares) != nullptr && (!(auxiliares == tablero.Piezaamover) || tablero.seleccion.empty()))
-					tablero.get_pieza(auxiliares)->print(auxx, auxy);
+	turno.draw();
+	glPopMatrix();
 
 
 
-			}
-		}
-		if (tablero.Piezaamover < tablero.get_tam() && !tablero.seleccion.empty())
-			tablero.get_pieza(tablero.Piezaamover)->print(tx, ty);
-
-		turno.draw();
-		glPopMatrix();
-
-
-	
 	if (tablero.coronacion == true && !ventana_coronado)
 	{
 		add_boton(new Boton(50, 50, 300, 220, "imagenes/TorreB.png", "imagenes/TorreN.png", 7, std::bind(&VentanaTablero::poner_torre, this)));
@@ -96,14 +99,14 @@ void VentanaTablero::dibuja() {
 		ventana_coronado = true;
 	}
 
-	
+
 	if (tablero.mate(tablero.get_turno()) && !ventana_jaque)
 	{
 		add_boton(new Boton(150, 50, 250, -80, "imagenes/JaqueMate.png",
 			(tablero.get_turno() == NEGRO) ? "imagenes/GananBlancas.png" : "imagenes/GananNegras.png", 8, std::bind(&VentanaTablero::restart, this)));
 
 		ventana_jaque = true;
-		
+
 	}
 
 	if (tablero.ahogado(tablero.get_turno()) && !ventana_jaque)
@@ -134,9 +137,9 @@ VentanaTablero::VentanaTablero(const GLdouble& Ancho, const GLdouble& Alto, std:
 	}
 
 	if (juego == SC) {
-		origenx = -Ancho/4;
-		origeny = -Alto/4;
-		lado = Ancho/10;
+		origenx = -Ancho / 4;
+		origeny = -Alto / 4;
+		lado = Ancho / 10;
 	}
 
 
@@ -145,11 +148,11 @@ VentanaTablero::VentanaTablero(const GLdouble& Ancho, const GLdouble& Alto, std:
 	int x = 1;
 	for (auto& iter : base) {
 
-		iter = new CasillaVacia(color,lado);
+		iter = new CasillaVacia(color, lado);
 
 		color = !color;
-		
-		if (x % tablero.get_tam().col == 0 && !(tablero.get_tam().col % 2 ) ) {
+
+		if (x % tablero.get_tam().col == 0 && !(tablero.get_tam().col % 2)) {
 			color = !color;
 		}
 		x++;
@@ -159,11 +162,13 @@ VentanaTablero::VentanaTablero(const GLdouble& Ancho, const GLdouble& Alto, std:
 		if (iter != nullptr)
 			iter->set_size(lado);
 	}
-	
+
 	add_boton(new Boton(50, 50, 300, 300, "imagenes/restart.png", "imagenes/restartrojo.png", 7, std::bind(&VentanaTablero::restart, this)));
-	
-	add_boton(new Boton(50, 50, -300, 200, "imagenes/Save.png", "imagenes/Save_2.png", 6, std::bind(&VentanaTablero::savear, this)));
-	add_boton(new Boton(50, 50, -300, 1, "imagenes/Load.png", "imagenes/Load_2.png", 6, std::bind(&VentanaTablero::loadear, this)));
+
+	add_boton(new Boton(50, 50, -300, 200, "imagenes/Save.png", "imagenes/Save_2.png", 6, std::bind(&VentanaTablero::guarda, this)));
+	add_boton(new Boton(50, 50, -300, 1, "imagenes/Load.png", "imagenes/Load_2.png", 6, std::bind(&VentanaTablero::lodea, this)));
+
+
 }
 
 void VentanaTablero::restart() {
@@ -172,11 +177,8 @@ void VentanaTablero::restart() {
 		if (iter != nullptr)
 			iter->set_size(lado);
 	}
-	if (ventana_jaque == true)
-	{
-		for (int i = botones.size() - 1; i >= 4; i--) {
-			botones.erase(botones.begin() + i);
-		}
+	for (int i = botones.size() - 1; i >= 4; i--) {
+		botones.erase(botones.begin() + i);
 	}
 	ventana_coronado = false;
 	ventana_jaque = false;
@@ -190,8 +192,8 @@ void VentanaTablero::poner_torre()
 		botones.erase(botones.begin() + i);
 	}
 	ventana_coronado = false;
-		
-	
+
+
 }
 
 void VentanaTablero::poner_reina()
@@ -232,10 +234,13 @@ void VentanaTablero::eliminar_jaque()
 
 void VentanaTablero::savear()
 {
-
+	partida.guardar(tablero);
 }
 
 void VentanaTablero::loadear()
 {
-
+	partida.cargar(tablero.get_juego(), tablero);
 }
+
+
+

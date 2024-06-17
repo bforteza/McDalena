@@ -9,3 +9,8 @@ VectorCoordenadas Reina::premove(Tablero* tablero, const Coordenadas& posicion)
 	return  (Pieza::premove_dir(direccionest, tablero, posicion)
 		+ Pieza::premove_dir(direccionesa, tablero, posicion));
 }
+
+void Reina::gpieza(std::ofstream& out) const {
+	out << static_cast<int>(color);
+	out << " " << tipo << std::endl;
+}

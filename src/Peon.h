@@ -7,8 +7,8 @@ class Peon :
     public Pieza
 {
 public:
-   
-   
+    void set_tipo() { tipo = "Peon"; }
+    void gpieza(std::ofstream& out) const;
     virtual VectorCoordenadas premove(Tablero* tablero, const Coordenadas& posicion);
     Peon(Color color) : Pieza::Pieza(color) {
         if (color == BLANCO)

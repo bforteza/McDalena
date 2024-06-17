@@ -7,14 +7,14 @@ class Animacion
 {
 protected:
 	ETSIDI::SpriteSequence secuencia{ "imagenes/pixelchessanimacion.png", 10 };
-	float coordenadasx,coordenadasy;
-	int _columnas,_filas;
+	float coordenadasx, coordenadasy;
+	int _columnas, _filas;
 	int _tiempo;
 	float _ancho, _alto;
 	std::string _Direccion;
 public:
-	
-	Animacion (std::string Direccion,int columnas,int filas,int tiempo,float x,float y,float ancho,float alto)
+
+	Animacion(std::string Direccion, int columnas, int filas, int tiempo, float x, float y, float ancho, float alto)
 	{
 		coordenadasx = x;
 		coordenadasy = y;
@@ -23,12 +23,13 @@ public:
 		_tiempo = tiempo;
 		_ancho = ancho;
 		_alto = alto;
-		_Direccion= Direccion;
+		_Direccion = Direccion;
 
-		secuencia= { Direccion.c_str(),filas,columnas,tiempo,true,x,y,ancho,alto};
+		secuencia = { Direccion.c_str(),filas,columnas,tiempo,true,x,y,ancho,alto };
 	}
 
 	void dibuja();
 	virtual void anima();
 };
+
 

@@ -5,10 +5,8 @@ class Torre :
 {
     bool move = false;
 public:
-    
-   
-
-  
+    void gpieza(std::ofstream& out) const;
+    void set_tipo() { tipo = "Torre"; }
     virtual VectorCoordenadas premove(Tablero* tablero, const Coordenadas& posicion);
     Torre(Color color) : Pieza::Pieza(color) {
         if (color == BLANCO)
