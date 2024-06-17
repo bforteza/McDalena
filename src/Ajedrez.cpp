@@ -21,9 +21,9 @@ bool click;
 int main(int argc, char* argv[])
 {
 
-
-	//Inicializar el gestor de ventanas FREEGLUT
- //y crear la ventana
+	
+   //Inicializar el gestor de ventanas FREEGLUT
+//y crear la ventana
 	glutInit(&argc, argv);
 	glutInitWindowSize(700, 700);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
@@ -31,12 +31,12 @@ int main(int argc, char* argv[])
 	//habilitar luces y definir perspectiva
 	glEnable(GL_LIGHT0);
 	glEnable(GL_LIGHTING);
-	gluPerspective(90.0, 800 / 800.0f, 400, 500);
+	gluPerspective(90.0, 800/800.0f, 400, 500);
 	glEnable(0x0B57);
 	glMatrixMode(GL_PROJECTION);
 
 
-
+	
 	glutDisplayFunc(OnDraw);
 	glutTimerFunc(25, OnTimer, 0);
 	glutMouseFunc(OnMouseClick);
@@ -61,7 +61,7 @@ void OnTimer(int value)
 }
 
 void OnMouseClick(int boton, int state, int x, int y)
-{
+{	
 	if (boton == GLUT_LEFT && state == GLUT_DOWN)
 	{
 		click = true;
@@ -75,5 +75,5 @@ void OnMouseClick(int boton, int state, int x, int y)
 void MouseMove(int x, int y)
 {
 	x_raton = x;
-	y_raton = y;
+	y_raton = y;	
 }

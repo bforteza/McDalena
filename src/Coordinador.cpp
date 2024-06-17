@@ -12,7 +12,7 @@ void Coordinador::dibuja()
 void Coordinador::detecta(GLdouble x, GLdouble y)
 {
 	if (actual != nullptr) {
-		actual->detecta(x, y);
+		actual->detecta(x,y);
 	}
 }
 
@@ -51,18 +51,18 @@ void Coordinador::set_integrantes()
 }
 void Coordinador::set_butterflies()
 {
-	if (muteado == false)
-		ETSIDI::playMusica(cancion1, true);
+	if(muteado==false)
+	ETSIDI::playMusica(cancion1, true);
 }
 void Coordinador::set_leapoffaith()
 {
 	if (muteado == false)
-		ETSIDI::playMusica(cancion2, true);
+	ETSIDI::playMusica(cancion2, true);
 }
 void Coordinador::set_livefreeordie()
 {
 	if (muteado == false)
-		ETSIDI::playMusica(cancion3, true);
+	ETSIDI::playMusica(cancion3, true);
 }
 void Coordinador::set_mute()
 {

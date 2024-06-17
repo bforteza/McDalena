@@ -22,12 +22,12 @@ public:
         casilla_verde("imagenes/cuadradoverde.png", 0, 0, lado, lado),
         casilla_seleccionada((_color == BLANCO) ? "imagenes/BlancoTenue.png" : "imagenes/NegroTenue.png", 0, 0, lado, lado)
     {
-
-
+    
+    
     };
-
+    
     void set_verde();
     void set_selecionado();
 
-    virtual void print(const float x, const float y);
+    virtual void print(const float x, const float y) ;
 };

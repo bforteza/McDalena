@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 #include <iostream>
 #include <freeglut.h>
 #include <ETSIDI.h>
@@ -9,7 +8,7 @@
 #include <fstream>
 #include <string>
 
-class Partida {
+class Partida{
 private:
 	vector <Pieza*>posicionesg{};
 	vector <Pieza*>posicionesc{};

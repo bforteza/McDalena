@@ -12,5 +12,5 @@ VectorCoordenadas Reina::premove(Tablero* tablero, const Coordenadas& posicion)
 
 void Reina::gpieza(std::ofstream& out) const {
 	out << static_cast<int>(color);
-	out << " " << tipo << std::endl;
+	out << " "<<tipo<< std::endl;
 }

@@ -40,21 +40,21 @@ void Partida::guardar(Tablero& tab)
 
 void Partida::cargar(Juego juego, Tablero& tab)
 {
-    std::ifstream gtxt("guardado");
-    vector<Pieza*> piezas;
-    if (gtxt.is_open()) {
-        Pieza pieza(BLANCO);
-        int color;
-        std::string tip{};
-        while (gtxt >> color >> tip) {
-            pieza.cpieza(color, tip);
-            piezas.push_back(new Pieza(pieza)); //Introduzco un puntero a la nueva pieza
-        }
-        gtxt.close();
-    }
-    else {
-        std::cerr << "No se pudo abrir el archivo para la carga" << std::endl;
-    }
+	std::ifstream gtxt("guardado");
+	vector<Pieza*> piezas;
+	if (gtxt.is_open()) {
+		Pieza pieza(BLANCO);
+		int color;
+		std::string tip{};
+		while (gtxt >> color >> tip) {
+			pieza.cpieza(color, tip);
+			piezas.push_back(new Pieza(pieza)); //Introduzco un puntero a la nueva pieza
+		}
+		gtxt.close();
+	}
+	else {
+		std::cerr << "No se pudo abrir el archivo para la carga" << std::endl;
+	}
 
-    Tablero::Tablero(juego, piezas);
+	Tablero::Tablero(juego, piezas);
 }

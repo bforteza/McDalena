@@ -36,17 +36,17 @@ Coordenadas Tablero::rey(const Color color)
 
 bool Tablero::jaque(Color color)
 {
-	VectorCoordenadas& piezas = (color == BLANCO) ? p_negras : p_blancas;
+	VectorCoordenadas& piezas = (color == BLANCO) ?  p_negras : p_blancas;
 	VectorCoordenadas VCaux;
 	Coordenadas c_rey = rey(color);
 	for (auto& aux : piezas) {
 		VCaux += get_pieza(aux)->premove(this, aux);
 		if (VCaux << c_rey)
 		{
-
+		
 			return true;
 		}
-
+			
 	}
 	return false;
 }
@@ -125,10 +125,10 @@ VectorCoordenadas Tablero::premove(const Coordenadas& e)
 		VectorCoordenadas premoves;
 
 		Color c_pieza = aux->get_color();
-
+		
 		premoves += aux->premove(this, e);
 
-		for (auto& iter : vector<Coordenadas>(premoves)) {
+		for (auto& iter : vector<Coordenadas>(premoves) ) {
 
 			muerte = fmove(e, iter);
 			if (jaque(c_pieza))
@@ -137,7 +137,7 @@ VectorCoordenadas Tablero::premove(const Coordenadas& e)
 			if (muerte) {
 				get_pieza(iter) = muertas.back();
 				muertas.pop_back();
-				((c_pieza == BLANCO) ? p_negras : p_blancas) += iter;
+				((c_pieza==BLANCO) ? p_negras : p_blancas)  += iter;
 			}
 
 		}
@@ -152,15 +152,15 @@ void Tablero::move(const Coordenadas& e)
 {
 	//coronación
 	Pieza*& aux = get_pieza(Piezaamover);
-
+	
 	if (dynamic_cast<Peon*>(aux) != nullptr && (e.fil == tam.fil || e.fil == 1)) {
 
 		PeonCoronacion = e;
 		coronacion = true;
-
+		
 	}
 	//enroque
-	if (dynamic_cast<Rey*>(aux) != nullptr) {
+	if (dynamic_cast<Rey*>(aux) != nullptr ) {
 		if (e.col - Piezaamover.col == 2) {
 			fmove(e + Coordenadas(1, 0), Piezaamover + Coordenadas(1, 0));
 			dynamic_cast<Rey*>(aux)->move = true;
@@ -182,8 +182,8 @@ void Tablero::move(const Coordenadas& e)
 
 	if (!coronacion)
 		turno = !turno;
-
-
+	
+	
 }
 
 void Tablero::entrada(const Coordenadas& e)
@@ -242,12 +242,12 @@ vector<Pieza*>& Tablero::get_cuadricula()
 
 void Tablero::set_coronacion(char e)
 {
-	if (coronacion == true) {
-
+	if (coronacion == true){
+	
 		Pieza*& aux = get_pieza(PeonCoronacion);
 		Color color = aux->get_color();
 		float lado = aux->get_lado();
-
+		
 		delete aux;
 
 		switch (e)
@@ -260,26 +260,26 @@ void Tablero::set_coronacion(char e)
 			break;
 		case 'N':
 			aux = new Caballo(color);
-			break;
+			break;	
 		case 'B':
 			aux = new Alfil(color);
-			break;
+			break;	
 		default:
 			break;
 		}
-
+		
 		aux->set_size(lado);
+		
+	
 
-
-
-		turno = !turno;
+	    turno = !turno;
 		coronacion = false;
 	}
 }
 
 void Tablero::restart()
 {
-	turno = BLANCO;
+	turno=BLANCO;
 	coronacion = false;
 	for (auto& iter : cuadricula) {
 		if (iter != nullptr)
@@ -294,7 +294,7 @@ void Tablero::restart()
 	p_blancas.clear();
 	p_negras.clear();
 
-
+	
 	if (juego == SC) {
 		tam.fil = 6;
 		tam.col = 5;
@@ -350,7 +350,7 @@ void Tablero::restart()
 		asignar({ D,5 }, new Torre(NEGRO));
 	}
 	buscar_piezas();
-
+	
 }
 
 Tablero::Tablero(Juego juego, vector<Pieza*>& piezas) {
@@ -402,7 +402,7 @@ Tablero::Tablero(Juego juego, vector<Pieza*>& piezas) {
 
 void Tablero::guarda() {
 
-
+	
 
 	std::string nombre_fichero;
 
@@ -481,7 +481,7 @@ void Tablero::guarda() {
 void Tablero::lodea() {
 
 	std::string nombre_fichero;
-
+	
 	if (juego == SC) {
 
 		nombre_fichero = "guardadoSC.txt";

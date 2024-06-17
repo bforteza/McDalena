@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "freeglut.h"
 #include <string>
 #include <functional>
@@ -17,17 +17,17 @@ protected:
 	bool mute = 0;
 	std::function<void()> function;
 	void PlaySonido(int caso);
-
+	
 public:
-	virtual void dibuja();
-	virtual void detectar(GLdouble rx, GLdouble ry);
-	virtual void click(GLdouble rx, GLdouble ry);
+	 virtual void dibuja();
+	 virtual void detectar(GLdouble rx, GLdouble ry);
+	 virtual void click(GLdouble rx, GLdouble ry);
 
-	void set_mute(bool _mute) { mute = _mute; }
+	 void set_mute(bool _mute) { mute = _mute; }
 
-	Boton(const GLdouble& Ancho, const GLdouble& Alto,
+	Boton(const GLdouble& Ancho, const GLdouble& Alto, 
 		const GLdouble& x, const GLdouble& y,
-		std::string Path1, std::string Path2, int caso_sonido,
+		std::string Path1,std::string Path2 ,int caso_sonido,
 		std::function<void()> func);
 
 };
